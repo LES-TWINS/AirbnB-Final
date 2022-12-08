@@ -8,6 +8,23 @@ import { HomePgComponent } from "./home-pg/home-pg.component";
 import { ModuleComponent } from "./module.component";
 import { OrderedHistoryComponent } from "./ordered/ordered-history/ordered-history.component";
 import { OrderedComponent } from "./ordered/ordered.component";
+import { HeaderComponent } from './home-pg/header/header.component';
+import { MainComponent } from './home-pg/main/main.component';
+import { LogoComponent } from './home-pg/header/logo/logo.component';
+import { SearchComponent } from './home-pg/header/search/search.component';
+import { UserComponent } from './home-pg/header/user/user.component';
+import { FooterComponent } from './home-pg/footer/footer.component';
+import { AboutComponent } from './home-pg/footer/about/about.component';
+import { SupportComponent } from './home-pg/footer/support/support.component';
+import { CardComponent } from './home-pg/main/card/card.component';
+import {MatCardModule} from '@angular/material/card';
+import { NavigationComponent } from './home-pg/main/navigation/navigation.component';
+import { SliderComponent } from './home-pg/main/navigation/slider/slider.component';
+import { FilterComponent } from './home-pg/main/navigation/filter/filter.component'; 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 const routes:Routes = [
     { path: '',  component:ModuleComponent,children:[  
@@ -25,9 +42,25 @@ const routes:Routes = [
         SignInComponent,
         SignUpComponent,
         OrderedHistoryComponent,
+        HeaderComponent,
+        MainComponent,
+        LogoComponent,
+        SearchComponent,
+        UserComponent,
+        FooterComponent,
+        AboutComponent,
+        SupportComponent,
+        CardComponent,
+        NavigationComponent,
+        SliderComponent,
+        FilterComponent,
+      
     ],
     imports: [
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        MatCardModule,
+        CarouselModule,
+        BrowserAnimationsModule
       ]
  
   })

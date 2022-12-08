@@ -1,0 +1,17 @@
+a{
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    }
+    a:hover{
+    text-decoration: underline;
+    }
+    a:last-of-type:hover{
+        text-decoration: none;
+    }
+    img{
+        width: 16px;
+    }
+    .currency {
+        padding: 0 27px;
+    }
