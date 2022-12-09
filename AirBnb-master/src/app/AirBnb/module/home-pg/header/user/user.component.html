@@ -1,0 +1,14 @@
+<div class="user">
+    <a href="#" class="btn  ">Airbnb your home</a>
+    <button type="button" class="btn earth"><img src="/assets//images/earth.png" alt="earth"></button>
+    <div clickOutside (clickOutside)="clickedOutside()" >
+    <button type="button" class="btn login" alt=""(click)="toggleLogin()"><div><img src="/assets/images/burger.png"  class="burger"><img src="/assets/images/person.png" alt="" class="person"> </div></button> 
+    </div>
+    <div class="list-group sign-in"  *ngIf="show">
+     
+        <button type="button" class="list-group-item list-group-item-action">Sign up</button>
+        <button type="button" class="list-group-item list-group-item-action">Log in</button>
+       
+      </div>
+</div>
+

@@ -25,6 +25,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleModule } from './AirBnb/module/module.module';
 
 
+
 const routes:Routes = [
   { path: '', redirectTo:"module" ,pathMatch: 'full'}
 ]
@@ -49,7 +50,8 @@ const routes:Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     ModuleModule,
-    
+ 
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

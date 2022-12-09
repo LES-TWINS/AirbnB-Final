@@ -1,0 +1,29 @@
+
+
+header{
+  max-width: 1920px;
+  background-color: #fff;
+  border-bottom:1px solid #ebebeb ;
+  padding: 0 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+ 
+.col{
+  height: 80px;
+  align-items: center;
+  display: flex;
+  min-width: 360px;
+}
+.col:nth-of-type(2){
+  justify-content: center;
+}
+.col:last-of-type{
+justify-content: flex-end;
+}  
+}
+
+
+
+  /*# sourceMappingURL=header.component.css.map */

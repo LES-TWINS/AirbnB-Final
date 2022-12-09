@@ -1,0 +1,13 @@
+.filter {
+  width: 90px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+img {
+  width: 20px;
+  margin-right: 7px;
+}
+/*# sourceMappingURL=filter.component.css.map */

@@ -1,0 +1,72 @@
+.btn-group {
+  border: 1px solid #D0D0D7;
+  border-radius: 20px;
+  height: 50px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-group:hover {
+  -webkit-box-shadow: 0 9px 6px -6px #D0D0D7;
+          box-shadow: 0 9px 6px -6px #D0D0D7;
+}
+
+.btn {
+  font-size: 14px;
+}
+
+.btn:focus {
+  outline: none;
+  border-radius: none;
+}
+
+.btn:first-of-type {
+  width: 110px;
+  font-weight: 600;
+}
+
+.btn:nth-of-type(2) {
+  width: 98px;
+  font-weight: 600;
+}
+
+.btn:last-of-type {
+  color: #717171;
+  width: 146px;
+}
+
+.btn:last-of-type > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 0 5px;
+}
+
+.btn:nth-of-type(2):after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: #D0D0D7;
+  position: absolute;
+  right: -1.5px;
+  top: 12.5px;
+}
+
+.btn:nth-of-type(2):before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: #D0D0D7;
+  position: absolute;
+  left: -2.5px;
+}
+
+img {
+  padding: 0 0 0 17px;
+}
+/*# sourceMappingURL=search.component.css.map */

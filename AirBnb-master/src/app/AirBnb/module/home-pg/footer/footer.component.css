@@ -1,0 +1,27 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  max-width: 1920px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+footer section {
+  border-top: 1px solid #ddd;
+  padding: 15px 80px;
+}
+
+footer .col-6 {
+  padding: 0;
+}
+
+footer .col-6:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+/*# sourceMappingURL=footer.component.css.map */
