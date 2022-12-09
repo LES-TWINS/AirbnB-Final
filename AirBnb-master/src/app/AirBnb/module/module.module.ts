@@ -23,6 +23,7 @@ import { SliderComponent } from './home-pg/main/navigation/slider/slider.compone
 import { FilterComponent } from './home-pg/main/navigation/filter/filter.component'; 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClickOutsideDirective } from "./home-pg/header/user/clickOutside.directive";
 
 
 
@@ -54,13 +55,15 @@ const routes:Routes = [
         NavigationComponent,
         SliderComponent,
         FilterComponent,
+        ClickOutsideDirective
       
     ],
     imports: [
         RouterModule.forRoot(routes),
         MatCardModule,
         CarouselModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+      
       ]
  
   })
