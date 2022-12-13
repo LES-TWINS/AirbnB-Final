@@ -3,9 +3,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 142px;
-    
-    
+    margin-top: 142px;    
 }
 .example-card {
     max-width: 270px;
@@ -23,8 +21,6 @@
     height: 260px;
     border-radius: 12px;
   }
-
-
 .mat-card-subtitle{
     font-size: 15px;
     margin:0 0 0 -15px;
@@ -33,13 +29,11 @@
 .mat-card-subtitle:first-of-type{
 padding: 7px 0;
 }
-
   p{
     font-weight: 600;
     font-size: 15px;
     margin:0 0 0 -15px;
   }
-
  p:first-of-type{
     margin-top:-5px
  }
@@ -54,9 +48,7 @@ p:last-of-type{
 
 img{
   height: 260px;
-
 }
-
 .carousel{
  margin: -16px!important;
   margin-left: -16px;
@@ -64,15 +56,10 @@ img{
 .carousel-inner{
   border-radius: 12px;
   margin-bottom: 16px;
- 
-
 }
-
 .mat-card-content:first-child{
   margin-top: 27px!important;
 }
-
-
 .cardText{
   margin-top:27px
 }
