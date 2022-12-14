@@ -24,6 +24,7 @@ import { FilterComponent } from './home-pg/main/navigation/filter/filter.compone
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClickOutsideDirective } from "./home-pg/header/user/clickOutside.directive";
+import { ErrorComponent } from "./error/error.component";
 
 
 
@@ -31,7 +32,10 @@ const routes:Routes = [
     { path: '',  component:ModuleComponent,children:[  
     { path: 'account-pg', component:AccountPgComponent},
     { path: 'home-pg', component:HomePgComponent},
-    { path: 'ordered', component:OrderedComponent}]},
+    { path: 'ordered', component:OrderedComponent},
+    { path:'**',component:ErrorComponent}
+  ]},
+    
   ]
 
 @NgModule({

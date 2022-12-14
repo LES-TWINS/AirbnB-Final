@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -24,6 +24,7 @@ import { ModuleComponent } from './AirBnb/module/module.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 
