@@ -67,6 +67,7 @@ const routes:Routes = [
         MatCardModule,
         CarouselModule,
         BrowserAnimationsModule,
+       
       
       ]
  
