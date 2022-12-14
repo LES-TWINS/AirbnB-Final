@@ -29,11 +29,11 @@ class="test">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="" aria-hidden="true"> <span class="wrapper"><img src="/assets/images/arrow.png" alt="" class="img"></span></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <button class="carousel-control-next nextA" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="" aria-hidden="true"><span class="wrapper rightA"><img src="/assets/images/arrow.png" alt="" class="img"></span></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
@@ -42,8 +42,9 @@ class="test">
              {{hotels.city}}, {{hotels.country}}
           </h6>
           <p><span>${{hotels.rooms[0].price}} </span> Night</p>
-       
+        
       </mat-card-content>
+      
      
     </mat-card>
 </div>
