@@ -1,120 +1,53 @@
-<mat-card class="example-card">
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
-      <input type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">
-      <input type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
 
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://wallpapercave.com/wp/wp2928706.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://wallpapercave.com/wp/wc1765288.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://wallpapercave.com/wp/wp2928817.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://images3.alphacoders.com/641/641193.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-    <mat-card-content class="cardText">
-        <p>
-            Added 5 weeks ago
-          </p>
-      <mat-card-subtitle> Added 5 weeks ago</mat-card-subtitle>
-      <mat-card-subtitle> Jan 8-13</mat-card-subtitle>
-      <p>
-        $167 night
-      </p>
-     
-    </mat-card-content>
-   
-  </mat-card>
-  <mat-card class="example-card">
-    <img mat-card-image src="https://images.hdqwalls.com/download/far-cry-6-12k-iz-1920x1080.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-            Added 5 weeks ago
-          </p>
-      <mat-card-subtitle> Added 5 weeks ago</mat-card-subtitle>
-      <mat-card-subtitle> Jan 8-13</mat-card-subtitle>
-      <p>
-        $167 night
-      </p>
-     
-    </mat-card-content>
-   
-  </mat-card>
+<div 
+*ngFor="let hotels of hotelsArray"
+class="test">
+  <mat-card 
   
-  <mat-card class="example-card">
-    <img mat-card-image src="https://cdnb.artstation.com/p/assets/images/images/011/398/141/large/-fireangel-1.jpg?1529394440" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p class="location">
-            Cedar City, Utah, US
-          </p>
-      <mat-card-subtitle class="time"> Added 5 weeks ago</mat-card-subtitle>
-      <mat-card-subtitle class="date"> Jan 8-13</mat-card-subtitle>
-      <p class="price">
-        $167 night
-      </p>
+  class="example-card">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <!-- <input type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"> -->
+        <input type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4">
+  
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img [src]="hotels.mainImages[0]" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img [src]="hotels.mainImages[1]" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img [src]="hotels.mainImages[2]" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img [src]="hotels.mainImages[3]" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+      <mat-card-content class="cardText">
+          <h6>
+             {{hotels.city}}, {{hotels.country}}
+          </h6>
+          <p><span>${{hotels.rooms[0].price}} </span> Night</p>
+       
+      </mat-card-content>
      
-    </mat-card-content>
-   
-  </mat-card> <mat-card class="example-card">
-    <img mat-card-image src="https://p4.wallpaperbetter.com/wallpaper/546/316/22/video-game-cyberpunk-2077-wallpaper-preview.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-            Added 5 weeks ago
-          </p>
-      <mat-card-subtitle> Added 5 weeks ago</mat-card-subtitle>
-      <mat-card-subtitle> Jan 8-13</mat-card-subtitle>
-      <p>
-        $167 night
-      </p>
-     
-    </mat-card-content>
-   
-  </mat-card> <mat-card class="example-card">
-    <img mat-card-image src="https://p4.wallpaperbetter.com/wallpaper/1/398/339/elden-ring-landscape-game-art-video-game-art-video-games-hd-wallpaper-preview.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-            Added 5 weeks ago
-          </p>
-      <mat-card-subtitle> Added 5 weeks ago</mat-card-subtitle>
-      <mat-card-subtitle> Jan 8-13</mat-card-subtitle>
-      <p>
-        $167 night
-      </p>
-     
-    </mat-card-content>
-   
-  </mat-card> <mat-card class="example-card">
-    <img mat-card-image src="https://www.gamewallpapers.com/img_script/wallpaper_dir/img.php?src=wallpaper_resident_evil_4_2022_01_2560x1440.jpg&height=450&width=800&fill-to-fit&sharpen" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-            Added 5 weeks ago
-          </p>
-      <mat-card-subtitle> Added 5 weeks ago</mat-card-subtitle>
-      <mat-card-subtitle> Jan 8-13</mat-card-subtitle>
-      <p>
-        $167 night
-      </p>
-     
-    </mat-card-content>
-   
-  </mat-card>
+    </mat-card>
+</div>
+
+  
+
 

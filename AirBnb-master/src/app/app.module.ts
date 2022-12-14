@@ -23,6 +23,7 @@ import { ModaleComponent } from './AirBnb/shared/modale/modale.component';
 import { ModuleComponent } from './AirBnb/module/module.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleModule } from './AirBnb/module/module.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -50,6 +51,7 @@ const routes:Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     ModuleModule,
+    HttpClientModule
  
    
   ],
