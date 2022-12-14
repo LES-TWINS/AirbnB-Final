@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { HttpService } from 'src/app/AirBnb/services/http.service';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -8,7 +9,14 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class SliderComponent {
   
-  constructor() { }
+  iconsArray:any=[]
+
+  constructor(private http:HttpService) {
+    this.http.getAllFilterIcons().subscribe((icons)=>{
+      this.iconsArray = icons;
+      console.log(this.iconsArray)
+    })
+   }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,

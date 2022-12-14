@@ -1,1 +1,27 @@
-/* No CSS *//*# sourceMappingURL=slider.component.css.map */
+:host {
+  width: calc(100% - 115px);
+}
+
+.slider__slide__name {
+  color: #717171;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.owl-prev {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+img {
+  width: 24px !important;
+}

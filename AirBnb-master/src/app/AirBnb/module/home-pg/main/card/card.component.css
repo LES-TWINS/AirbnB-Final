@@ -1,28 +1,17 @@
 :host {
   padding: 0 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 62px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 142px;
 }
 
 .example-card {
   max-width: 270px;
   border-radius: 12px;
   margin-top: 40px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   cursor: pointer;
-}
-
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
 }
 
 .mat-card-image {
@@ -40,17 +29,28 @@
   padding: 7px 0;
 }
 
-p {
-  font-weight: 600;
-  font-size: 15px;
-  margin: 0 0 0 -15px;
+h6, span {
+  font-weight: bold;
 }
 
-p:first-of-type {
-  margin-top: -5px;
+img {
+  height: 260px;
 }
 
-p:last-of-type {
-  margin: 8px 0 -15px -16px !important;
+.carousel {
+  margin: -16px !important;
+  margin-left: -16px;
 }
-/*# sourceMappingURL=card.component.css.map */
+
+.carousel-inner {
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.mat-card-content:first-child {
+  margin-top: 27px !important;
+}
+
+.cardText {
+  margin-top: 27px;
+}

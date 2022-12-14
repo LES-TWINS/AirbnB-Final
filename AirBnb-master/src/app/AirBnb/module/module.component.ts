@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 
+
 @Component({
   selector:'app-module',
   templateUrl:'./module.component.html',
@@ -10,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class ModuleComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit(): void {
   }

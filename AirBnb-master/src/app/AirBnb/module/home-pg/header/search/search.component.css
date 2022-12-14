@@ -2,13 +2,11 @@
   border: 1px solid #D0D0D7;
   border-radius: 20px;
   height: 50px;
-  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 
 .btn-group:hover {
-  -webkit-box-shadow: 0 9px 6px -6px #D0D0D7;
-          box-shadow: 0 9px 6px -6px #D0D0D7;
+  box-shadow: 0 9px 6px -6px #D0D0D7;
 }
 
 .btn {
@@ -36,12 +34,8 @@
 }
 
 .btn:last-of-type > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0 0 0 5px;
 }
 
@@ -69,4 +63,3 @@
 img {
   padding: 0 0 0 17px;
 }
-/*# sourceMappingURL=search.component.css.map */
