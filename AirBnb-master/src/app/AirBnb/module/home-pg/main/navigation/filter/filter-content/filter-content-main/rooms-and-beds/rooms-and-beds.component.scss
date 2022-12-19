@@ -1,0 +1,33 @@
+.rooms{
+    max-width: 715px;
+    padding: 15px 0 15px 25px;
+    margin-top: -24px;
+}
+.rooms__header{
+    font-size: 24px;  
+}
+.rooms__text{
+font-size: 18px;
+margin: 27px 0 ;
+}
+.rooms__Bedrooms__button:first-of-type{
+    width: 79px;
+}
+
+.rooms__Bedrooms__button{
+    width: 59px;
+    height:40px ;
+    border: 1px solid #ddd ;
+    outline: none;
+    border-radius: 30px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+.rooms__Bedrooms__button:hover{
+border:1px solid #222;
+}
+.rooms__Bedrooms__button:focus{
+    background-color: #222;
+    color:#fff;
+    border:1px solid #222;
+}

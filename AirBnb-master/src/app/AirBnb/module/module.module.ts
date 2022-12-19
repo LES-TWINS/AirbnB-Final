@@ -25,8 +25,14 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClickOutsideDirective } from "./home-pg/header/user/clickOutside.directive";
 import { ErrorComponent } from "./error/error.component";
-
-
+import { FilterContentComponent } from './home-pg/main/navigation/filter/filter-content/filter-content.component';
+import { FilterContentHeaderComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-header/filter-content-header.component';
+import { FilterContentMainComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/filter-content-main.component';
+import { TypeOfPlaceComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/type-of-place/type-of-place.component';
+import { RoomsAndBedsComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/rooms-and-beds/rooms-and-beds.component';
+import { AmenitesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/amenites/amenites.component';
+import { LanguagesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/languages/languages.component';
+import { PropertyTypeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/property-type/property-type.component';
 
 const routes:Routes = [
     { path: '',  component:ModuleComponent,children:[  
@@ -59,7 +65,15 @@ const routes:Routes = [
         NavigationComponent,
         SliderComponent,
         FilterComponent,
-        ClickOutsideDirective
+        ClickOutsideDirective,
+        FilterContentComponent,
+        FilterContentHeaderComponent,
+        FilterContentMainComponent,
+        TypeOfPlaceComponent,
+        RoomsAndBedsComponent,
+        AmenitesComponent,
+        LanguagesComponent,
+        PropertyTypeComponent,
       
     ],
     imports: [
@@ -67,7 +81,7 @@ const routes:Routes = [
         MatCardModule,
         CarouselModule,
         BrowserAnimationsModule,
-       
+        
       
       ]
  

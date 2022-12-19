@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%;}
 body { margin: 0; font-family:'AirbnbCereal_W_Md', Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Bootstrap SCSS file. */
@@ -9,12 +9,18 @@ body { margin: 0; font-family:'AirbnbCereal_W_Md', Roboto, "Helvetica Neue", san
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-
-
+// ფილტრის მოდალის სქროლვის გამო
+body{
+    padding-right: 17px;
+    overflow-y: hidden;
+}
 
 // carusel styles
 *{
     font-family: 'AirbnbCereal_W_Md';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body .owl-carousel .owl-nav{
     margin-top: -53.5px!important;
