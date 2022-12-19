@@ -33,6 +33,9 @@ import { RoomsAndBedsComponent } from './home-pg/main/navigation/filter/filter-c
 import { AmenitesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/amenites/amenites.component';
 import { LanguagesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/languages/languages.component';
 import { PropertyTypeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/property-type/property-type.component';
+import { PriceRangeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/price-range/price-range.component';
+import { FilterContentFooterComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-footer/filter-content-footer.component';
+
 
 const routes:Routes = [
     { path: '',  component:ModuleComponent,children:[  
@@ -74,6 +77,8 @@ const routes:Routes = [
         AmenitesComponent,
         LanguagesComponent,
         PropertyTypeComponent,
+        PriceRangeComponent,
+        FilterContentFooterComponent,
       
     ],
     imports: [
