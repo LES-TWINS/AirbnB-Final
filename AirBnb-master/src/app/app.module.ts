@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 const routes:Routes = [
   { path: '', redirectTo:"module" ,pathMatch: 'full'}
 ]
@@ -52,7 +53,8 @@ const routes:Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     ModuleModule,
-    HttpClientModule
+    HttpClientModule,
+   
  
    
   ],

@@ -9,11 +9,6 @@ body { margin: 0; font-family:'AirbnbCereal_W_Md', Roboto, "Helvetica Neue", san
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-// ფილტრის მოდალის სქროლვის გამო
-body{
-    padding-right: 17px;
-    overflow-y: hidden;
-}
 
 // carusel styles
 *{

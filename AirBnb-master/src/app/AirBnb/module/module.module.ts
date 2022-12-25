@@ -35,14 +35,15 @@ import { LanguagesComponent } from './home-pg/main/navigation/filter/filter-cont
 import { PropertyTypeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/property-type/property-type.component';
 import { PriceRangeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/price-range/price-range.component';
 import { FilterContentFooterComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-footer/filter-content-footer.component';
-
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const routes:Routes = [
     { path: '',  component:ModuleComponent,children:[  
     { path: 'account-pg', component:AccountPgComponent},
     { path: 'home-pg', component:HomePgComponent},
     { path: 'ordered', component:OrderedComponent},
-    { path:'**',component:ErrorComponent}
+    { path:'**',component:ErrorComponent},
+  
   ]},
     
   ]
@@ -79,15 +80,15 @@ const routes:Routes = [
         PropertyTypeComponent,
         PriceRangeComponent,
         FilterContentFooterComponent,
-      
     ],
     imports: [
         RouterModule.forRoot(routes),
         MatCardModule,
         CarouselModule,
         BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
         
-      
       ]
  
   })
