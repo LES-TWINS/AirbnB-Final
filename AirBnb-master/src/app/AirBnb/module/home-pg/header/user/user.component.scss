@@ -8,7 +8,20 @@
             align-items: center;
     position: relative;
   }
-  
+  .home{
+    border-radius: 22px;
+  }
+  .home:hover{
+    background-color: #f7f7f7;
+   
+  }
+  .earth{
+    border-radius: 50%;
+  }
+  .earth:hover{
+    background-color: #f7f7f7;
+   
+  }
   .user .earth {
     height: 42px;
     outline-offset: none;

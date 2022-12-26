@@ -9,6 +9,18 @@ body { margin: 0; font-family:'AirbnbCereal_W_Md', Roboto, "Helvetica Neue", san
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+// modal scroll
+  html { 
+    overflow-y: scroll!important;
+  }
+.modal-open {
+    padding-right: 0 !important;
+  }
+
+ 
+
+
+
 
 // carusel styles
 *{
