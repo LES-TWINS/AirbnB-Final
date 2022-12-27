@@ -3,15 +3,20 @@
     overflow: visible;
     padding: 100px 0 200px;
 }
-
-
   .modal.fade .modal-dialog {
     transform: translate3d(0, 100vh, 0);
   }
   .modal.show .modal-dialog {
     transform: translate3d(0, 0, 0);
   }
+.mb-3{
+    margin-bottom: 0!important;
 
+}
+.btn:focus {
+    outline: none !important;
+    box-shadow: none;
+  }
 .form{
     width: 568px;
     height: auto;
@@ -46,7 +51,6 @@
     display: block;
    
 }
-
 .close::after{
     content: "";
     width: 32px;
@@ -71,22 +75,10 @@ flex-wrap: wrap;
     color: #717171;
     margin: 8px 0 22px ;
 }
-input:focus ~ .form-label ,
-input:not(:focus):valid ~ .form-label {
-  top: 10px;
-  bottom: 10px;
-  left: 13px;
-  font-size: 11px;
-}
+
 input{
     width: 503px;
-    height: 100%;
-    outline: none;
-    padding:20px 0 0 10px;
-    border: none; 
-    color: #fff;
-    background-color: #fff;
-    position: relative;
+    height: 56px!important;
     border: 1px solid #717171;
     border-radius: 8px;
     
@@ -97,22 +89,12 @@ input{
 .lastname{
     border-radius: 0 0 8px 8px;
 }
+
 input:focus{
-    color: #222;
     border: 2px solid #000;
     border-radius: 8px;
 }
-input:focus:input{
-border: none;
-}
-.form-label {
-  position: absolute;
-  pointer-events: none;
-  left: 10px;
-  top:14px;
-  color: #717171;;
-  transition: 0.2s ease all;
-}
+
 .form__button{
 width: 503px;
 height: 48px;
