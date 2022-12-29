@@ -9,16 +9,45 @@ import { HttpService } from 'src/app/AirBnb/services/http.service';
 })
 export class CardComponent implements OnInit {
 
-  hotelsArray:any = []
+  hotelsArray: any = []
 
-  constructor(private http:HttpService) { 
-   this.http.getAllHotels().subscribe((hotels =>{
-     this.hotelsArray = hotels;
-     console.log(this.hotelsArray)
-   }))
+  constructor(private http: HttpService) {
+    this.http.getAllHotels().subscribe(((hotels: any) => {
+      this.hotelsArray = hotels;
+      this.hotelsArray.forEach((hotel: any) => {
+        hotel.mainImages = hotel.mainImages.map((item: any, index: number) => {
+          return {
+            src: item,
+            isActive: index == 0
+          }
+        })
+      });
+      console.log(this.hotelsArray);
+    }))
   }
 
   ngOnInit(): void {
+  }
+
+  prev(hotel: any) {
+    var index = hotel.mainImages.findIndex((item: any) => item.isActive == true);
+    hotel.mainImages[index].isActive = false;
+    if (index == 0) {
+      hotel.mainImages[hotel.mainImages.length - 1].isActive = true;
+    } else {
+      hotel.mainImages[index - 1].isActive = true;
+    }
+  }
+
+  next(hotel: any) {
+    var index = hotel.mainImages.findIndex((item: any) => item.isActive);
+    hotel.mainImages[index].isActive = false;
+    if (index == hotel.mainImages.length - 1) {
+      hotel.mainImages[0].isActive = true;
+    } else {
+      hotel.mainImages[index + 1].isActive = true;
+
+    }
   }
 
 }
