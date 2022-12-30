@@ -83,6 +83,7 @@ input{
     border-radius: 8px;
     
 }
+
 .name{
     border-radius: 8px 8px 0 0;
 }
@@ -98,7 +99,6 @@ input:focus{
 .form__button{
 width: 503px;
 height: 48px;
-font-weight: bold;
 border-radius: 8px;
 border: none;
 cursor: pointer;
@@ -154,6 +154,39 @@ img{
     right: 0;
 }
 
+.popup{
+    position: relative;
+}
+.popup:Before{
+    content: "Name is required";
+    padding: 5px;
+    background-color: #ff0000;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    top:-86px;
+    left: 60px;
+    transition: 0.5s;
+  }
+  .popup:after{
+    content: "";
+    position: absolute;
+    top: -61px;
+    left: 80px;
+    transform: rotate(180deg);
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 12px 12px 12px;
+border-color: transparent transparent #ff0000 transparent;
+transition: 0.5s;
+  }
 
+    .popdate::before{
+        content: "Date is required"; 
+    }
 
-
+  .popemail::before{
+    content: "Email is required";
+  }

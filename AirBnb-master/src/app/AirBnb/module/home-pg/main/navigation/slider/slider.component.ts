@@ -23,7 +23,7 @@ export class SliderComponent {
     touchDrag: false,
     pullDrag: false,
     dots: false,
-    navSpeed: 1600,
+    navSpeed: 1400,
     navText: ['<img src="assets/images/arrow.png" class="arrow">', '<img src="assets/images/arrow.png" class="arrow arrowR">'],
     responsive: {
       0: {

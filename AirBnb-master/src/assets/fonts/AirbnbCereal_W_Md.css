@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'AirbnbCereal_W_Md';
-    src: url('fonts/AirbnbCereal_W_Md.eot');
-    src: url('fonts/AirbnbCereal_W_Md.eot') format('embedded-opentype'),
-         url('fonts/AirbnbCereal_W_Md.woff2') format('woff2'),
-         url('fonts/AirbnbCereal_W_Md.woff') format('woff'),
-         url('fonts/AirbnbCereal_W_Md.ttf') format('truetype'),
-         url('fonts/AirbnbCereal_W_Md.svg#AirbnbCereal_W_Md') format('svg');
-}

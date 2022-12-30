@@ -3,26 +3,40 @@
       <div class="modal-content">
          
 
-<form  class="form" >
+<form  class="form" [formGroup]="signupForm" (ngSubmit)="signUp()">
 
    
   <h1 class="form__header">Sign up<span type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></span></h1>
    <div class="wrapper">
     <div class="form-floating mb-3">
-      <input type="text" class="form-control name shadow-none" id="name" placeholder="name">
+      <input formControlName="firstName" [ngClass]="{'is-invalid':submitted && signupForm.controls.firstName.errors}" type="text" class="form-control name shadow-none" id="name" placeholder="name">
       <label for="name">First name</label>
+      <div *ngIf="submitted && signupForm.controls.firstName.errors">
+        <div class="popup" *ngIf="submitted && signupForm.controls.firstName.errors"></div>
+
+      </div>
+      
     </div>
     <div class="form-floating mb-3">
-      <input type="text" class="form-control lastname shadow-none" id="last" placeholder="last name">
+      <input formControlName="lastName" [ngClass]="{'is-invalid':submitted && signupForm.controls.lastName.errors}" type="text" class="form-control lastname shadow-none" id="last" placeholder="last name">
       <label for="last">Last name</label>
+      <div *ngIf="submitted && signupForm.controls.lastName.errors">
+        <div class="popup " *ngIf="submitted && signupForm.controls.lastName.errors"></div>
+
+      </div>
+      
     </div>
 <p class="input__wrapper__text">Make sure it matches the name on your government ID.</p>
 </div>
 
 <div class="wrapper">
 <div class="form-floating mb-3" >
-  <input type="date" class="form-control shadow-none" id="date" placeholder="Birthdate" >
+  <input formControlName="Birthdate" [ngClass]="{'is-invalid':submitted && signupForm.controls.Birthdate.errors}" type="date" class="form-control shadow-none" id="date" placeholder="Birthdate" >
   <label for="date">Birthdate</label>
+  <div *ngIf="submitted && signupForm.controls.Birthdate.errors">
+    <div class="popup popdate" *ngIf="submitted && signupForm.controls.Birthdate.errors"></div>
+
+  </div>
 </div>
   <p class="input__wrapper__text">To sign up, you need to be at least 18. Your birthday won’t be shared with other people who use Airbnb.</p>
   </div>
@@ -30,10 +44,15 @@
   
 
   <div class="form-floating mb-3">
-    <input type="email" class="form-control shadow-none" NgModel name="email" id="email" placeholder="name@example.com" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-]+)(\.[a-zA-Z]{2,5}){1,2}$"  required>
+    <input  formControlName="Email" [ngClass]="{'is-invalid':submitted && signupForm.controls.Email.errors}" type="email" class="form-control shadow-none" NgModel  id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"   required>
     <label for="email">Email address</label>
-  </div>
+    <div *ngIf="submitted && signupForm.controls.Email.errors">
+      <div class="popup popemail" *ngIf="submitted && signupForm.controls.Email.errors"></div>
 
+    </div>
+  </div>
+ 
+  
   <p class="input__wrapper__text">We'll email you trip confirmations and receipts.</p>
 
   </div>
