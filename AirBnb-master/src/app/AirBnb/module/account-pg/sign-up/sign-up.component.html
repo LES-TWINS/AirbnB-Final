@@ -12,16 +12,18 @@
       <input formControlName="firstName" [ngClass]="{'is-invalid':submitted && signupForm.controls.firstName.errors}" type="text" class="form-control name shadow-none" id="name" placeholder="name">
       <label for="name">First name</label>
       <div *ngIf="submitted && signupForm.controls.firstName.errors">
-        <div class="popup" *ngIf="submitted && signupForm.controls.firstName.errors"></div>
+        <div class="popup " *ngIf="submitted && signupForm.controls.firstName.errors.required"></div>
+        <div class="popup popfirstwrong" *ngIf="submitted && signupForm.controls.firstName.errors.minlength"></div>
 
       </div>
-      
     </div>
     <div class="form-floating mb-3">
       <input formControlName="lastName" [ngClass]="{'is-invalid':submitted && signupForm.controls.lastName.errors}" type="text" class="form-control lastname shadow-none" id="last" placeholder="last name">
       <label for="last">Last name</label>
       <div *ngIf="submitted && signupForm.controls.lastName.errors">
-        <div class="popup " *ngIf="submitted && signupForm.controls.lastName.errors"></div>
+        <div class="popup  last" *ngIf="submitted && signupForm.controls.lastName.errors.required"></div>
+        <div class="popup poplastwrong" *ngIf="submitted && signupForm.controls.lastName.errors.minlength"></div>
+
 
       </div>
       
@@ -47,9 +49,13 @@
     <input  formControlName="Email" [ngClass]="{'is-invalid':submitted && signupForm.controls.Email.errors}" type="email" class="form-control shadow-none" NgModel  id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"   required>
     <label for="email">Email address</label>
     <div *ngIf="submitted && signupForm.controls.Email.errors">
-      <div class="popup popemail" *ngIf="submitted && signupForm.controls.Email.errors"></div>
+      <div class="popup popemail" *ngIf="submitted && signupForm.controls.Email.errors.required"></div>
+      <div class="popup popemailwrong" *ngIf="submitted && signupForm.controls.Email.errors.email">
+      
 
     </div>
+    </div>
+   
   </div>
  
   
@@ -57,7 +63,7 @@
 
   </div>
 
-  <button type="submit"  class="btn form__button" >Register</button>
+  <button type="submit"  class="btn form__button">Register</button>
 
 
   <div class="form__line">or</div>

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 
 
@@ -39,6 +39,7 @@ alert("we are good")
     .subscribe(res=>{
       alert("sing up good")
       this.signupForm.reset()
+      
       
 
     })

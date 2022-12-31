@@ -158,7 +158,7 @@ img{
     position: relative;
 }
 .popup:Before{
-    content: "Name is required";
+    content: "first Name is required";
     padding: 5px;
     background-color: #ff0000;
     border-radius: 5px;
@@ -190,3 +190,16 @@ transition: 0.5s;
   .popemail::before{
     content: "Email is required";
   }
+.last::before{
+    content: "Last name is required"; 
+}
+
+.popfirstwrong::before{
+    content: "Firs tname length must be at least 3 charecters"; 
+}
+.poplastwrong::before{
+    content: "Last name length must be at least 3 charecters"; 
+}
+.popemailwrong::before{
+    content: "Email is wrong";
+}
