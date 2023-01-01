@@ -33,20 +33,23 @@ export class CardComponent implements OnInit {
     var index = hotel.mainImages.findIndex((item: any) => item.isActive == true);
     hotel.mainImages[index].isActive = false;
     if (index == 0) {
-      hotel.mainImages[hotel.mainImages.length - 1].isActive = true;
+      hotel.mainImages[3].isActive = true;
+      console.log(index)
     } else {
       hotel.mainImages[index - 1].isActive = true;
+      console.log(index)
     }
   }
 
   next(hotel: any) {
     var index = hotel.mainImages.findIndex((item: any) => item.isActive);
     hotel.mainImages[index].isActive = false;
-    if (index == hotel.mainImages.length - 1) {
+    if (index == 3) {
       hotel.mainImages[0].isActive = true;
+      console.log(index)
     } else {
       hotel.mainImages[index + 1].isActive = true;
-
+      console.log(index)
     }
   }
 
