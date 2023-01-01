@@ -1,0 +1,55 @@
+.container{
+    margin-top: 120px;
+}
+.hotel-desc{
+    margin-bottom: 30px;
+   h4{
+    font-size: 26px;
+   }
+   span{
+    margin-left: 10px;
+    text-decoration: underline;
+    &:hover{
+        cursor: pointer;
+    }
+   }
+
+}
+.image-area{
+    display: flex;
+}
+img{
+    object-fit: cover;
+    &:hover{
+        filter: contrast(70%);
+        transition: 0.4s;
+        cursor: pointer;
+    }
+}
+.left{
+    img{
+        height: 480px;
+        width: 560px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+}
+.right{
+
+    img{
+        height:235px;
+        width: 272px;
+        margin-left: 10px;
+    }
+    img:nth-child(3){
+    margin-top: 10px;
+    }
+    img:nth-child(4){
+    margin-top: 10px;
+    border-bottom-right-radius: 15px;
+    }
+    img:nth-child(2){
+    border-top-right-radius: 15px;
+    }
+   
+}

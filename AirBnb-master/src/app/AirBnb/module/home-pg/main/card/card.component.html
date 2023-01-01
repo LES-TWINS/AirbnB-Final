@@ -1,5 +1,7 @@
 <div *ngFor="let hotels of hotelsArray" class="test">
-  <mat-card class="example-card">
+  <mat-card
+  
+  class="example-card">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active button"
@@ -11,7 +13,9 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"
           class="button"></button>
       </div>
-      <div class="carousel-inner">
+      <div 
+      routerLink="./details"
+      class="carousel-inner">
         <div class="carousel-item"[ngClass]='{"active":hotels.mainImages[0].isActive}' >
           <img [src]="hotels.mainImages[0].src" class="d-block w-100" alt="...">
         </div>

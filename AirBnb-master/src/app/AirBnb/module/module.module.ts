@@ -42,7 +42,9 @@ const routes:Routes = [
     { path: 'account-pg', component:AccountPgComponent},
     { path: 'home-pg', component:HomePgComponent},
     { path: 'ordered', component:OrderedComponent},
+    { path:'home-pg/details',component:DetailsComponent},
     { path:'**',component:ErrorComponent},
+
   
   ]},
     
