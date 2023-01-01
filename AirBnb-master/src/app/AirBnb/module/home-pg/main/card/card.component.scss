@@ -4,6 +4,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 142px;    
+    font-family: 'Montserrat'
 }
 .example-card {
     max-width: 270px;
@@ -59,13 +60,13 @@ transition: ease-in-out 0.2s;
 .nextA:hover{
   transform: scale(1.04);
 }
-
-
-
-
-h6,span{
-  font-weight: bold;
+h6,p{
+  font-size: 15px;
 }
+
+
+
+
 img{
   height: 260px;
 }

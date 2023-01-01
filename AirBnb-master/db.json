@@ -1,0 +1,98 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "signUp": [
+    {
+      "firstname": "koko",
+      "lastname": "sdsad",
+      "birthdate": "2022-12-15",
+      "email": "oeskoko@gmail.com",
+      "id": 1
+    },
+    {
+      "firstname": "ljlijlij",
+      "lastname": "sdsad",
+      "birthdate": "2022-12-15",
+      "email": "sdsdsd",
+      "id": 2
+    },
+    {
+      "firstName": "koko",
+      "lastName": "sdsad",
+      "Birthdate": "2022-12-14",
+      "Email": "mariakhobadze@gmail.com",
+      "id": 3
+    },
+    {
+      "firstName": "koko",
+      "lastName": "axo",
+      "Birthdate": "2022-12-15",
+      "Email": "oeskoko@gmail.com",
+      "id": 4
+    },
+    {
+      "firstName": "koko",
+      "lastName": "sdsad",
+      "Birthdate": "2022-12-07",
+      "Email": "rrrrrrtyrfyt@yahoo.com",
+      "id": 5
+    },
+    {
+      "firstName": "ljlijlij",
+      "lastName": "axo",
+      "Birthdate": "2022-12-14",
+      "Email": "oeskoko@gmail.com",
+      "id": 6
+    },
+    {
+      "firstName": "ljlijlij",
+      "lastName": "sdsad",
+      "Birthdate": "2022-12-07",
+      "Email": "rrrrrrtyrfyt@yahoo.com",
+      "id": 7
+    },
+    {
+      "firstName": "koko",
+      "lastName": "sdsad",
+      "Birthdate": "2022-12-14",
+      "Email": "oeskoko@gmail.com",
+      "id": 8
+    },
+    {
+      "firstName": "koko",
+      "lastName": "d3333",
+      "Birthdate": "2022-12-07",
+      "Email": "oeskoko@gmail.com",
+      "id": 9
+    },
+    {
+      "firstName": "koko",
+      "lastName": "axo",
+      "Birthdate": "2022-12-06",
+      "Email": "oeskoko@gmail.com",
+      "id": 10
+    },
+    {
+      "firstName": "koko",
+      "lastName": "axo",
+      "Birthdate": "2022-12-01",
+      "Email": "oeskoko@gmail.com",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
