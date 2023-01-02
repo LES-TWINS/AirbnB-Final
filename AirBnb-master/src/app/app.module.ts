@@ -24,6 +24,8 @@ import { ModuleComponent } from './AirBnb/module/module.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 
@@ -44,7 +46,6 @@ const routes:Routes = [
     IconComponent,
     CalculatorComponent,
     CalendarComponent,
-   
     ModaleComponent,
     ModuleComponent
   ],
@@ -54,6 +55,9 @@ const routes:Routes = [
     RouterModule.forRoot(routes),
     ModuleModule,
     HttpClientModule,
+    FontAwesomeModule,
+    FontAwesomeModule
+  
    
  
    

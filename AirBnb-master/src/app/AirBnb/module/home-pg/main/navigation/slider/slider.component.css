@@ -1,12 +1,10 @@
 :host {
   width: calc(100% - 115px);
-
 }
 
 .slider__slide__name {
   color: #717171;
   font-size: 12px;
-  font-weight: 600;
 }
 
 .owl-prev {

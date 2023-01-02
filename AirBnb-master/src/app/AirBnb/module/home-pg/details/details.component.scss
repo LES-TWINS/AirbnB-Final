@@ -1,55 +1,133 @@
-.container{
-    margin-top: 120px;
+
+
+.intro {
+  margin-top: 120px;
+ 
 }
-.hotel-desc{
-    margin-bottom: 30px;
-   h4{
-    font-size: 26px;
-   }
-   span{
+.hotel-desc {
+  margin-bottom: 30px;
+  h4 {
+    font-size: 26px;  
+  }
+  span {
     margin-left: 10px;
     text-decoration: underline;
-    &:hover{
-        cursor: pointer;
+    &:hover {
+      cursor: pointer;
     }
-   }
-
+  }
 }
-.image-area{
-    display: flex;
+.image-area {
+  display: flex;
 }
-img{
-    object-fit: cover;
-    &:hover{
-        filter: contrast(70%);
-        transition: 0.4s;
-        cursor: pointer;
-    }
+img {
+  object-fit: cover;
+  &:hover {
+    filter: contrast(70%);
+    transition: 0.4s;
+    cursor: pointer;
+  }
 }
-.left{
-    img{
-        height: 480px;
-        width: 560px;
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-    }
+.left {
+  img {
+    height: 480px;
+    width: 560px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
 }
-.right{
-
-    img{
-        height:235px;
-        width: 272px;
-        margin-left: 10px;
-    }
-    img:nth-child(3){
+.right {
+  img {
+    height: 235px;
+    width: 272px;
+    margin-left: 10px;
+  }
+  img:nth-child(3) {
     margin-top: 10px;
-    }
-    img:nth-child(4){
+  }
+  img:nth-child(4) {
     margin-top: 10px;
     border-bottom-right-radius: 15px;
-    }
-    img:nth-child(2){
+  }
+  img:nth-child(2) {
     border-top-right-radius: 15px;
+  }
+
+}
+
+.test{
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+  gap: 280px;
+}
+.hotel-circle-img{
+img{
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+}
+}
+section{
+    .container{
+      hr{
+        width: 50%;
+      }
+        
+        .hotel-info{
+            margin-top: 50px;
+            h6{
+                font-size: 22px;
+                font-weight: lighter;
+            }
+            span{
+                font-size: 16px;
+                color: rgb(50, 50, 50);
+            
+            }
+          }
+      
     }
-   
+    .hotel-details{
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      width: 460px;
+    
+    }
+    .icon-area{
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+      font-size: 25px;
+      justify-content: center;
+    }
+    .hotel-est{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      h6{
+        font-size: 16px;
+        margin: 0;
+      }
+      p{
+        font-size: 14px;
+      }
+    }
+}
+.protection{
+  margin: 35px 0px;
+  width: 650px;
+  img{
+    width: 126px;
+  }
+  p{
+    margin:15px 0px;
+  }
+  span{
+    text-decoration: underline;
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }

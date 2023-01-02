@@ -1,6 +1,6 @@
 .btn-group {
   border: 1px solid #D0D0D7;
-  border-radius: 20px;
+  border-radius: 40px;
   height: 50px;
   transition: 0.3s ease-in-out;
 }
@@ -20,12 +20,10 @@
 
 .btn:first-of-type {
   width: 110px;
-  font-weight: 600;
 }
 
 .btn:nth-of-type(2) {
   width: 98px;
-  font-weight: 600;
 }
 
 .btn:last-of-type {
@@ -61,5 +59,6 @@
 }
 
 img {
-  padding: 0 0 0 17px;
+  position: absolute;
+  left: 105px;
 }

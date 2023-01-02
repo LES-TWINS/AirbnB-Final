@@ -36,6 +36,10 @@ import { PropertyTypeComponent } from './home-pg/main/navigation/filter/filter-c
 import { PriceRangeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/price-range/price-range.component';
 import { FilterContentFooterComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-footer/filter-content-footer.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
+
 
 const routes:Routes = [
     { path: '',  component:ModuleComponent,children:[  
@@ -90,10 +94,10 @@ const routes:Routes = [
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
-        
-      ]
- 
-  })
+        FontAwesomeModule,
+   
+    ]
+})
 
 export class ModuleModule{
 

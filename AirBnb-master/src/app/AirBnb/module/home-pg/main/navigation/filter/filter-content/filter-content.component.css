@@ -1,0 +1,19 @@
+.filter {
+  position: relative;
+  width: 780px;
+  height: auto;
+  background-color: #fff;
+  top: 0px;
+  border-radius: 12px;
+  right: 140px;
+  margin: -5px;
+  padding-bottom: 20px;
+}
+
+.modal.fade .modal-dialog {
+  transform: translate3d(0, 100vh, 0);
+}
+
+.modal.show .modal-dialog {
+  transform: translate3d(0, 0, 0);
+}

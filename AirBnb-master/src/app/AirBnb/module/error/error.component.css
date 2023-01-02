@@ -1,0 +1,14 @@
+div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+p {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  background-image: url("/assets/images/error.gif");
+  height: 1000px;
+}
