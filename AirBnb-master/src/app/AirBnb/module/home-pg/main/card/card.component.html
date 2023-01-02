@@ -14,7 +14,7 @@
           class="button"></button>
       </div>
       <div 
-      routerLink="./details"
+      routerLink="./details/{{hotels.name}}/{{hotels.id}}"
       class="carousel-inner">
         <div class="carousel-item"[ngClass]='{"active":hotels.mainImages[0].isActive}' >
           <img [src]="hotels.mainImages[0].src" class="d-block w-100" alt="...">

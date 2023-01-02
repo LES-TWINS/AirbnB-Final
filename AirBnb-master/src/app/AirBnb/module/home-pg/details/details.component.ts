@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { faStar,faHeart,faFile } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,9 +11,10 @@ export class DetailsComponent implements OnInit {
   faStar = faStar;
   faHeart = faHeart;
   faFile = faFile;
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+   console.log(this.activatedRoute.snapshot.params) 
   }
 
 }
