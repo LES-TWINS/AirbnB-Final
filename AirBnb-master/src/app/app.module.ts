@@ -25,6 +25,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -56,7 +58,8 @@ const routes:Routes = [
     ModuleModule,
     HttpClientModule,
     FontAwesomeModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule
   
    
  

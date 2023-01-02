@@ -52,12 +52,25 @@ img:hover {
   border-top-right-radius: 15px;
 }
 
-section {
-  width: 48% !important;
-  margin-left: 100px;
+.test {
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+  gap: 280px;
+}
+
+.hotel-circle-img img {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+}
+
+section .container hr {
+  width: 50%;
 }
 section .container .hotel-info {
   margin-top: 50px;
+  width: 307px;
 }
 section .container .hotel-info h6 {
   font-size: 22px;
@@ -66,4 +79,115 @@ section .container .hotel-info h6 {
 section .container .hotel-info span {
   font-size: 16px;
   color: rgb(50, 50, 50);
+}
+section .hotel-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 460px;
+}
+section .icon-area {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  font-size: 25px;
+  justify-content: center;
+}
+section .hotel-est {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+section .hotel-est h6 {
+  font-size: 16px;
+  margin: 0;
+}
+section .hotel-est p {
+  font-size: 14px;
+}
+
+.protection {
+  margin: 35px 0px;
+  width: 650px;
+}
+.protection img {
+  width: 126px;
+}
+.protection p {
+  margin: 15px 0px;
+}
+.protection span {
+  text-decoration: underline;
+}
+.protection span:hover {
+  cursor: pointer;
+}
+
+.hotel-info span:nth-child(odd) {
+  margin-right: 5px;
+}
+
+.description {
+  width: 650px;
+}
+
+.bed-rooms {
+  border: 1px solid rgba(159, 159, 159, 0.319);
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+}
+.bed-rooms p {
+  font-size: 14px;
+}
+.bed-rooms p, .bed-rooms h6, .bed-rooms fa-icon {
+  padding-left: 25px;
+}
+.bed-rooms h6 {
+  padding-top: 20px;
+}
+
+.sleep-opt {
+  width: 650px;
+  margin-top: 50px;
+}
+.sleep-opt aside {
+  margin: 50px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.place-offers {
+  margin-top: 50px;
+}
+.place-offers .list-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 600px;
+  gap: 150px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.btn-area {
+  margin: 35px 0px;
+}
+.btn-area button {
+  padding: 9px 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.547);
+  background-color: white;
+  transition: 0.2s;
+}
+.btn-area button:hover {
+  background-color: rgba(253, 246, 238, 0.216);
+  transition: 0.2s;
+}
+
+mat-form-field {
+  margin-right: 12px;
 }

@@ -37,7 +37,13 @@ import { PriceRangeComponent } from './home-pg/main/navigation/filter/filter-con
 import { FilterContentFooterComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-footer/filter-content-footer.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatFormFieldModule} from "@angular/material/form-field";
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { NgScrolltopModule } from 'ng-scrolltop';
 
 
 
@@ -95,6 +101,15 @@ const routes:Routes = [
         FormsModule,
         ReactiveFormsModule,
         FontAwesomeModule,
+        MatDatepickerModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatNativeDateModule,
+        MatInputModule,
+        MatSelectModule,
+        NgScrolltopModule,
+        
+    
    
     ]
 })

@@ -9,6 +9,7 @@
   h4 {
     font-size: 26px;  
   }
+
   span {
     margin-left: 10px;
     text-decoration: underline;
@@ -62,10 +63,13 @@ img {
   gap: 280px;
 }
 .hotel-circle-img{
+
 img{
   border-radius: 50%;
   width: 56px;
   height: 56px;
+
+  
 }
 }
 section{
@@ -76,6 +80,7 @@ section{
         
         .hotel-info{
             margin-top: 50px;
+            width: 307px;
             h6{
                 font-size: 22px;
                 font-weight: lighter;
@@ -128,6 +133,109 @@ section{
     text-decoration: underline;
     &:hover{
       cursor: pointer;
+    }
+  }
+}
+.hotel-info{
+  span:nth-child(odd){
+    margin-right: 5px;
+  }
+}
+.description{
+  width: 650px;
+}
+.bed-rooms{
+  border: 1px solid rgba(159, 159, 159, 0.319);
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  p{
+    font-size: 14px;
+  }
+  p,h6,fa-icon{
+    padding-left: 25px;
+  }
+  h6{
+    padding-top: 20px;
+  }
+
+}
+.sleep-opt{
+  width: 650px;
+  margin-top: 50px;
+  aside{
+    margin:50px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
+
+.place-offers{
+  margin-top: 50px;
+.list-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 600px;
+  gap: 150px;
+}
+}
+li{
+  list-style-type: none;
+}
+.btn-area{
+  margin: 35px 0px;
+  button{
+    padding: 9px 22px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.547);
+    background-color: white;
+    transition: 0.2s;
+    &:hover{
+      background-color: rgba(253, 246, 238, 0.216);
+      transition: 0.2s;
+    }
+  }
+}
+
+
+
+
+mat-form-field {
+  margin-right: 12px;
+}
+.not-fixed{
+  position: absolute;
+  top: 75%;
+  right: 20%;
+}
+.fixed{
+  position: fixed;
+  top: 120px;
+  right: 20%;
+}
+.reserve-area{
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  width: 500px;
+  box-shadow: 0px 0px 15px 3px rgb(120, 120, 120);
+  .hotel-detal{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+  }
+  aside{
+    display: flex;
+  }
+  .availability{
+    button{
+      padding: 12px 70px;
+      background-color: #FE375B;
+      border: none;
+      border-radius: 8px;
+      color: white;
     }
   }
 }
