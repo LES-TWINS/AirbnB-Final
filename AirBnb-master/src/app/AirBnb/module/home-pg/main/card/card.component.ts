@@ -34,10 +34,9 @@ export class CardComponent implements OnInit {
     hotel.mainImages[index].isActive = false;
     if (index == 0) {
       hotel.mainImages[3].isActive = true;
-      console.log(index)
     } else {
       hotel.mainImages[index - 1].isActive = true;
-      console.log(index)
+ 
     }
   }
 
@@ -46,10 +45,9 @@ export class CardComponent implements OnInit {
     hotel.mainImages[index].isActive = false;
     if (index == 3) {
       hotel.mainImages[0].isActive = true;
-      console.log(index)
     } else {
       hotel.mainImages[index + 1].isActive = true;
-      console.log(index)
+
     }
   }
 
