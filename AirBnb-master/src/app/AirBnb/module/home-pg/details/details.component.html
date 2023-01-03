@@ -92,8 +92,10 @@
       <div class="place-offers">
         <h4>What this place offers</h4>
      <div class="list-box">
-      <aside class="left">
-        <ul *ngFor="let item of singleHotel.placeOffers let i = index">
+      <aside 
+      class="left">
+        <ul 
+        *ngFor="let item of singleHotel.placeOffers let i = index">
           <li *ngIf="i < 5">{{item}}</li>
         </ul>
        
@@ -109,6 +111,30 @@
      </div>
 
       </div>
+      <hr>
+
+      <div class="calendar">
+        <h4>Select checkout date</h4>
+         <p>Add your travel dates for exact pricing</p>
+        <div class="calendar-box">
+        <aside class="left-calendar">
+          <mat-card class="demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+          </mat-card>
+          <!-- <p>Selected date: {{selected}}</p> -->
+        </aside>
+
+        <aside class="right-calendar">
+          <aside class="left-calendar">
+            <mat-card class="demo-inline-calendar-card">
+              <mat-calendar [(selected)]="selected"></mat-calendar>
+            </mat-card>
+            <!-- <p>Selected date: {{selected}}</p> -->
+          </aside>
+        </aside>
+      </div>
+      </div>
+
       <hr>
   
   </div>
@@ -144,7 +170,7 @@ class="reserve-area"
   </div>
   <div class="check-out">
     <mat-form-field appearance="fill">
-      <mat-label>Angular forms (w/ deserialization)</mat-label>
+      <mat-label>Check Out</mat-label>
       <input matInput [matDatepicker]="picker2"
              [formControl]="serializedDate">
       <mat-hint>MM/DD/YYYY</mat-hint>

@@ -5,6 +5,7 @@ import { faStar,faHeart,faFile,faBed,faBedPulse } from '@fortawesome/free-solid-
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -23,6 +24,7 @@ export class DetailsComponent implements OnInit {
   faBedPulse = faBedPulse
 
   public hotelId:string = '';
+  public iconArray:any = [];
   
   singleHotel:any = [];
   userScroll:number = 0;
@@ -33,7 +35,9 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
    this.hotelId = this.activatedRoute.snapshot.params['id'];
    this.getOne(this.hotelId);
-
+   this.http.getAllFilterIcons().subscribe(icon => {
+    this.iconArray = icon
+   })
   }
 
   getOne(id:string){
@@ -49,11 +53,11 @@ onWindowScroll() {
 let pos = document.documentElement.scrollTop;
 let max = document.documentElement.scrollHeight;
 
- if(pos > (max / 4) )   {
-   this.userScroll = pos
+ if(pos > (max / 4.3) ) {
+   this.userScroll = pos;
  } 
- if(pos < (max / 4)){
-   this.userScroll = 0
+ if(pos < (max / 4.3)){
+   this.userScroll = 0;
  }
 
 }

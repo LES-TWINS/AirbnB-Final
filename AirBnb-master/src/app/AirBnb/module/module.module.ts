@@ -44,6 +44,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
+import { gsap } from "gsap";
+import {Draggable} from "gsap/Draggable";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 
 
@@ -108,6 +111,8 @@ const routes:Routes = [
         MatInputModule,
         MatSelectModule,
         NgScrolltopModule,
+       
+
         
     
    
