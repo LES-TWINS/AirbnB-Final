@@ -9,7 +9,6 @@
   h4 {
     font-size: 26px;  
   }
-
   span {
     margin-left: 10px;
     text-decoration: underline;
@@ -63,13 +62,10 @@ img {
   gap: 280px;
 }
 .hotel-circle-img{
-
 img{
   border-radius: 50%;
   width: 56px;
   height: 56px;
-
-  
 }
 }
 section{
@@ -80,7 +76,6 @@ section{
         
         .hotel-info{
             margin-top: 50px;
-            width: 307px;
             h6{
                 font-size: 22px;
                 font-weight: lighter;
@@ -136,6 +131,7 @@ section{
     }
   }
 }
+
 .hotel-info{
   span:nth-child(odd){
     margin-right: 5px;
@@ -269,3 +265,4 @@ body{
   height: 500vh;
   overflow-y: scroll;
 }
+

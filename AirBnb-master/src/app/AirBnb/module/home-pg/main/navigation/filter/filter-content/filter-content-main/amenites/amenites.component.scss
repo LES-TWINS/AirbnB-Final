@@ -18,6 +18,7 @@ width: 100%;
 .form-check{
     width: 350px;
      min-height: 50px;
+     display: flex;
 }
 .form-check-input{
     width: 24px;
@@ -38,7 +39,7 @@ border: 1px solid #000;
 }
 .checkboxHeader{
     font-size: 16px;
-  padding-top: 6px;
+  padding-top: 2px;
 }
 .checkboxText{
     color: #717171 ;

@@ -6,7 +6,6 @@
 <div class="container intro">
   <div class="hotel-desc">
     <h4>{{singleHotel.name}}</h4>
-    <fa-icon [icon]="faStar"></fa-icon><span [ngStyle]="{'margin-left.px': 3}">{{singleHotel.starCount}}</span>
     <span>5 reviews</span>
     <span>{{singleHotel.city}} {{singleHotel.country}}</span>
   </div>
@@ -30,23 +29,18 @@
     <div class="test">
       <div class="hotel-info">
         <h6>{{singleHotel.hostInformation.hostName}}</h6>        
-        <span>{{singleHotel.rooms[0].personsCount}} </span>  <span> guests</span>
-        <span>{{singleHotel.rooms[0].bedsCount}}  </span> <span>beds</span>
-        <span>{{singleHotel.rooms[0].bathRoomsCount}} </span> <span>bath</span>
+
+        <span>2 guests</span>
+        <span>1 bedroom</span>
+        <span>1 bed</span>
+        <span>1 bath</span>
       </div>
       <div class="hotel-circle-img">
         <img src="https://a0.muscache.com/im/pictures/user/a6ccc650-1184-4401-8f29-4a7aabfc140b.jpg?im_w=240" alt="">
       </div>
-
-
-      
-
-
     </div>
   
     <hr>
-    
- 
     <div class="hotel-details">
       <div class="icon-area">
         <fa-icon [icon]="faStar"></fa-icon>
@@ -58,8 +52,7 @@
           <p>Gaspard has 117 reviews for other places.</p>
           <h6>Highly rated Host</h6>
           <p>Gaspard has received 5-star ratings from 90% of recent guests.</p>
-          <h6>Free cancellation for {{ singleHotel.freeCancellationDaysCount }} days.
-          </h6>
+          <h6>Free cancellation for 48 hours.</h6>
       </div>
     </div>
     <hr>
@@ -70,6 +63,7 @@
       <span>Learn more</span>
     </div>
     <hr>
+
     <div class="description">
       <p>{{singleHotel.description}}</p>
     </div>
@@ -137,11 +131,13 @@
 
       <hr>
   
+
   </div>
 
  
 </section>
 </section>
+
 
 
  
@@ -196,3 +192,4 @@ class="reserve-area"
  <button>Check availability</button>
 </div>
 </div>
+
