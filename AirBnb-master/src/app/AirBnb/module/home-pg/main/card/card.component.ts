@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 
 
@@ -9,7 +9,8 @@ import { HttpService } from 'src/app/AirBnb/services/http.service';
 })
 export class CardComponent implements OnInit {
 
-  hotelsArray: any = []
+  hotelsArray: any = [];
+ 
 
   constructor(private http: HttpService) {
     this.http.getAllHotels().subscribe(((hotels: any) => {

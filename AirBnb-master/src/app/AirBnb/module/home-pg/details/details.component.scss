@@ -218,11 +218,13 @@ mat-form-field {
   }
   .availability {
     button {
-      padding: 12px 70px;
+      padding: 12px 0px;
+      width: 100%;
       background-color: #fe375b;
       border: none;
       border-radius: 8px;
       color: white;
+      letter-spacing: 2px;
     }
   }
 }
@@ -270,5 +272,40 @@ ul {
     }
 
   }
+  .host-btn{
+    margin: 20px 0px;
+    button{
+      padding: 10px 50px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.547);
+      transition: 0.2s;
+      background-color: white;
+     
+      &:hover {
+        background-color: rgba(253, 246, 238, 0.216);
+        transition: 0.2s;
+      }
+    }
+  }
+ 
 }
 
+.price-box,.total{
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  .night{
+    p{
+      text-decoration: underline;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+  p{
+    font-size: 16px;
+  }
+  h3{
+    font-weight: bold;
+  }
+}

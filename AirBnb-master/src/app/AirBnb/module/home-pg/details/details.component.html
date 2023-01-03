@@ -96,6 +96,7 @@
           <aside class="left-calendar">
             <mat-card class="demo-inline-calendar-card">
               <mat-calendar
+           
               (selectedChange)="checkIn($event)" 
               [(selected)]="userCheckIn"></mat-calendar>
             </mat-card>
@@ -103,7 +104,7 @@
           <aside class="right-calendar">
               <mat-card class="demo-inline-calendar-card">
                 <mat-calendar 
-             
+               
                  (selectedChange)="checkOut($event)"
                 [(selected)]="userCheckOut"></mat-calendar>
               </mat-card>
@@ -124,8 +125,14 @@
           </div>
           
         </div>
+        <div class="host-btn">
+          <button>Contact Host</button>
+        </div>
 
       </div>
+      <hr>
+  
+     
     </div>
   </section>
 </section>
@@ -148,9 +155,8 @@
       <mat-form-field appearance="fill">
         <mat-label>Check In</mat-label>
         <input 
-       
+      
         matInput [matDatepicker]="picker1" [formControl]="date">
-        <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
@@ -158,28 +164,34 @@
     <div class="check-out">
       <mat-form-field appearance="fill">
         <mat-label>Check Out</mat-label>
-        <input matInput [matDatepicker]="picker2" 
+        <input 
+        
+        matInput [matDatepicker]="picker2" 
         [formControl]="serializedDate">
-        <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
     </div>
 
   </aside>
-
-  <div class="guests">
-    <mat-form-field appearance="fill">
-      <mat-label>Select an option</mat-label>
-      <mat-select [(value)]="selected">
-        <mat-option>None</mat-option>
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
   <div class="availability">
-    <button>Check availability</button>
+    <button>Reserve</button>
   </div>
+  <div class="price-box">
+    <div class="night">
+      <p>$69 x 5 nights</p>
+    </div>
+    <div class="price">
+       <p>$347</p>
+    </div>
+   </div>
+   <hr>
+   <div class="total">
+    <div class="total-title">
+      <h3>Total before taxes</h3>
+    </div>
+    <div class="total-price">
+      <h3>$688</h3>
+    </div>
+   </div>
 </div>

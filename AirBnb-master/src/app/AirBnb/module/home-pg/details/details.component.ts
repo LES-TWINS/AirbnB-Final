@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, HostListener,  OnDestroy, OnInit, } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { faStar,faHeart,faFile,faBed,faBedPulse } from '@fortawesome/free-solid-svg-icons';
@@ -12,37 +12,70 @@ import { Subscription } from 'rxjs';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit,OnDestroy {
+export class DetailsComponent implements OnInit,OnDestroy{
+
+
 
   date = new FormControl(new Date());
   serializedDate = new FormControl(new Date().toISOString());
   
-  leftBottomSubscription!:Subscription 
-  rightBottomSubscription!:Subscription
+  leftBottomSubscription!:Subscription; 
+  rightBottomSubscription!:Subscription;
 
-  selected ='option2';
+  public inDay:number = 0;
+  public inMonth:number = 0;
+  public inYear:number = 0;
+  public outDay:number = 0;
+  public outMonth:number = 0;
+  public outYear:number = 0;
+  public oneNightPrice:number = 0;
+  public totalPrice:number = 0;
+
+ 
+
+
   userCheckIn = '';
   userCheckOut = '';
+
+
+
   checkIn(checkInDate:any){
-    this.date.setValue(checkInDate)
+    this.date.setValue(checkInDate);
+    this.inDay = checkInDate.getDate();
+    this.inMonth = checkInDate.getMonth();
+    this.inYear = checkInDate.getFullYear();
+ 
+    
   }
   checkOut(checkOutDate:any){
-    this.serializedDate.setValue(checkOutDate)
+    this.serializedDate.setValue(checkOutDate);
+    this.outDay = checkOutDate.getDate();
+    this.outMonth = checkOutDate.getMonth();
+    this.outYear = checkOutDate.getFullYear();
+
   }
 
   checkInTop(){
-  this.leftBottomSubscription = this.date.valueChanges.subscribe((test:any) => {
-      this.userCheckIn = test
+  this.leftBottomSubscription = this.date.valueChanges.subscribe((dateInfo:any) => {
+      this.userCheckIn = dateInfo;
+      this.inDay = dateInfo.getDate();
+      this.inMonth = dateInfo.getMonth();
+      this.inYear = dateInfo.getFullYear();
      })
 
   }
   checkOutBottom(){
-    this.rightBottomSubscription = this.serializedDate.valueChanges.subscribe((test:any) => {
-      this.userCheckOut = test
+    this.rightBottomSubscription = this.serializedDate.valueChanges.subscribe((dateInfo:any) => {
+      this.userCheckOut = dateInfo;
+      this.outDay = dateInfo.getDate();
+      this.outMonth = dateInfo.getMonth();
+      this.outYear = dateInfo.getFullYear();
      })
   }
 
-  
+
+
+
 
 
 
@@ -61,20 +94,22 @@ export class DetailsComponent implements OnInit,OnDestroy {
     
   constructor(private activatedRoute:ActivatedRoute,private http:HttpService) { }
 
+
   ngOnInit(): void {
    this.hotelId = this.activatedRoute.snapshot.params['id'];
    this.getOne(this.hotelId);
-   this.http.getAllFilterIcons().subscribe(icon => {
-    this.iconArray = icon
-   })
-    this.checkInTop()
-    this.checkOutBottom()
+    this.checkInTop();
+    this.checkOutBottom();
+  
+  
   }
 
   getOne(id:string){
      this.http.getOne(id).subscribe(data =>{
       this.singleHotel = data;
-      console.log(this.singleHotel)
+      this.oneNightPrice = this.singleHotel.rooms[0].price;
+      this.totalPrice = this.oneNightPrice;
+      console.log(this.singleHotel);
     })
   }
 
