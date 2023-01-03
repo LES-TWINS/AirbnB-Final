@@ -6,7 +6,6 @@
 <div class="container intro">
   <div class="hotel-desc">
     <h4>{{singleHotel.name}}</h4>
-    <fa-icon [icon]="faStar"></fa-icon><span [ngStyle]="{'margin-left.px': 3}">{{singleHotel.starCount}}</span>
     <span>5 reviews</span>
     <span>{{singleHotel.city}} {{singleHotel.country}}</span>
   </div>
@@ -30,23 +29,18 @@
     <div class="test">
       <div class="hotel-info">
         <h6>{{singleHotel.hostInformation.hostName}}</h6>        
-        <span>{{singleHotel.rooms[0].personsCount}} </span>  <span> guests</span>
-        <span>{{singleHotel.rooms[0].bedsCount}}  </span> <span>beds</span>
-        <span>{{singleHotel.rooms[0].bathRoomsCount}} </span> <span>bath</span>
+
+        <span>2 guests</span>
+        <span>1 bedroom</span>
+        <span>1 bed</span>
+        <span>1 bath</span>
       </div>
       <div class="hotel-circle-img">
         <img src="https://a0.muscache.com/im/pictures/user/a6ccc650-1184-4401-8f29-4a7aabfc140b.jpg?im_w=240" alt="">
       </div>
-
-
-      
-
-
     </div>
   
     <hr>
-    
- 
     <div class="hotel-details">
       <div class="icon-area">
         <fa-icon [icon]="faStar"></fa-icon>
@@ -58,8 +52,7 @@
           <p>Gaspard has 117 reviews for other places.</p>
           <h6>Highly rated Host</h6>
           <p>Gaspard has received 5-star ratings from 90% of recent guests.</p>
-          <h6>Free cancellation for {{ singleHotel.freeCancellationDaysCount }} days.
-          </h6>
+          <h6>Free cancellation for 48 hours.</h6>
       </div>
     </div>
     <hr>
@@ -70,103 +63,9 @@
       <span>Learn more</span>
     </div>
     <hr>
-    <div class="description">
-      <p>{{singleHotel.description}}</p>
-    </div>
-    <hr>
-    <div class="sleep-opt">
-      <h4>Where you'll sleep</h4>
-      <aside>
-        <div
-        *ngFor="let bedroom of singleHotel.rooms let i = index"
-        class="bed-rooms">
-          <fa-icon [icon]="faBed" [ngStyle]="{'font-size.px': 25}"></fa-icon>
-          <h6>Bedroom {{i+1}}</h6>
-          <p>{{bedroom.name}}</p>
-        </div>
-      </aside>
-
-      
-    </div>
-    <hr>
-      <div class="place-offers">
-        <h4>What this place offers</h4>
-     <div class="list-box">
-      <aside class="left">
-        <ul *ngFor="let item of singleHotel.placeOffers let i = index">
-          <li *ngIf="i < 5">{{item}}</li>
-        </ul>
-       
-      </aside>
-      <aside class="right">
-       <ul *ngFor="let item of singleHotel.placeOffers let i = index">
-        <li *ngIf="i >= 5 && i < 10">{{item}}</li>
-       </ul>
-      </aside>
-     </div>
-     <div class="btn-area">
-      <button>show al 24 amenities</button>
-     </div>
-
-      </div>
-      <hr>
-  
+    <p>hello</p>
   </div>
 
  
 </section>
 </section>
-
-
- 
-<div
-class="reserve-area"
-[ngClass]="userScroll ? 'fixed' : 'not-fixed'"
->
-
-  <div class="hotel-detal">
-   <div class="price">
-    <h4>$326 night</h4>
-   </div>
-   <div class="rev">
-    <span>5.0 · 5 reviews </span>
-   </div>
-  </div>
-<aside>
-  <div class="check-in">
-    <mat-form-field appearance="fill">
-      <mat-label>Check In</mat-label>
-      <input matInput [matDatepicker]="picker1" [formControl]="date">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field>
-  </div>
-  <div class="check-out">
-    <mat-form-field appearance="fill">
-      <mat-label>Angular forms (w/ deserialization)</mat-label>
-      <input matInput [matDatepicker]="picker2"
-             [formControl]="serializedDate">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
-      <mat-datepicker #picker2></mat-datepicker>
-    </mat-form-field>
-  </div>
- 
-</aside>
-
-<div class="guests">
-  <mat-form-field appearance="fill">
-    <mat-label>Select an option</mat-label>
-    <mat-select [(value)]="selected">
-      <mat-option>None</mat-option>
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-<div class="availability">
- <button>Check availability</button>
-</div>
-</div>

@@ -32,7 +32,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
-
 const routes:Routes = [
   { path: '', redirectTo:"module" ,pathMatch: 'full'}
 ]
@@ -59,7 +58,9 @@ const routes:Routes = [
     HttpClientModule,
     FontAwesomeModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+   
+   
   
    
  
