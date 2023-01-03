@@ -1,0 +1,209 @@
+.modal {
+  height: auto;
+  overflow: visible;
+  padding: 100px 0 200px;
+}
+
+.modal.fade .modal-dialog {
+  transform: translate3d(0, 100vh, 0);
+}
+
+.modal.show .modal-dialog {
+  transform: translate3d(0, 0, 0);
+}
+
+.mb-3 {
+  margin-bottom: 0 !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.form {
+  width: 568px;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  left: -35px;
+  margin: -5px;
+  padding-bottom: 5px;
+}
+
+.form__header {
+  font-size: 20px;
+  font-weight: bold;
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.close {
+  position: relative;
+  top: 4px;
+  left: -277px;
+  width: 6px;
+  height: 6px;
+  display: block;
+}
+
+.close::after {
+  content: "";
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  top: -9px;
+  left: -9px;
+}
+
+.wrapper {
+  width: 503px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input__wrapper {
+  position: relative;
+  height: 55px;
+  width: auto;
+}
+
+.input__wrapper__text {
+  font-size: 12px;
+  color: #717171;
+  margin: 8px 0 22px;
+}
+
+input {
+  width: 503px;
+  height: 56px !important;
+  border: 1px solid #717171;
+  border-radius: 8px;
+}
+
+.name {
+  border-radius: 8px;
+}
+
+input:focus {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.form__button {
+  width: 503px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #222;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.form__button:hover {
+  background-color: #f7f7f7;
+}
+
+.form__button:first-of-type {
+  background-color: #E21B5F;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+}
+
+.form__button:nth-of-type(3) {
+  margin: 17px 0;
+}
+
+img {
+  position: absolute;
+  left: 22px;
+  top: 14px;
+}
+
+.form__line {
+  height: 45px;
+  width: 503px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.form__line::before {
+  content: "";
+  position: absolute;
+  width: 46%;
+  height: 1px;
+  background: #ddd;
+  top: 50%;
+  left: 0;
+}
+
+.form__line::after {
+  content: "";
+  position: absolute;
+  width: 46%;
+  height: 1px;
+  background: #ddd;
+  top: 50%;
+  right: 0;
+}
+
+.popup {
+  position: relative;
+}
+
+.popup:Before {
+  content: "first Name is required";
+  padding: 5px;
+  background-color: #ff0000;
+  border-radius: 5px;
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  top: -86px;
+  left: 60px;
+  transition: 0.5s;
+}
+
+.popup:after {
+  content: "";
+  position: absolute;
+  top: -61px;
+  left: 80px;
+  transform: rotate(180deg);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 12px 12px;
+  border-color: transparent transparent #ff0000 transparent;
+  transition: 0.5s;
+}
+
+.popemail::before {
+  content: "Email is required";
+}
+
+.popfirstwrong::before {
+  content: "First name length must be at least 3 charecters";
+}
+
+.popemailwrong::before {
+  content: "Email is wrong";
+}

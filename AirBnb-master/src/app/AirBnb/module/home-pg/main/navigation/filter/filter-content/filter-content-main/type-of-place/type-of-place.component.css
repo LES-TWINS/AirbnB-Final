@@ -18,6 +18,7 @@
   width: 350px;
   min-height: 60px;
   margin: 8px 0;
+  display: flex;
 }
 
 .form-check-input {

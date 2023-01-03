@@ -213,7 +213,7 @@ img {
 }
 
 .popfirstwrong::before {
-  content: "Firs tname length must be at least 3 charecters";
+  content: "First name length must be at least 3 charecters";
 }
 
 .poplastwrong::before {
