@@ -3,8 +3,12 @@
   <div class="container intro">
     <div class="hotel-desc">
       <h4>{{singleHotel.name}}</h4>
-      <span>5 reviews</span>
-      <span>{{singleHotel.city}} {{singleHotel.country}}</span>
+      <fa-icon [icon]="faStar"></fa-icon>
+      <span>{{singleHotel.starCount}}.0</span>
+      <span>·</span>
+      <span>5 reviews </span>
+      <span>·</span>
+      <span> {{ singleHotel.city}} {{singleHotel.country}}</span>
     </div>
     <div class="image-area">
       <aside class="left">
@@ -96,7 +100,6 @@
           <aside class="left-calendar">
             <mat-card class="demo-inline-calendar-card">
               <mat-calendar
-           
               (selectedChange)="checkIn($event)" 
               [(selected)]="userCheckIn"></mat-calendar>
             </mat-card>
@@ -104,7 +107,6 @@
           <aside class="right-calendar">
               <mat-card class="demo-inline-calendar-card">
                 <mat-calendar 
-               
                  (selectedChange)="checkOut($event)"
                 [(selected)]="userCheckOut"></mat-calendar>
               </mat-card>
@@ -156,7 +158,8 @@
         <mat-label>Check In</mat-label>
         <input 
       
-        matInput [matDatepicker]="picker1" [formControl]="date">
+        matInput [matDatepicker]="picker1" 
+        [formControl]="date">
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
@@ -179,7 +182,7 @@
   </div>
   <div class="price-box">
     <div class="night">
-      <p>${{singleHotel.rooms[0].price}} x {{daysCount}} nights</p>
+      <p>${{singleHotel.rooms[0].price}} x {{differenceInDays}} nights</p>
     </div>
     <div class="price">
        <p>${{totalPrice}}</p>
@@ -191,7 +194,7 @@
       <h3>Total before taxes</h3>
     </div>
     <div class="total-price">
-      <h3>${{totalPrice}}</h3>
+      <h3 >${{totalPrice}}</h3>
     </div>
    </div>
 </div>

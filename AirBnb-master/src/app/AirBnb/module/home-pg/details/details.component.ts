@@ -12,6 +12,7 @@ import { HttpService } from 'src/app/AirBnb/services/http.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -20,19 +21,26 @@ import { Subscription } from 'rxjs';
 export class DetailsComponent implements OnInit, OnDestroy {
   date = new FormControl(new Date());
   serializedDate = new FormControl(new Date().toISOString());
+  both = new FormControl(new Date());
 
   leftBottomSubscription!: Subscription;
   rightBottomSubscription!: Subscription;
 
+
   public inDay: number = 0;
   public inMonth: number = 0;
+  public checkInMonth!:any
   public inYear: number = 0;
   public outDay: number = 0;
   public outMonth: number = 0;
+  public checkOutMonth!:any;
   public outYear: number = 0;
-  public oneNightPrice: number = 0;
+  public oneNightPrice: number = 1;
   public daysCount:number = 1;
-  public totalPrice: number = 0;
+  public totalPrice: number = 1;
+  public differenceInTime!:any;
+  public differenceInDays!:any;
+  public minDate:Number=10;
 
   userCheckIn = '';
   userCheckOut = '';
@@ -49,28 +57,14 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.checkOutBottom();
   }
 
+
   checkIn(checkInDate: any) {
     this.date.setValue(checkInDate);
-    this.inDay = checkInDate.getDate();
-    this.inMonth = checkInDate.getMonth();
-    this.inYear = checkInDate.getFullYear();
-    if(this.inDay < this.outDay){
-     this.totalPrice = this.outDay - this.inDay;
-     this.daysCount = this.totalPrice;
-     this.totalPrice *= this.oneNightPrice;
-     console.log(this.totalPrice)
-    }
-    
-  
-  
   }
   checkOut(checkOutDate: any) {
     this.serializedDate.setValue(checkOutDate);
-    this.outDay = checkOutDate.getDate();
-    this.outMonth = checkOutDate.getMonth();
-    this.outYear = checkOutDate.getFullYear();
-   
   }
+
 
   checkInTop() {
     this.leftBottomSubscription = this.date.valueChanges.subscribe(
@@ -79,18 +73,33 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.inDay = dateInfo.getDate();
         this.inMonth = dateInfo.getMonth();
         this.inYear = dateInfo.getFullYear();
+        this.checkInMonth = new Date(this.inYear, this.inMonth, this.inDay);
+        this.differenceInTime = this.checkOutMonth - this.checkInMonth;
+        this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
+        if(this.differenceInDays > 0){
+          this.totalPrice = this.oneNightPrice *this.differenceInDays;
+        }
+       
       }
-      
     );
- 
   }
+
+
+
   checkOutBottom() {
     this.rightBottomSubscription = this.serializedDate.valueChanges.subscribe(
       (dateInfo: any) => {
         this.userCheckOut = dateInfo;
         this.outDay = dateInfo.getDate();
-        this.outMonth = dateInfo.getMonth();
+        this.outMonth = dateInfo.getMonth() ;
         this.outYear = dateInfo.getFullYear();
+     
+        this.checkOutMonth =  new Date(this.outYear, this.outMonth, this.outDay);
+        this.differenceInTime = this.checkOutMonth - this.checkInMonth;
+        this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
+        if(this.differenceInDays > 0){
+          this.totalPrice = this.oneNightPrice *this.differenceInDays;
+        }
       }
     );
   }
