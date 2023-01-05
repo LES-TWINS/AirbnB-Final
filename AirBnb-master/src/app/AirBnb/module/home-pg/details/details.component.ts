@@ -7,6 +7,8 @@ import {
   faFile,
   faBed,
   faBedPulse,
+  faChain,
+  faChainBroken
 } from '@fortawesome/free-solid-svg-icons';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -40,6 +42,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   public totalPrice: number = 1;
   public differenceInTime!:any;
   public differenceInDays!:any;
+
   minDate = new Date();
   checkOutMinDate!:Date;
 
@@ -117,6 +120,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   faFile = faFile;
   faBed = faBed;
   faBedPulse = faBedPulse;
+  faChainBroken = faChainBroken;
 
   public hotelId: string = '';
   public iconArray: any = [];
@@ -139,10 +143,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
     let pos = document.documentElement.scrollTop;
     let max = document.documentElement.scrollHeight;
 
-    if (pos > max / 4.3) {
+    if (pos > max / 5) {
       this.userScroll = pos;
     }
-    if (pos < max / 4.3) {
+    if (pos < max / 5) {
       this.userScroll = 0;
     }
   }
