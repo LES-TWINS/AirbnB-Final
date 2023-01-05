@@ -93,7 +93,9 @@ input:focus{
     border: 2px solid #000;
     border-radius: 8px;
 }
-
+.signup{
+    font-size: 16px;
+}
 .form__button{
 width: 503px;
 height: 48px;
@@ -153,43 +155,8 @@ img{
 }
 
 .popup{
-    position: relative;
-}
-.popup:Before{
-    content: "first Name is required";
-    padding: 5px;
-    background-color: #ff0000;
-    border-radius: 5px;
-    font-size: 12px;
-    color: white;
+    color: #ff0000;
     position: absolute;
-    top:-86px;
-    left: 60px;
-    transition: 0.5s;
-  }
-  .popup:after{
-    content: "";
-    position: absolute;
-    top: -61px;
-    left: 80px;
-    transform: rotate(180deg);
-    width: 0;
-height: 0;
-border-style: solid;
-border-width: 0 12px 12px 12px;
-border-color: transparent transparent #ff0000 transparent;
-transition: 0.5s;
-  }
-
-
-  .popemail::before{
-    content: "Email is required";
-  }
-
-.popfirstwrong::before{
-    content: "First name length must be at least 3 charecters"; 
-}
-
-.popemailwrong::before{
-    content: "Email is wrong";
+    top: 17px;
+    right: 35px;
 }

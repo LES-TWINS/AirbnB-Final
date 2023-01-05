@@ -19,10 +19,10 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm=this.formBuilder.group({
-       firstName:['',[Validators.required,Validators.minLength(3)]],
-       lastName:['',[Validators.required,Validators.minLength(3)]],
-       Birthdate:['',Validators.required],
-       Email:['',[Validators.required,Validators.email]]
+      firstName:['',[Validators.required,Validators.minLength(5)]],
+      Password:['',[Validators.required,Validators.minLength(6)]],
+      Birthdate:['',Validators.required],
+      Email:['',[Validators.required,Validators.email]]
 
     })
   }
@@ -30,19 +30,16 @@ export class SignUpComponent implements OnInit {
   signUp(){
    this.submitted=true
 
-   if(this.signupForm.invalid){
-    return
-   }
-alert("we are good")
+  //  if(this.signupForm.invalid){
+  //   return
+  //  }
+// alert("we are good")
 
-    this.http.post<any>("http://localhost:3000/signUp",this.signupForm.value)
-    .subscribe(res=>{
-      alert("sing up good")
-      this.signupForm.reset()
-      
-      
-
-    })
+    // this.http.post<any>("http://localhost:3000/signUp",this.signupForm.value)
+    // .subscribe(res=>{
+    //   alert("sing up good")
+    //   this.signupForm.reset()
+    // })
     
   }
 }
