@@ -1,22 +1,39 @@
 
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent {
+export class SliderComponent implements OnInit,OnDestroy {
   
-  iconsArray:any=[]
+  iconsArray:any=[];
+  filteredIcon:any = [];
+  iconSub!: Subscription
 
-  constructor(private http:HttpService) {
-    this.http.getAllFilterIcons().subscribe((icons)=>{
+  constructor(private http:HttpService,private activatedRoute: ActivatedRoute,) {
+     this.http.getAllFilterIcons().subscribe((icons)=>{
       this.iconsArray = icons;
       console.log(this.iconsArray)
+
+      this.iconSub = this.activatedRoute.queryParams.subscribe((data) =>{
+     this.filteredIcon = data;
+     console.log(this.filteredIcon)
+   
+      })
     })
    }
+
+
+   ngOnInit(): void {
+  
+   }
+
+  
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -43,6 +60,10 @@ export class SliderComponent {
     },
 
     nav: true
+  }
+
+  ngOnDestroy(): void {
+ this.iconSub.unsubscribe();
   }
 }
 

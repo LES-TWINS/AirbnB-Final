@@ -85,6 +85,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
         this.totalPrice = this.oneNightPrice * this.differenceInDays;
         this.checkOutMinDate = new Date(this.inYear,this.inMonth,this.inDay + 1)
+        console.log(this.inDay,this.inMonth,this.inYear)
       }
     );
   }
@@ -107,6 +108,9 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
         this.totalPrice = this.oneNightPrice * this.differenceInDays;
+        console.log(this.outDay,this.outMonth,this.outYear)
+
+
        
         
       }

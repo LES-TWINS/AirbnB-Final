@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 
 
@@ -12,7 +13,7 @@ export class CardComponent implements OnInit {
   hotelsArray: any = [];
  
 
-  constructor(private http: HttpService) {
+  constructor(private router:Router, private http: HttpService) {
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
       this.hotelsArray.forEach((hotel: any) => {
@@ -28,7 +29,9 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
+
 
   prev(hotel: any) {
     var index = hotel.mainImages.findIndex((item: any) => item.isActive == true);

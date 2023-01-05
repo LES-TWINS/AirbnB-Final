@@ -50,16 +50,15 @@ import { HostPgComponent } from "./host-pg/host-pg.component";
 
 
 const routes:Routes = [
-    { path: '',  component:ModuleComponent,children:[  
+    { path: '',  component:HomePgComponent},
     { path: 'account-pg', component:AccountPgComponent},
     { path: 'home-pg', component:HomePgComponent},
     { path: 'ordered', component:OrderedComponent},
-    {path: 'host-pg',component:HostPgComponent},
-    { path:'home-pg/details/:name/:id',component:DetailsComponent},
+    {   path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
+    { path:'details/:name/:id',component:DetailsComponent},
+    {  path:':icon',component:HomePgComponent},
     { path:'**',component:ErrorComponent},
-
   
-  ]},
     
   ]
 
