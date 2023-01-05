@@ -26,7 +26,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   leftBottomSubscription!: Subscription;
   rightBottomSubscription!: Subscription;
 
-
+  // public minDate:any = 5
   public inDay: number = 0;
   public inMonth: number = 0;
   public checkInMonth!:any
@@ -40,7 +40,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
   public totalPrice: number = 1;
   public differenceInTime!:any;
   public differenceInDays!:any;
-  public minDate:Number=10;
+  minDate = new Date();
+  checkOutMinDate!:Date;
 
   userCheckIn = '';
   userCheckOut = '';
@@ -55,8 +56,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.getOne(this.hotelId);
     this.checkInTop();
     this.checkOutBottom();
-  }
 
+  }
 
   checkIn(checkInDate: any) {
     this.date.setValue(checkInDate);
@@ -65,10 +66,13 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.serializedDate.setValue(checkOutDate);
   }
 
-
   checkInTop() {
     this.leftBottomSubscription = this.date.valueChanges.subscribe(
       (dateInfo: any) => {
+        while(isNaN(this.differenceInDays) || this.differenceInDays < 0){
+          this.differenceInDays = 0;
+          this.totalPrice = 0;
+        }
         this.userCheckIn = dateInfo;
         this.inDay = dateInfo.getDate();
         this.inMonth = dateInfo.getMonth();
@@ -76,10 +80,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.checkInMonth = new Date(this.inYear, this.inMonth, this.inDay);
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
-        if(this.differenceInDays > 0){
-          this.totalPrice = this.oneNightPrice *this.differenceInDays;
-        }
-       
+        this.totalPrice = this.oneNightPrice * this.differenceInDays;
+        this.checkOutMinDate = new Date(this.inYear,this.inMonth,this.inDay + 1)
       }
     );
   }
@@ -89,21 +91,27 @@ export class DetailsComponent implements OnInit, OnDestroy {
   checkOutBottom() {
     this.rightBottomSubscription = this.serializedDate.valueChanges.subscribe(
       (dateInfo: any) => {
+        while(isNaN(this.differenceInDays) || this.differenceInDays < 0){
+          this.differenceInDays = 0;
+          this.totalPrice = 0
+        
+     }
         this.userCheckOut = dateInfo;
         this.outDay = dateInfo.getDate();
         this.outMonth = dateInfo.getMonth() ;
         this.outYear = dateInfo.getFullYear();
-     
         this.checkOutMonth =  new Date(this.outYear, this.outMonth, this.outDay);
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
-        if(this.differenceInDays > 0){
-          this.totalPrice = this.oneNightPrice *this.differenceInDays;
-        }
+        this.totalPrice = this.oneNightPrice * this.differenceInDays;
+       
+        
       }
     );
   }
 
+
+  
   faStar = faStar;
   faHeart = faHeart;
   faFile = faFile;

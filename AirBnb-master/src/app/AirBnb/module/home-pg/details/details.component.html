@@ -99,14 +99,18 @@
         <div class="calendar-box">
           <aside class="left-calendar">
             <mat-card class="demo-inline-calendar-card">
+              <span>Check In</span>
               <mat-calendar
+              [minDate]="minDate"
               (selectedChange)="checkIn($event)" 
               [(selected)]="userCheckIn"></mat-calendar>
             </mat-card>
           </aside>
           <aside class="right-calendar">
               <mat-card class="demo-inline-calendar-card">
+                <span>Check Out</span>
                 <mat-calendar 
+                 [minDate]="checkOutMinDate"
                  (selectedChange)="checkOut($event)"
                 [(selected)]="userCheckOut"></mat-calendar>
               </mat-card>
@@ -157,7 +161,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Check In</mat-label>
         <input 
-      
+        [min]="minDate"
         matInput [matDatepicker]="picker1" 
         [formControl]="date">
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -168,7 +172,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Check Out</mat-label>
         <input 
-        
+        [min]="checkOutMinDate"
         matInput [matDatepicker]="picker2" 
         [formControl]="serializedDate">
         <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
