@@ -1,1 +1,160 @@
-<p>ordered works!</p>
+
+<app-header></app-header>
+
+<section>
+  <article class="col-md-12 d-flex justify-content-between">
+    <aside class="col-md-5 ">
+      <button class="back" (click)="goBack()"> < </button>
+        <h1>Confirm and pay</h1>
+        <br>
+        <br>
+        <h2><b>Your trip</b></h2>
+
+        <div class="trip col-md-12 d-flex justify-content-between" >
+          <div>
+            <p>Dates</p>
+            <p>Jan 4 - 11</p>
+            <p>Guests</p>
+            <p> 1 guest</p>
+          </div>
+          <div>
+            <span>Edit</span>
+            <br>
+            <br>
+            <br>
+            <span>Edit</span>
+          </div>
+        </div>
+   <hr>
+
+    
+
+<!-- aq barati bank-->
+<!-- <p>Pay with</p> -->
+
+<div class="add">
+  <h2><b>Required for your trip</b></h2>
+    <div class="md-3 d-flex justify-content-between" >
+      <h3>Phone number</h3>
+      <button (click)="addPhoneNumber()" type="button" class="btn btn-light">Add</button>
+    </div>
+
+    <div>
+      <h4>Add and confirm your phone number to get trip updates.</h4>
+    </div>
+</div>
+
+
+<hr>
+
+<div class="cancellation">
+  <h2><b>Cancellation policy</b></h2>
+  <a>This reservation is non-refundable.</a>
+  <span>Learn more</span>
+</div>
+<hr>
+
+<div class="small-information">
+  <small>By selecting the button below, I agree to the <span>Host's House Rules, Ground rules for guests, Airbnb's Rebooking and Refund Policy,</span> and that Airbnb can <span>charge my payment method</span> if I’m responsible for damage.</small>
+  <br>
+  <small>I also agree to the <span class="blue-text">updated Terms of Service, Payments Terms of Service,</span> and I acknowledge the <span class="blue-text">Privacy Policy.</span></small>
+  <br>
+  <br>
+  <button type="button" class="btn btn-primary btn-lg">Confirm and pay</button>
+</div>
+
+   </aside>
+
+
+<aside class="col-md-6">
+  <div class="card" style="width: 25rem;">
+    <div class="image d-flex justify-content-between">
+      <div>
+        <img src="https://a0.muscache.com/im/pictures/397ed026-16a9-4418-af19-1d2b31fe0aa8.jpg?im_w=1200" class="card-img-top" alt="Card image cap">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Entire rental unit</h5>
+        <h4>koka's apartment</h4>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Your booking is protected by <b><a style="color:#FF385C;">air</a>cover</b></li>
+        <!-- <h2><b>Price details</b></h2> -->
+      <div class="card-body">
+        <h2><b>Price details</b></h2>
+        <div class="d-flex justify-content-between">
+          <p>$90.00 x 3 nights</p>
+          <p>$270.00</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span>Service fee</span>
+          <p>$44.00</p>
+        </div>
+      </div>
+    </ul>
+    <div class="card-body d-flex justify-content-between">
+        <p><b>Total<span>(USD)</span></b></p>
+        <p>$314.00</p>
+    </div>
+  </div>
+  <br>
+    
+</aside>
+</article>
+</section>
+
+
+
+
+<br>
+<br>
+<br>
+
+<br>
+<br>
+
+
+
+<!-- add number modal -->
+<!-- <form  class="form" [formGroup]="addPhoneNumberForm" (ngSubmit)="addPhoneNumber()"></form> -->
+
+
+ <!-- <div class="form-floating mb-3">
+  <input  formControlName="Email" [ngClass]="{'is-invalid':submitted && addPhoneNumberForm.controls.number.errors}" type="number" class="form-control shadow-none" NgModel  id="number" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"   required>
+  <label for="email">Email address</label>
+  <div *ngIf="submitted && addPhoneNumberForm.controls.number.errors">
+
+<p>We'll text you a code to confirm your number. Standard message and data rates apply.</p>
+
+   </div>
+ </div>  -->
+
+ <!-- <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add phone number</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>We'll send you trip updates and a text to verify this number.</p>
+        <select>Country/Region</select>
+      </div>
+      <div>
+        <input  formControlNumber="number" [ngClass]="{'is-invalid':submitted && addPhoneNumberForm.controls.number.errors}" type="number" class="form-control shadow-none" NgModel  id="number"  required>
+        <label for="number">Phone number</label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+  <app-footer></app-footer>

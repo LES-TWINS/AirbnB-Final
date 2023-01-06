@@ -1,0 +1,130 @@
+
+section {
+    margin-top: 150px;
+    margin-left: 150px;
+
+   h1 {
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 32px !important;
+        line-height: 36px !important;
+        font-weight: 600 !important;
+    }
+    .back {
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    color:black;
+    font-size: 30px;
+    background-color: white;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(235, 235, 235);
+
+      }
+    }
+
+
+span{
+    color: #000000;
+    text-decoration: underline;
+    font-weight: bold; 
+    &:hover{
+      cursor: pointer;
+    }
+}
+
+
+
+.cancellation{
+    margin: 35px 0px;
+    width: 650px;
+
+}
+
+.add {
+    margin: 35px 0px;
+    width: 580px;
+
+
+}
+
+
+.blue-text {
+    color:blue;
+}
+
+
+
+.trip {
+    color: black;
+}
+
+.btn-light {
+    border-color: black;
+    border-width: 1px !important;
+    margin: 0px !important;
+    text-align: center !important;
+    height: 35px;
+    padding: 1px 15px !important;
+    width: 60px !important;
+}
+
+
+
+.btn-lg {
+    // background-color:  #FF385C !important;
+    cursor: pointer !important;
+    border: none !important;
+    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+    color: rgb(255, 255, 255) !important;
+    text-align: center !important;
+    height: 60px !important;
+    width: 200px !important;
+    transition: opacity 1.25s;
+    display: block;
+
+}
+
+.card {
+    img {
+        width: 140px;
+        height: 120px;
+        margin: 30px;
+        display: inline;
+    }
+    .card-body {
+        span{
+            font-weight: inherit;
+        }
+        h5 {
+            font-size: 12px !important;
+            margin-top: 14px !important;
+            margin-right: 60px !important;
+        }
+
+        h4 {
+            font-size: 14px !important;
+
+
+        }
+        
+
+
+        // display: flex;
+        // margin: 0px;
+        // display: inline-flex;
+    }
+    // h4 {
+    //     margin: 30px !important;
+
+    // }
+    
+
+    
+}
+
+}
