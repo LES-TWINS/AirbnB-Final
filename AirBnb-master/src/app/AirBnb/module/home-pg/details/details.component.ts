@@ -7,8 +7,8 @@ import {
   faFile,
   faBed,
   faBedPulse,
-  faChain,
-  faChainBroken
+  faChainBroken,
+  faArrowLeft
 } from '@fortawesome/free-solid-svg-icons';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -145,6 +145,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   faBed = faBed;
   faBedPulse = faBedPulse;
   faChainBroken = faChainBroken;
+
 
   public hotelId: string = '';
   public iconArray: any = [];
