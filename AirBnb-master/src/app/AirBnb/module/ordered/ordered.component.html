@@ -4,7 +4,7 @@
 <section>
   <article class="col-md-12 d-flex justify-content-between">
     <aside class="col-md-5 ">
-      <button class="back" (click)="goBack()"> < </button>
+      <button class="back" >  </button>
         <h1>Confirm and pay</h1>
         <br>
         <br>
@@ -36,7 +36,7 @@
   <h2><b>Required for your trip</b></h2>
     <div class="md-3 d-flex justify-content-between" >
       <h3>Phone number</h3>
-      <button (click)="addPhoneNumber()" type="button" class="btn btn-light">Add</button>
+      <button  type="button" class="btn btn-light">Add</button>
     </div>
 
     <div>
@@ -70,7 +70,7 @@
   <div class="card" style="width: 25rem;">
     <div class="image d-flex justify-content-between">
       <div>
-        <img src="https://a0.muscache.com/im/pictures/397ed026-16a9-4418-af19-1d2b31fe0aa8.jpg?im_w=1200" class="card-img-top" alt="Card image cap">
+        <img [src]="reservedHotel.img" class="card-img-top" alt="Card image cap">
       </div>
       <div class="card-body">
         <h5 class="card-title">Entire rental unit</h5>
@@ -84,8 +84,8 @@
       <div class="card-body">
         <h2><b>Price details</b></h2>
         <div class="d-flex justify-content-between">
-          <p>$90.00 x 3 nights</p>
-          <p>$270.00</p>
+          <p>${{reservedHotel.price}} x {{reservedHotel.night}} nights</p>
+          <p>${{reservedHotel.total}}</p>
         </div>
         <div class="d-flex justify-content-between">
           <span>Service fee</span>
