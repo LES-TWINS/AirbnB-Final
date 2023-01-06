@@ -1,61 +1,57 @@
 <div  class="modal custom fade"  id="login" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered " style="background-color: #fff;">
-      <div class="modal-content">
-         
+  <div class="modal-dialog modal-dialog-centered " style="background-color: #fff;">
+    <div class="modal-content">
+       
 
 <form  class="form" [formGroup]="signinForm" (ngSubmit)="signIn()">
 
-   
-  <h1 class="form__header">Sign in<span type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></span></h1>
-   <div class="wrapper">
-    <div class="form-floating mb-3">
-      <input formControlName="firstName" [ngClass]="{'is-invalid':submitted && signinForm.controls.firstName.errors}" type="text" class="form-control name shadow-none" id="name" placeholder="name">
-      <label for="name">First name</label>
-      <div *ngIf="submitted && signinForm.controls.firstName.errors">
-        <div class="popup " *ngIf="submitted && signinForm.controls.firstName.errors.required"></div>
-        <div class="popup popfirstwrong" *ngIf="submitted && signinForm.controls.firstName.errors.minlength"></div>
-
-      </div>
+ 
+<h1 class="form__header">Sign in<span type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></span></h1>
+ <div class="wrapper">
+  <div class="form-floating mb-3">
+    <input formControlName="Email" [ngClass]="{'is-invalid':submitted && signinForm.controls.Email.errors}" type="text" class="form-control name shadow-none" id="email" placeholder="email" >
+    <label for="email">Email</label>
+    <div *ngIf="submitted && signinForm.controls.Email.errors">
+      <div class="popup " *ngIf="submitted && signinForm.controls.Email.errors.required">Email is required</div>
+      <div class="popup popemailwrong" *ngIf="submitted && signinForm.controls.Email.errors.email">Enter correct email format</div>
     </div>
-   
+  </div>
+ 
 <p class="input__wrapper__text">Make sure it matches the name on your government ID.</p>
 </div>
 
 
-  <div class="wrapper">
-  
+<div class="wrapper">
 
-  <div class="form-floating mb-3">
-    <input  formControlName="Email" [ngClass]="{'is-invalid':submitted && signinForm.controls.Email.errors}" type="email" class="form-control shadow-none" NgModel  id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"   required>
-    <label for="email">Email address</label>
-    <div *ngIf="submitted && signinForm.controls.Email.errors">
-      <div class="popup popemail" *ngIf="submitted && signinForm.controls.Email.errors.required"></div>
-      <div class="popup popemailwrong" *ngIf="submitted && signinForm.controls.Email.errors.email">
-      
+
+<div class="form-floating mb-3">
+  <input  formControlName="Password" [ngClass]="{'is-invalid':submitted && signinForm.controls.Password.errors}" type="password" class="form-control shadow-none" NgModel placeholder="password" id="password" maxlength="8" required>
+  <label for="password">Password</label>
+  <div *ngIf="submitted && signinForm.controls.Password.errors">
+    <div class="popup "*ngIf="submitted && signinForm.controls.Password.errors.required">password is required</div>
+    <div class="popup popfirstwrong" *ngIf="submitted && signinForm.controls.Password.errors.minlength">should be at least 6 charecters</div>
+  </div>
+</div>
+
+
+<p class="input__wrapper__text">We'll email you trip confirmations and receipts. <a  data-bs-toggle="modal" href="#signup" class="signup">Signup</a></p>
+
+</div>
+
+<button type="submit"  class="btn form__button">Login</button>
+
+
+
+<div class="form__line">or</div>
+<button class="form__button"><span><img src="assets/images/facebook-logo.png" alt="" width="20px"> Continue with Facebook</span> </button>
+<button class="form__button"><span><img src="assets/images/google-logo.png" alt="" width="20px"> Continue with Google</span></button>
+
+</form>
 
     </div>
-    </div>
-   
   </div>
- 
-  
-  <p class="input__wrapper__text">We'll email you trip confirmations and receipts.</p>
+</div>
 
-  </div>
-
-  <button type="submit"  class="btn form__button">Login</button>
-
-
-  <div class="form__line">or</div>
-  <button class="form__button"><span><img src="assets/images/facebook-logo.png" alt="" width="20px"> Continue with Facebook</span> </button>
-  <button class="form__button"><span><img src="assets/images/google-logo.png" alt="" width="20px"> Continue with Google</span></button>
- 
-  </form>
-
-      </div>
-    </div>
-  </div>
- 
 
 
 

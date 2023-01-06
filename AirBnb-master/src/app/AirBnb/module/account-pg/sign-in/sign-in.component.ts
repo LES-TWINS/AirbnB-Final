@@ -16,30 +16,27 @@ export class SignInComponent implements OnInit {
  
   ngOnInit(): void {
     this.signinForm=this.formBuilder.group({
-       firstName:['',[Validators.required,Validators.minLength(3)]],
-       lastName:['',[Validators.required,Validators.minLength(3)]],
-       Birthdate:['',Validators.required],
-       Email:['',[Validators.required,Validators.email]]
-
+      Email:['',[Validators.required,Validators.email]],
+       Password:['',[Validators.required,Validators.minLength(6)]],
     })
   }
  
   signIn(){
    this.submitted=true
 
-   if(this.signinForm.invalid){
-    return
-   }
-alert("we are good")
+//    if(this.signinForm.invalid){
+//     return
+//    }
+// alert("we are good")
 
-    this.http.post<any>("http://localhost:3000/signUp",this.signinForm.value)
-    .subscribe(res=>{
-      alert("sing up good")
-      this.signinForm.reset()
+//     this.http.post<any>("http://localhost:3000/signUp",this.signinForm.value)
+//     .subscribe(res=>{
+//       alert("sing up good")
+//       this.signinForm.reset()
       
       
 
-    })
+//     })
     
   }
 }

@@ -33,7 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes:Routes = [
-  { path: '', redirectTo:"module" ,pathMatch: 'full'}
+  { path: '', redirectTo:"home-pg" ,pathMatch: 'full'}
 ]
 
 @NgModule({

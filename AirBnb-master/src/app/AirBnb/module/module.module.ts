@@ -44,20 +44,21 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
+import { HostPgComponent } from "./host-pg/host-pg.component";
 
 
 
 
 const routes:Routes = [
-    { path: '',  component:ModuleComponent,children:[  
+    { path: '',  component:HomePgComponent},
     { path: 'account-pg', component:AccountPgComponent},
     { path: 'home-pg', component:HomePgComponent},
     { path: 'ordered', component:OrderedComponent},
-    { path:'home-pg/details/:name/:id',component:DetailsComponent},
+    {   path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
+    { path:'details/:name/:id',component:DetailsComponent},
+    {  path:':icon',component:HomePgComponent},
     { path:'**',component:ErrorComponent},
-
   
-  ]},
     
   ]
 
@@ -108,6 +109,8 @@ const routes:Routes = [
         MatNativeDateModule,
         MatInputModule,
         MatSelectModule,
+        
+        
         
       
        
