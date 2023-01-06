@@ -110,16 +110,63 @@ span{
 
         h4 {
             font-size: 14px !important;
-
         }
-
-
-     
-
-    }
-        
+    }      
+}
 }
 
+article {
+    .modal-number {
+        margin-top: 100px;
 
+    }
 
+    .modal-title {
+        text-align: center;
+        margin-left: 150px;
+        }
+        
+        
+    .form-group {
+        color:  #FF385C !important;
+    
+    }
+        
+    .btn-close {
+        margin-bottom: 12px;
+    }
+    
+    .btn-primary {
+        background-color:  #FF385C !important;
+        border:none;
+    }
+    .form-control {
+        height: 50px;
+    }
+    .btn-light {
+        border: none;
+    
+    }    
+}
+
+.payment {
+    img {
+        height: 30px;
+        width: 30px;
+        margin:2px;
+    }
+
+}
+
+.paymentMethods{
+    .form-select {
+        font-size: 15px;
+    }
+    p {
+        font-size: 15px;
+    }
+
+}
+h2 {
+  font-size: 22px;
 }
