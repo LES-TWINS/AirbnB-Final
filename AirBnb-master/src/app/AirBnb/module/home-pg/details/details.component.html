@@ -27,10 +27,10 @@
       <div class="test">
         <div class="hotel-info">
           <h6>{{singleHotel.hostInformation.hostName}}</h6>
-          <span>2 guests</span>
+          <span>{{singleHotel.rooms[0].personsCount}} guests</span>
           <span>1 bedroom</span>
-          <span>1 bed</span>
-          <span>1 bath</span>
+          <span>{{singleHotel.rooms[0].bedsCount}} bed</span>
+          <span>{{singleHotel.rooms[0].bathRoomsCount}} bath</span>
         </div>
         <div class="hotel-circle-img">
           <img src="https://a0.muscache.com/im/pictures/user/a6ccc650-1184-4401-8f29-4a7aabfc140b.jpg?im_w=240" alt="">
@@ -191,7 +191,15 @@
       price:singleHotel.rooms[0].price,
       night:differenceInDays,
       total:totalPrice,
-      img:singleHotel.rooms[0].images[0]
+      img:singleHotel.rooms[0].images[0],
+      name:singleHotel.name,
+      type:singleHotel.typeOfPlace,
+      star:singleHotel.starCount,
+      inMonth:inMonth,
+      inDay:inDay,
+      outMonth:outMonth,
+      outDay:outDay,
+      guests:singleHotel.rooms[0].personsCount
     }"
     >Reserve</button>
   </div>

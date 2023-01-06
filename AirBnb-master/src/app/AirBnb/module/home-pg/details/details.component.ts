@@ -102,7 +102,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
      }
         this.userCheckOut = dateInfo;
         this.outDay = dateInfo.getDate();
-        this.outMonth = dateInfo.getMonth() ;
+        this.outMonth = dateInfo.getMonth();
         this.outYear = dateInfo.getFullYear();
         this.checkOutMonth =  new Date(this.outYear, this.outMonth, this.outDay);
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
