@@ -3,6 +3,8 @@ import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { faArrowLeft,
+faStar} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -15,6 +17,8 @@ export class OrderedComponent implements OnInit {
   addPhoneNumberForm!:FormGroup;
   submitted = false ;
   reservedHotel:any = [];
+  faArrowLeft = faArrowLeft;
+  faStar = faStar;
 
   constructor( private location: Location, 
     private formBuilder:FormBuilder,private http:HttpClient,
@@ -29,30 +33,12 @@ export class OrderedComponent implements OnInit {
       this.reservedHotel = info
       console.log(this.reservedHotel)
     })
-      // this.addPhoneNumberForm=this.formBuilder.group({
-      //  Country:['',[Validators.required,Validators]],
-      //  PhoneNumber:['',[Validators.required,Validators.minLength(9)]],
 
-      // })
- }
 
-//  addPhoneNumber(){
-//   this.submitted=true
 
-//   if(this.addPhoneNumberForm.invalid){
-//    return
-//   }
-// alert("good")
 
-//    this.http.post<any>("http://localhost:3000/ordered",this.addPhoneNumberForm.value)
-//    .subscribe(res=>{
-//      alert("add number good")
-//      this.addPhoneNumberForm.reset()
      
-     
-
-//    })
-
+  }
   
-// }
+
 }

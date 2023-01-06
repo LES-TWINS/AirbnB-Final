@@ -17,8 +17,8 @@ section {
     text-decoration: none;
     display: inline-block;
     border: none;
-    color:black;
-    font-size: 30px;
+    color: black;
+    font-size: 26px;
     background-color: white;
     &:hover{
         cursor: pointer;
@@ -93,7 +93,9 @@ span{
     img {
         width: 140px;
         height: 120px;
-        margin: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
         display: inline;
     }
     .card-body {
@@ -109,22 +111,15 @@ span{
         h4 {
             font-size: 14px !important;
 
-
         }
-        
 
 
-        // display: flex;
-        // margin: 0px;
-        // display: inline-flex;
+     
+
     }
-    // h4 {
-    //     margin: 30px !important;
-
-    // }
-    
-
-    
+        
 }
+
+
 
 }
