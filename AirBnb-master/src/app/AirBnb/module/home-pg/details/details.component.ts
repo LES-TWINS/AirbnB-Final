@@ -42,6 +42,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
   public totalPrice: number = 1;
   public differenceInTime!:any;
   public differenceInDays!:any;
+  public checkInMonthString:string = ''
+  public checkOutMonthString:string = ''
 
   minDate = new Date();
   checkOutMinDate!:Date;
@@ -76,6 +78,11 @@ export class DetailsComponent implements OnInit, OnDestroy {
           this.differenceInDays = 0;
           this.totalPrice = 0;
         }
+
+       
+
+
+
         this.userCheckIn = dateInfo;
         this.inDay = dateInfo.getDate();
         this.inMonth = dateInfo.getMonth();
@@ -84,11 +91,21 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
         this.totalPrice = this.oneNightPrice * this.differenceInDays;
-        this.checkOutMinDate = new Date(this.inYear,this.inMonth,this.inDay + 1)
+        this.checkOutMinDate = new Date(this.inYear,this.inMonth,this.inDay + 1);
+        const stringDate = new Date();
+        stringDate.setMonth(this.inMonth);
+        this.checkInMonthString = stringDate.toLocaleString('en-US', { month: 'long' });
+
         console.log(this.inDay,this.inMonth,this.inYear)
       }
     );
   }
+
+
+
+
+
+  
 
 
 
@@ -108,6 +125,9 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
         this.totalPrice = this.oneNightPrice * this.differenceInDays;
+        const stringDate = new Date();
+        stringDate.setMonth(this.outMonth);
+        this.checkOutMonthString = stringDate.toLocaleString('en-US', { month: 'long' });
         console.log(this.outDay,this.outMonth,this.outYear)
 
 
