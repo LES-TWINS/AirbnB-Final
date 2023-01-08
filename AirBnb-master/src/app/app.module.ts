@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { OrderedPaymentComponent } from './AirBnb/module/ordered/ordered-payment/ordered-payment.component';
 
 
 

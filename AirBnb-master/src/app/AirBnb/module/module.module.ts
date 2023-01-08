@@ -45,7 +45,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
-
+import { OrderedPaymentComponent } from './ordered/ordered-payment/ordered-payment.component';
 
 
 
@@ -58,6 +58,7 @@ const routes:Routes = [
     { path:'details/:name/:id',component:DetailsComponent},
     {  path:':icon',component:HomePgComponent},
     { path:'**',component:ErrorComponent},
+    { path: 'ordered-payment', component:OrderedPaymentComponent},
   
     
   ]
@@ -94,6 +95,7 @@ const routes:Routes = [
         PropertyTypeComponent,
         PriceRangeComponent,
         FilterContentFooterComponent,
+        OrderedPaymentComponent,
     ],
     imports: [
         RouterModule.forRoot(routes),
