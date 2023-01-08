@@ -45,20 +45,20 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
-import { OrderedPaymentComponent } from './ordered/ordered-payment/ordered-payment.component';
+import { OrderedPaymentComponent } from "./ordered/ordered-payment/ordered-payment.component";
+
 
 
 
 const routes:Routes = [
     { path: '',  component:HomePgComponent},
     { path: 'account-pg', component:AccountPgComponent},
-    { path: 'home-pg', component:HomePgComponent},
-    { path: 'ordered', component:OrderedComponent},
-    {   path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
+    { path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
     { path:'details/:name/:id',component:DetailsComponent},
-    {  path:':icon',component:HomePgComponent},
-    { path:'**',component:ErrorComponent},
-    { path: 'ordered-payment', component:OrderedPaymentComponent},
+    { path: 'ordered', component:OrderedComponent},
+    { path: 'ordered-payment/:id', component:OrderedPaymentComponent},
+    { path:'ordered-history/:id', component: OrderedHistoryComponent},
+    { path:'**',component:ErrorComponent}
   
     
   ]
@@ -96,6 +96,7 @@ const routes:Routes = [
         PriceRangeComponent,
         FilterContentFooterComponent,
         OrderedPaymentComponent,
+ 
     ],
     imports: [
         RouterModule.forRoot(routes),

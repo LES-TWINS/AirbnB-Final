@@ -115,7 +115,21 @@
   <small>I also agree to the <span class="blue-text">updated Terms of Service, Payments Terms of Service,</span> and I acknowledge the <span class="blue-text">Privacy Policy.</span></small>
   <br>
   <br>
-  <button type="button" class="btn btn-primary btn-lg">Confirm and pay</button>
+  <button 
+  routerLink="/ordered-payment/{{reservedHotel.id}}"
+
+  type="button" class="btn btn-primary btn-lg">Confirm and pay</button>
+
+
+<!-- დროებითი ღილაკი -->
+
+<button 
+routerLink="/ordered-history/{{reservedHotel.id}}"
+
+type="button" class="btn btn-primary btn-lg">დროებითი</button>
+
+
+
 </div>
 </aside>
 
