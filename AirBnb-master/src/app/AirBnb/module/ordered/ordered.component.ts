@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -19,6 +19,8 @@ export class OrderedComponent implements OnInit {
   faArrowLeft = faArrowLeft;
   faStar = faStar;
   showNumber = ''
+  userScroll: number = 0;
+  userScrollMax: number = 0;
 
 
   constructor(private formBuilder:FormBuilder,private http:HttpClient,
@@ -51,5 +53,17 @@ onSave(){
 
 }
   
+@HostListener('window:scroll', ['$event'])
+onWindowScroll() {
+  let pos = document.documentElement.scrollTop;
+  let max = document.documentElement.scrollHeight;
+
+  if (pos > max / 50) {
+    this.userScroll = pos;
+  }
+  if (pos < max / 50) {
+    this.userScroll = 0;
+  }
+}
 
 }

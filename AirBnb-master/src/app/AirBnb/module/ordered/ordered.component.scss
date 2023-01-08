@@ -170,3 +170,14 @@ article {
 h2 {
   font-size: 22px;
 }
+
+.not-fixed {
+    position: absolute;
+    top: 15%;
+    right: 24%;
+  }
+  .fixed {
+    position: fixed;
+    top: 120px;
+    right: 24%;
+  }

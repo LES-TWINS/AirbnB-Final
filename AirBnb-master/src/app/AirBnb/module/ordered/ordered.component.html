@@ -44,7 +44,7 @@
 
 <form class="paymentMethods">
 <div class="container p-0">
-  <div class="card px-4">
+  <div class="card px-4"  >
     <br>
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
         <option selected>Credit or debit card</option>
@@ -121,7 +121,7 @@
 
 <!-- card info -->
 <aside class="col-md-6">
-  <div class="card" style="width: 25rem;">
+  <div class="card" style="width: 25rem;" [ngClass]="userScroll ? 'fixed' : 'not-fixed'">
     <div class="image d-flex justify-content-between">
       <div>
         <img [src]="reservedHotel.img" class="card-img-top" alt="Card image cap">
