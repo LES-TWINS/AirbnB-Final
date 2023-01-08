@@ -110,14 +110,6 @@ const routes:Routes = [
         MatInputModule,
         MatSelectModule,
         
-        
-        
-      
-       
-
-        
-    
-   
     ]
 })
 

@@ -26,11 +26,14 @@
     <div class="container">
       <div class="test">
         <div class="hotel-info">
-          <h6>{{singleHotel.hostInformation.hostName}}</h6>
-          <span>{{singleHotel.rooms[0].personsCount}} guests</span>
+          <h6>{{singleHotel.hostInformation.hostName }}</h6>
+          <span>{{singleHotel.rooms[0].personsCount }} guests </span>
+          <span>·</span>
           <span>1 bedroom</span>
-          <span>{{singleHotel.rooms[0].bedsCount}} bed</span>
-          <span>{{singleHotel.rooms[0].bathRoomsCount}} bath</span>
+          <span>·</span>
+          <span>{{ singleHotel.rooms[0].bedsCount }} bed</span>
+          <span>·</span>
+          <span>{{ singleHotel.rooms[0].bathRoomsCount }} bath</span>
         </div>
         <div class="hotel-circle-img">
           <img src="https://a0.muscache.com/im/pictures/user/a6ccc650-1184-4401-8f29-4a7aabfc140b.jpg?im_w=240" alt="">

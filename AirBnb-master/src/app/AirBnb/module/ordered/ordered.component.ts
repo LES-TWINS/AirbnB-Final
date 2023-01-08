@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { faArrowLeft, faStar} from '@fortawesome/free-solid-svg-icons';
 
@@ -13,15 +13,15 @@ import { faArrowLeft, faStar} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./ordered.component.scss']
 })
 export class OrderedComponent implements OnInit {
-  addPhoneNumberForm!:FormGroup;
-  submitted = false ;
+   addPhoneNumberForm!:FormGroup;
+  submitted = true;
   reservedHotel:any = [];
   faArrowLeft = faArrowLeft;
   faStar = faStar;
-  showNumber = ''
   userScroll: number = 0;
   userScrollMax: number = 0;
-
+  phoneNumber:any = 'Add and confirm your phone number to get trip updates.';
+  // test!:FormControl;
 
   constructor(private formBuilder:FormBuilder,private http:HttpClient,
     private activatedRoute: ActivatedRoute ) { 
@@ -33,7 +33,8 @@ export class OrderedComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((info) =>{
       this.reservedHotel = info
-      console.log(this.reservedHotel)
+      console.log(this.reservedHotel);
+     
     })
 
     this.addPhoneNumberForm=this.formBuilder.group({
@@ -41,17 +42,11 @@ export class OrderedComponent implements OnInit {
     })
   }
 
-  addPhoneNumber(){
-   this.submitted=true;
-
-
-     
+  addPhoneNumber(mobileNumber:any){
+   this.phoneNumber = mobileNumber.form.controls.phoneNumber.value
+   this.submitted = !this.submitted;
   }
-onSave(){
-  this.showNumber
 
-
-}
   
 @HostListener('window:scroll', ['$event'])
 onWindowScroll() {

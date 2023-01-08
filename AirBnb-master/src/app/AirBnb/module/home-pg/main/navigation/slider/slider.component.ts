@@ -13,7 +13,8 @@ export class SliderComponent implements OnInit,OnDestroy {
   
   iconsArray:any=[];
   filteredIcon:any = [];
-  iconSub!: Subscription
+  iconSub!: Subscription;
+  
 
   constructor(private http:HttpService,private activatedRoute: ActivatedRoute,) {
      this.http.getAllFilterIcons().subscribe((icons)=>{
@@ -21,18 +22,22 @@ export class SliderComponent implements OnInit,OnDestroy {
       console.log(this.iconsArray)
 
       this.iconSub = this.activatedRoute.queryParams.subscribe((data) =>{
-     this.filteredIcon = data;
-     console.log(this.filteredIcon)
-   
+      this.filteredIcon = data;
+      console.log(this.filteredIcon);
+      this.getByCategory(this.activatedRoute.snapshot.queryParams['id']);
+  
       })
     })
    }
 
 
    ngOnInit(): void {
-  
+   
    }
-
+   getByCategory(id:string){
+   id = this.http.getByCategory(id);
+ 
+   }
   
   customOptions: OwlOptions = {
     loop: true,

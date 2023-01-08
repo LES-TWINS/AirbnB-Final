@@ -99,7 +99,7 @@
       </button>
     </div>
     <div>
-      <h4>Add and confirm your phone number to get trip updates.</h4>
+      <h4>{{phoneNumber}}</h4> 
     </div>
 </div>
 <hr>
@@ -156,12 +156,19 @@
   <br>
 </aside>
 </article>
+
+
 </section>
 
 <!-- Modal add phone number  -->
-<form  class="form" [formGroup]="addPhoneNumberForm" (ngSubmit)="addPhoneNumber()">
+<form  
+#mobileNumber="ngForm"
+class="form"  (ngSubmit)="addPhoneNumber(mobileNumber)">
 <article class="modal-number">
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div 
+  [ngClass]="submitted ? 'hide' : 'show'"
+  class="modal fade" 
+  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -177,30 +184,26 @@
               <option value="2">Germany</option>
               <option value="2">Greece</option>
             </select>
-             <input class="form-control form-control-lg" type="number" placeholder="Phone number">
+             <input 
+            ngModel
+            name="phoneNumber"
+             class="form-control form-control-lg" type="number" placeholder="Phone number">
           </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-          <button (click)="onSave()"
-          type="button" class="btn btn-primary">Save</button>
+          <button 
+          type="submit" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>
   </div>
   </div>
 </article>
+</form>
 
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 

@@ -26,6 +26,7 @@ import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -59,12 +60,7 @@ const routes:Routes = [
     FontAwesomeModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-   
-   
-  
-   
- 
-   
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

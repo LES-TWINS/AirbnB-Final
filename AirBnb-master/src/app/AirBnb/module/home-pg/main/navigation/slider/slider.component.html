@@ -1,30 +1,21 @@
+<owl-carousel-o [options]="customOptions" class="slider">
 
-  <owl-carousel-o [options]="customOptions" class="slider" >
-   
-    <ng-template 
-  
-    *ngFor="let icons of iconsArray"
-    carouselSlide >
-    
-      <div 
-      routerLink="/"
-      [queryParams]="{
+  <ng-template *ngFor="let icons of iconsArray" carouselSlide>
+
+    <div
+    (click)="getByCategory(icons.id)"
+    routerLink="/" [queryParams]="{
         id:icons.id,
         name:icons.name,
         icon:icons.icon
-      }"
-       
-      
-      class="slide">
+      }" class="slide">
 
-        <img 
+      <img [src]="icons.icon" alt="img 1" class="slider__slide__image">
+      <span class="slider__slide__name">{{icons.name}}</span>
 
-        [src]="icons.icon"  alt="img 1" class="slider__slide__image"> 
-        <span class="slider__slide__name">{{icons.name}}</span>
-       
-      </div>
+    </div>
 
-    </ng-template>  
-    
-   
-  </owl-carousel-o>
+  </ng-template>
+
+
+</owl-carousel-o>
