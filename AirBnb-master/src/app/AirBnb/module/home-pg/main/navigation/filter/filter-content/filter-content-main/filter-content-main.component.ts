@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/AirBnb/services/http.service';
 
 @Component({
   selector: 'app-filter-content-main',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterContentMainComponent implements OnInit {
 
-  constructor() { }
+  public amenities:any = []
+
+  constructor(private http:HttpService) { }
 
   ngOnInit(): void {
+    this.http.getAllAmenities().subscribe((amenities) =>{
+     this.amenities = amenities;
+     console.log(this.amenities)
+    })
   }
 
 }

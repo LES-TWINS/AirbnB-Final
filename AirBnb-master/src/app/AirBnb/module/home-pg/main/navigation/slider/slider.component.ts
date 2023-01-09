@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
+import { MainService } from '../../main.service';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -13,26 +14,30 @@ export class SliderComponent implements OnInit,OnDestroy {
   
   iconsArray:any=[];
   filteredIcon:any = [];
-  iconSub!: Subscription
+  iconSub!: Subscription;
+  
 
-  constructor(private http:HttpService,private activatedRoute: ActivatedRoute,) {
+  constructor(private http:HttpService,private activatedRoute: ActivatedRoute,private mainService:MainService) {
      this.http.getAllFilterIcons().subscribe((icons)=>{
       this.iconsArray = icons;
-      console.log(this.iconsArray)
+     // console.log(this.iconsArray)
 
       this.iconSub = this.activatedRoute.queryParams.subscribe((data) =>{
-     this.filteredIcon = data;
-     console.log(this.filteredIcon)
-   
+      this.filteredIcon = data;
       })
     })
    }
 
 
    ngOnInit(): void {
-  
+   
    }
-
+   getByCategory(id:string){
+    
+    this.http.getFilterByCategory(id).subscribe((data)=>{
+      this.mainService.cardFilter.next(data)
+    })
+   }
   
   customOptions: OwlOptions = {
     loop: true,

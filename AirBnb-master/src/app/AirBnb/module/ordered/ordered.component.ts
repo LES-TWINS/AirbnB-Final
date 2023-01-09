@@ -1,24 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { faArrowLeft, faStar} from '@fortawesome/free-solid-svg-icons';
 
 
 
 @Component({
   selector: 'app-ordered',
   templateUrl: './ordered.component.html',
-  styleUrls: ['./ordered.component.scss']
+  styleUrls: ['./ordered.component.scss'],
+  changeDetection:ChangeDetectionStrategy.Default
 })
 export class OrderedComponent implements OnInit {
-  addPhoneNumberForm!:FormGroup;
-  submitted = false ;
+   addPhoneNumberForm!:FormGroup;
+  submitted:boolean = false;
   reservedHotel:any = [];
-
-  constructor( private location: Location, 
-    private formBuilder:FormBuilder,private http:HttpClient,
-    private activatedRoute: ActivatedRoute ) { 
+  faArrowLeft = faArrowLeft;
+  faStar = faStar;
+  userScroll: number = 0;
+  userScrollMax: number = 0;
+  phoneNumber:any = 'Add and confirm your phone number to get trip updates.';
+ 
+  
+  // test!:FormControl;
+  @ViewChild('saveBtn') saveBtn!:ElementRef<any>
+  constructor(private formBuilder:FormBuilder,private http:HttpClient,
+    private activatedRoute: ActivatedRoute,public det:ChangeDetectorRef ) { 
   }
 
 
@@ -27,32 +35,38 @@ export class OrderedComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((info) =>{
       this.reservedHotel = info
-      console.log(this.reservedHotel)
+      console.log(this.reservedHotel);
+     
     })
-      // this.addPhoneNumberForm=this.formBuilder.group({
-      //  Country:['',[Validators.required,Validators]],
-      //  PhoneNumber:['',[Validators.required,Validators.minLength(9)]],
 
-      // })
- }
+    this.addPhoneNumberForm=this.formBuilder.group({
+      Number:['',[Validators.required,Validators.minLength(9)]],
+    })
+  }
 
-//  addPhoneNumber(){
-//   this.submitted=true
-
-//   if(this.addPhoneNumberForm.invalid){
-//    return
-//   }
-// alert("good")
-
-//    this.http.post<any>("http://localhost:3000/ordered",this.addPhoneNumberForm.value)
-//    .subscribe(res=>{
-//      alert("add number good")
-//      this.addPhoneNumberForm.reset()
-     
-     
-
-//    })
+  addPhoneNumber(mobileNumber:any){
+   this.phoneNumber = mobileNumber.form.controls.phoneNumber.value
+  
+   setTimeout(()=>{
+    this.saveBtn.nativeElement.setAttribute('data-bs-dismiss','modal');
+    this.det.detectChanges();
+   },300)
+    this.det.detectChanges();
+   
+  }
 
   
-// }
+@HostListener('window:scroll', ['$event'])
+onWindowScroll() {
+  let pos = document.documentElement.scrollTop;
+  let max = document.documentElement.scrollHeight;
+
+  if (pos > max / 50) {
+    this.userScroll = pos;
+  }
+  if (pos < max / 50) {
+    this.userScroll = 0;
+  }
+}
+
 }

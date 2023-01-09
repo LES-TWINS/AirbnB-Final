@@ -2,6 +2,7 @@
 section {
     margin-top: 150px;
     margin-left: 150px;
+    padding-bottom: 150px;
 
    h1 {
         display: inline-block;
@@ -17,8 +18,8 @@ section {
     text-decoration: none;
     display: inline-block;
     border: none;
-    color:black;
-    font-size: 30px;
+    color: black;
+    font-size: 26px;
     background-color: white;
     &:hover{
         cursor: pointer;
@@ -47,15 +48,13 @@ span{
 
 .add {
     margin: 35px 0px;
-    width: 580px;
-
-
+   
 }
-
 
 .blue-text {
     color:blue;
 }
+
 
 
 
@@ -93,7 +92,9 @@ span{
     img {
         width: 140px;
         height: 120px;
-        margin: 30px;
+        margin-left: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
         display: inline;
     }
     .card-body {
@@ -108,23 +109,76 @@ span{
 
         h4 {
             font-size: 14px !important;
+        }
+    }      
+}
+}
 
+article {
+    .modal-number {
+        margin-top: 100px;
 
+    }
+
+    .modal-title {
+        text-align: center;
+        margin-left: 150px;
         }
         
-
-
-        // display: flex;
-        // margin: 0px;
-        // display: inline-flex;
+        
+    .form-group {
+        color:  #FF385C !important;
+    
     }
-    // h4 {
-    //     margin: 30px !important;
-
-    // }
+        
+    .btn-close {
+        margin-bottom: 12px;
+    }
     
-
+    .btn-primary {
+        background-color:  #FF385C !important;
+        border:none;
+    }
+    .form-control {
+        height: 50px;
+    }
+    .btn-light {
+        border: none;
     
+    }    
 }
 
+.payment {
+    img {
+        height: 30px;
+        width: 30px;
+        margin:2px;
+    }
+
 }
+
+.paymentMethods{
+    .form-select {
+        font-size: 15px;
+    }
+    p {
+        font-size: 15px;
+    }
+
+}
+h2 {
+  font-size: 22px;
+}
+.hide{
+    display: none;
+}
+.not-fixed {
+    position: absolute;
+    top: 15%;
+    right: 24%;
+  }
+  .fixed {
+    position: fixed;
+    top: 120px;
+    right: 24%;
+  }

@@ -7,8 +7,8 @@ import {
   faFile,
   faBed,
   faBedPulse,
-  faChain,
-  faChainBroken
+  faChainBroken,
+  faArrowLeft
 } from '@fortawesome/free-solid-svg-icons';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -42,6 +42,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
   public totalPrice: number = 1;
   public differenceInTime!:any;
   public differenceInDays!:any;
+  public checkInMonthString:string = ''
+  public checkOutMonthString:string = ''
 
   minDate = new Date();
   checkOutMinDate!:Date;
@@ -76,6 +78,11 @@ export class DetailsComponent implements OnInit, OnDestroy {
           this.differenceInDays = 0;
           this.totalPrice = 0;
         }
+
+       
+
+
+
         this.userCheckIn = dateInfo;
         this.inDay = dateInfo.getDate();
         this.inMonth = dateInfo.getMonth();
@@ -84,11 +91,21 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
         this.totalPrice = this.oneNightPrice * this.differenceInDays;
-        this.checkOutMinDate = new Date(this.inYear,this.inMonth,this.inDay + 1)
+        this.checkOutMinDate = new Date(this.inYear,this.inMonth,this.inDay + 1);
+        const stringDate = new Date();
+        stringDate.setMonth(this.inMonth);
+        this.checkInMonthString = stringDate.toLocaleString('en-US', { month: 'long' });
+
         console.log(this.inDay,this.inMonth,this.inYear)
       }
     );
   }
+
+
+
+
+
+  
 
 
 
@@ -102,12 +119,15 @@ export class DetailsComponent implements OnInit, OnDestroy {
      }
         this.userCheckOut = dateInfo;
         this.outDay = dateInfo.getDate();
-        this.outMonth = dateInfo.getMonth() ;
+        this.outMonth = dateInfo.getMonth();
         this.outYear = dateInfo.getFullYear();
         this.checkOutMonth =  new Date(this.outYear, this.outMonth, this.outDay);
         this.differenceInTime = this.checkOutMonth - this.checkInMonth;
         this.differenceInDays = this.differenceInTime / (1000 * 3600 * 24);
         this.totalPrice = this.oneNightPrice * this.differenceInDays;
+        const stringDate = new Date();
+        stringDate.setMonth(this.outMonth);
+        this.checkOutMonthString = stringDate.toLocaleString('en-US', { month: 'long' });
         console.log(this.outDay,this.outMonth,this.outYear)
 
 
@@ -125,6 +145,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   faBed = faBed;
   faBedPulse = faBedPulse;
   faChainBroken = faChainBroken;
+
 
   public hotelId: string = '';
   public iconArray: any = [];

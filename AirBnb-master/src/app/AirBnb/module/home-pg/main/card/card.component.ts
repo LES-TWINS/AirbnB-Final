@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
+import { MainService } from '../main.service';
 
 
 @Component({
@@ -11,9 +12,12 @@ import { HttpService } from 'src/app/AirBnb/services/http.service';
 export class CardComponent implements OnInit {
 
   hotelsArray: any = [];
+  activatedRoute: any;
  
 
-  constructor(private router:Router, private http: HttpService) {
+  constructor(private router:Router, private http: HttpService,private mainService:MainService) {
+
+
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
       this.hotelsArray.forEach((hotel: any) => {
@@ -25,11 +29,14 @@ export class CardComponent implements OnInit {
         })
       });
       console.log(this.hotelsArray);
+     
     }))
   }
 
   ngOnInit(): void {
-
+     this.mainService.cardFilter.subscribe((data)=>{
+       this.hotelsArray = data
+     })
   }
 
 
