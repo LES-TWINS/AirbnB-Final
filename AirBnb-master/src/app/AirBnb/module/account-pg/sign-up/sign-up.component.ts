@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit,  } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/AirBnb/services/auth.service';
 
 
 
@@ -13,9 +15,11 @@ export class SignUpComponent implements OnInit {
 
  signupForm!:FormGroup;
  submitted=false 
+ Email!:string;
+ Password!:string
 
 
-  constructor(private formBuilder:FormBuilder,private http:HttpClient) { }
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
     this.signupForm=this.formBuilder.group({
@@ -27,19 +31,18 @@ export class SignUpComponent implements OnInit {
     })
   }
  
+
+
   signUp(){
-   this.submitted=true
+   this.submitted=true;
 
-  //  if(this.signupForm.invalid){
-  //   return
-  //  }
-// alert("we are good")
+//    this.auth.signUp(this.Email,this.Password);
+// this.Email="";
+// this.Password="";
 
-    // this.http.post<any>("http://localhost:3000/signUp",this.signupForm.value)
-    // .subscribe(res=>{
-    //   alert("sing up good")
-    //   this.signupForm.reset()
-    // })
     
   }
+
+
+
 }

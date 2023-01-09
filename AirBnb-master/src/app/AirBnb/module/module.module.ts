@@ -45,6 +45,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
+import { SignInGoogleComponent } from './account-pg/sign-in/sign-in-google/sign-in-google.component';
+import { SignInFacebookComponent } from './account-pg/sign-in/sign-in-facebook/sign-in-facebook.component';
 
 
 
@@ -94,6 +96,8 @@ const routes:Routes = [
         PropertyTypeComponent,
         PriceRangeComponent,
         FilterContentFooterComponent,
+        SignInGoogleComponent,
+        SignInFacebookComponent,
     ],
     imports: [
         RouterModule.forRoot(routes),
@@ -109,7 +113,6 @@ const routes:Routes = [
         MatNativeDateModule,
         MatInputModule,
         MatSelectModule,
-        
         
         
       
