@@ -31,6 +31,8 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+import { OrderedPaymentComponent } from './AirBnb/module/ordered/ordered-payment/ordered-payment.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -39,7 +41,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 
 const routes:Routes = [
-  { path: '', redirectTo:"home-pg" ,pathMatch: 'full'}
+  { path: '', redirectTo:"module" ,pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -57,6 +59,8 @@ const routes:Routes = [
     ModuleComponent,
     
   ],
+  providers: [],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -66,9 +70,10 @@ const routes:Routes = [
     FontAwesomeModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+    FormsModule
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideAuth(() => getAuth()),
+    // provideFirestore(() => getFirestore()),
 
   
    
@@ -77,7 +82,5 @@ const routes:Routes = [
  
    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }

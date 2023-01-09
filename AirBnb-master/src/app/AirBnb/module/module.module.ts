@@ -47,6 +47,7 @@ import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
 import { SignInGoogleComponent } from './account-pg/sign-in/sign-in-google/sign-in-google.component';
 import { SignInFacebookComponent } from './account-pg/sign-in/sign-in-facebook/sign-in-facebook.component';
+import { OrderedPaymentComponent } from "./ordered/ordered-payment/ordered-payment.component";
 
 
 
@@ -54,14 +55,13 @@ import { SignInFacebookComponent } from './account-pg/sign-in/sign-in-facebook/s
 const routes:Routes = [
     { path: '',  component:HomePgComponent},
     { path: 'account-pg', component:AccountPgComponent},
-    { path: 'home-pg', component:HomePgComponent},
-    { path: 'ordered', component:OrderedComponent},
-    {   path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
+    { path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
     { path:'details/:name/:id',component:DetailsComponent},
-    {  path:':icon',component:HomePgComponent},
-    { path:'**',component:ErrorComponent},
+    { path: 'ordered', component:OrderedComponent},
+    { path: 'ordered-payment/:id', component:OrderedPaymentComponent},
+    { path:'ordered-history/:id', component: OrderedHistoryComponent},
+    { path:'**',component:ErrorComponent}
   
-    
   ]
 
 @NgModule({
@@ -113,16 +113,12 @@ const routes:Routes = [
         MatNativeDateModule,
         MatInputModule,
         MatSelectModule,
-        
-        
-      
-       
 
-        
-    
+
    
     ]
 })
+
 
 export class ModuleModule{
 
