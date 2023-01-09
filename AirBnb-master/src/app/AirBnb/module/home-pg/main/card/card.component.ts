@@ -34,16 +34,9 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //  this.mainService.cardFilter.subscribe((data)=>{
-    //   this.hotelsArray = this.hotelsArray.filter((hotel:any)=>{
-    //        return hotel.categories.forEach((singleHotel:any)=>{
-    //             // return data == singleHotel.id
-    //             console.log(data,singleHotel.id);
-    //         })
-    //    })
-     
-    //   console.log(this.hotelsArray);
-    //  })
+     this.mainService.cardFilter.subscribe((data)=>{
+       this.hotelsArray = data
+     })
   }
 
 

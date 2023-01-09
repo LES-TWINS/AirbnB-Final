@@ -20,13 +20,10 @@ export class SliderComponent implements OnInit,OnDestroy {
   constructor(private http:HttpService,private activatedRoute: ActivatedRoute,private mainService:MainService) {
      this.http.getAllFilterIcons().subscribe((icons)=>{
       this.iconsArray = icons;
-      console.log(this.iconsArray)
+     // console.log(this.iconsArray)
 
       this.iconSub = this.activatedRoute.queryParams.subscribe((data) =>{
       this.filteredIcon = data;
-  
-      
-  
       })
     })
    }
@@ -36,7 +33,10 @@ export class SliderComponent implements OnInit,OnDestroy {
    
    }
    getByCategory(id:string){
-    this.mainService.cardFilter.next(id)
+    
+    this.http.getFilterByCategory(id).subscribe((data)=>{
+      this.mainService.cardFilter.next(data)
+    })
    }
   
   customOptions: OwlOptions = {

@@ -20,8 +20,8 @@ export class HttpService {
   getOne(id:string){
     return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel/' + id);
   }
-  getFilterByCategory(){
-    return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel/filter-by-category');
+  getFilterByCategory(id:string){
+    return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel/filter-by-category?ID=' + id);
   }
   getAllAmenities(){
     return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Category/get-all-menities');

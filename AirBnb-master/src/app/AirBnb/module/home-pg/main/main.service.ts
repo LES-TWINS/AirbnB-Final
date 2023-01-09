@@ -9,5 +9,4 @@ export class MainService{
 
     cardFilter:Subject<any> = new Subject();
 
-
 }
