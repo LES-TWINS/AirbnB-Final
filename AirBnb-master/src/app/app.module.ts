@@ -26,12 +26,7 @@ import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-// import { environment } from '../environments/environment';
-// import { provideAuth,getAuth } from '@angular/fire/auth';
-// import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-// import { AngularFireModule } from '@angular/fire/compat';
-// import { OrderedPaymentComponent } from './AirBnb/module/ordered/ordered-payment/ordered-payment.component';
+
 import { FormsModule } from '@angular/forms';
 
 
@@ -74,13 +69,6 @@ const routes:Routes = [
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAuth(() => getAuth()),
     // provideFirestore(() => getFirestore()),
-
-  
-   
-  
-   
- 
-   
   ],
 })
 export class AppModule { }
