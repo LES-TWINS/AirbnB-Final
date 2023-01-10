@@ -10,7 +10,7 @@ import { HttpService } from 'src/app/AirBnb/services/http.service';
 export class FilterContentMainComponent implements OnInit {
 
   numberArray:Number[] = [1,2,3,4,5,6,7,8]
- 
+  testing:any =''
 
   constructor(private http:HttpService) { }
 
@@ -18,9 +18,11 @@ export class FilterContentMainComponent implements OnInit {
    
   }
   filteredByCategory(data:NgForm){
-    console.log(data.value)
+   
+    data.value.typeOfPlace = this.testing;
+    console.log(data.value);
   }
   test(event: Event){
-   console.log((event.target as HTMLInputElement).value)
+  this.testing = ((event.target as HTMLInputElement).value)
   }
 }
