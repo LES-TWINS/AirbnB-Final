@@ -39,10 +39,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
-
-import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
-
 import { SignInGoogleComponent } from './account-pg/sign-in/sign-in-google/sign-in-google.component';
 import { SignInFacebookComponent } from './account-pg/sign-in/sign-in-facebook/sign-in-facebook.component';
 import { OrderedPaymentComponent } from "./ordered/ordered-payment/ordered-payment.component";
@@ -91,9 +88,6 @@ const routes:Routes = [
         FilterContentHeaderComponent,
         FilterContentMainComponent,
         FilterContentFooterComponent,
-
-        MapComponent,
-
         SignInGoogleComponent,
         SignInFacebookComponent,
 

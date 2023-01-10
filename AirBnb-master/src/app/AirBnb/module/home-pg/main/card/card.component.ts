@@ -2,6 +2,7 @@ import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular
 import { Route, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
+import { MapService } from '../../details/map.service';
 import { MainService } from '../main.service';
 
 
@@ -18,7 +19,9 @@ export class CardComponent implements OnInit,OnDestroy {
   cardFilter!:Subscription
 
 
-  constructor(private router:Router, private http: HttpService,private mainService:MainService) {
+  constructor(private router:Router, private http: HttpService,
+    private mapService:MapService,
+    private mainService:MainService) {
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
       this.mapMainImages(this.hotelsArray);
@@ -41,6 +44,12 @@ export class CardComponent implements OnInit,OnDestroy {
    this.cardFilter = this.mainService.cardFilter.subscribe((data)=>{
        this.hotelsArray = data;
        this.mapMainImages(this.hotelsArray);
+
+
+   
+ 
+         
+    
      })
   }
 
