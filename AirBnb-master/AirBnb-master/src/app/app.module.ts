@@ -26,13 +26,11 @@ import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-// import { environment } from '../environments/environment';
-// import { provideAuth,getAuth } from '@angular/fire/auth';
-// import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-// import { AngularFireModule } from '@angular/fire/compat';
-// import { OrderedPaymentComponent } from './AirBnb/module/ordered/ordered-payment/ordered-payment.component';
-import { FormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
 
 
@@ -41,7 +39,7 @@ import { FormsModule } from '@angular/forms';
 
 
 const routes:Routes = [
-  { path: '', redirectTo:"module" ,pathMatch: 'full'}
+  { path: '', redirectTo:"home-pg" ,pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -59,8 +57,6 @@ const routes:Routes = [
     ModuleComponent,
     
   ],
-  providers: [],
-  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -70,10 +66,9 @@ const routes:Routes = [
     FontAwesomeModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    FormsModule
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
-    // provideFirestore(() => getFirestore()),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
 
   
    
@@ -82,5 +77,7 @@ const routes:Routes = [
  
    
   ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

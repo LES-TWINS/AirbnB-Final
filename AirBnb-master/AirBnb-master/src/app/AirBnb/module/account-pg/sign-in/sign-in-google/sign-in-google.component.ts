@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { AuthService } from 'src/app/AirBnb/services/auth.service';
 
 @Component({
   selector: 'app-sign-in-google',
@@ -11,7 +12,7 @@ export class SignInGoogleComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  signInGoogle(){
-  
+  signingoogle(){
+    // this.auth.signInGoogle()
   }
 }

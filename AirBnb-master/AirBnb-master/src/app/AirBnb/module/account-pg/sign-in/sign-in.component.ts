@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/AirBnb/services/auth.service';
-
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+// import { AuthService } from 'src/app/AirBnb/services/auth.service';
+import { AuthenticationService } from 'src/app/AirBnb/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,7 +15,7 @@ export class SignInComponent implements OnInit {
   Email!:string;
   Password!:string
 
-  constructor(private formBuilder:FormBuilder,) { }
+  constructor(private formBuilder:FormBuilder,private authservice:AuthenticationService,public router:Router) { }
  
   ngOnInit(): void {
     this.signinForm=this.formBuilder.group({
@@ -24,11 +25,19 @@ export class SignInComponent implements OnInit {
   }
  
 
-  
 
-   logIn() {
+ signIn() {
  this.submitted=true
 
+ if(this.signinForm.invalid){
+  return
+ }
+
+const{Email,Password}=this.signinForm.value
+
+this.authservice.login(Email,Password).subscribe(()=>{
+  // return this.router.navigate('');
+})
 // this.auth.logIn(this.Email,this.Password);
 // this.Email="";
 // this.Password="";
