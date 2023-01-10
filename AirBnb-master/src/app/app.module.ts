@@ -26,6 +26,7 @@ import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 
@@ -34,8 +35,9 @@ import { AgmCoreModule } from '@agm/core';
 
 
 
+
 const routes:Routes = [
-  { path: '', redirectTo:"home-pg" ,pathMatch: 'full'}
+  { path: '', redirectTo:"module" ,pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -50,8 +52,11 @@ const routes:Routes = [
     CalculatorComponent,
     CalendarComponent,
     ModaleComponent,
-    ModuleComponent
+    ModuleComponent,
+    
   ],
+  providers: [],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -61,13 +66,18 @@ const routes:Routes = [
     FontAwesomeModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
     })
     
+
+    
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideAuth(() => getAuth()),
+    // provideFirestore(() => getFirestore()),
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }

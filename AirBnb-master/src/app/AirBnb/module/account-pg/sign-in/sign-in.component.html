@@ -1,9 +1,10 @@
 <div  class="modal custom fade"  id="login" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered " style="background-color: #fff;">
     <div class="modal-content">
-
-<form  class="form" [formGroup]="signinForm" (ngSubmit)="signIn()">      
        
+
+<form  class="form" [formGroup]="signinForm" (ngSubmit)="logIn()">
+
  
 <h1 class="form__header">Sign in<span type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></span></h1>
  <div class="wrapper">
@@ -37,13 +38,16 @@
 
 </div>
 
-<button type="submit"  class="btn form__button">Login</button>
+<button type="submit"  class="btn form__button"   >Login</button>
 
 
 
 <div class="form__line">or</div>
-<button class="form__button"><span><img src="assets/images/facebook-logo.png" alt="" width="20px"> Continue with Facebook</span> </button>
-<button class="form__button"><span><img src="assets/images/google-logo.png" alt="" width="20px"> Continue with Google</span></button>
+<app-sign-in-facebook></app-sign-in-facebook>
+<app-sign-in-google></app-sign-in-google>
+
+<!-- <button class="form__button"><span><img src="assets/images/facebook-logo.png" alt="" width="20px"> Continue with Facebook</span> </button>
+<button class="form__button"><span><img src="assets/images/google-logo.png" alt="" width="20px"> Continue with Google</span></button> -->
 
 </form>
 

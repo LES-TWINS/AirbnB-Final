@@ -1,0 +1,19 @@
+.form__button{
+    width: 503px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #222;
+    background-color: #fff;
+    font-size: 14px;
+    }
+    .form__button:hover{
+        background-color: #f7f7f7;
+    } 
+    img{
+        position: absolute;
+        left:22px;
+        top:14px;
+    }

@@ -28,12 +28,6 @@ import { ErrorComponent } from "./error/error.component";
 import { FilterContentComponent } from './home-pg/main/navigation/filter/filter-content/filter-content.component';
 import { FilterContentHeaderComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-header/filter-content-header.component';
 import { FilterContentMainComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/filter-content-main.component';
-import { TypeOfPlaceComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/type-of-place/type-of-place.component';
-import { RoomsAndBedsComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/rooms-and-beds/rooms-and-beds.component';
-import { AmenitesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/amenites/amenites.component';
-import { LanguagesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/languages/languages.component';
-import { PropertyTypeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/property-type/property-type.component';
-import { PriceRangeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/price-range/price-range.component';
 import { FilterContentFooterComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-footer/filter-content-footer.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -45,8 +39,14 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
+
 import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
+
+import { SignInGoogleComponent } from './account-pg/sign-in/sign-in-google/sign-in-google.component';
+import { SignInFacebookComponent } from './account-pg/sign-in/sign-in-facebook/sign-in-facebook.component';
+import { OrderedPaymentComponent } from "./ordered/ordered-payment/ordered-payment.component";
+
 
 
 
@@ -56,14 +56,13 @@ import { AgmCoreModule } from '@agm/core';
 const routes:Routes = [
     { path: '',  component:HomePgComponent},
     { path: 'account-pg', component:AccountPgComponent},
-    { path: 'home-pg', component:HomePgComponent},
-    { path: 'ordered', component:OrderedComponent},
-    {   path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
+    { path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
     { path:'details/:name/:id',component:DetailsComponent},
-    {  path:':icon',component:HomePgComponent},
-    { path:'**',component:ErrorComponent},
+    { path: 'ordered', component:OrderedComponent},
+    { path: 'ordered-payment/:id', component:OrderedPaymentComponent},
+    { path:'ordered-history/:id', component: OrderedHistoryComponent},
+    { path:'**',component:ErrorComponent}
   
-    
   ]
 
 @NgModule({
@@ -91,14 +90,13 @@ const routes:Routes = [
         FilterContentComponent,
         FilterContentHeaderComponent,
         FilterContentMainComponent,
-        TypeOfPlaceComponent,
-        RoomsAndBedsComponent,
-        AmenitesComponent,
-        LanguagesComponent,
-        PropertyTypeComponent,
-        PriceRangeComponent,
         FilterContentFooterComponent,
+
         MapComponent,
+
+        SignInGoogleComponent,
+        SignInFacebookComponent,
+
     ],
     imports: [
         RouterModule.forRoot(routes),
@@ -114,11 +112,16 @@ const routes:Routes = [
         MatNativeDateModule,
         MatInputModule,
         MatSelectModule,
+
         AgmCoreModule
         
         
+
+    
+
     ]
 })
+
 
 export class ModuleModule{
 

@@ -94,7 +94,10 @@
   <h2><b>Required for your trip</b></h2>
     <div class="col-md-12 d-flex justify-content-between" >
       <h3>Phone number</h3>
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" 
+      class="btn btn-light" 
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal">
         Add
       </button>
     </div>
@@ -115,7 +118,22 @@
   <small>I also agree to the <span class="blue-text">updated Terms of Service, Payments Terms of Service,</span> and I acknowledge the <span class="blue-text">Privacy Policy.</span></small>
   <br>
   <br>
-  <button type="button" class="btn btn-primary btn-lg">Confirm and pay</button>
+
+<button 
+routerLink="/ordered-payment/{{reservedHotel.id}}"
+
+type="button" class="btn btn-primary btn-lg">Confirm and pay</button>
+
+
+<!-- დროებითი ღილაკი -->
+
+<button 
+routerLink="/ordered-history/{{reservedHotel.id}}"
+
+type="button" class="btn btn-primary btn-lg">დროებითი</button>
+
+
+
 </div>
 </aside>
 
@@ -166,7 +184,7 @@
 class="form"  (ngSubmit)="addPhoneNumber(mobileNumber)">
 <article class="modal-number">
   <div 
-  [ngClass]="submitted ? 'hide' : 'show'"
+  
   class="modal fade" 
   id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -185,6 +203,7 @@ class="form"  (ngSubmit)="addPhoneNumber(mobileNumber)">
               <option value="2">Greece</option>
             </select>
              <input 
+
             ngModel
             name="phoneNumber"
              class="form-control form-control-lg" type="number" placeholder="Phone number">
@@ -192,7 +211,9 @@ class="form"  (ngSubmit)="addPhoneNumber(mobileNumber)">
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
           <button 
-          type="submit" class="btn btn-primary">Save</button>
+          type="submit" 
+          #saveBtn
+          class="btn btn-primary" data-bs-dismiss="modal" >Save</button>
         </div>
       </div>
     </div>
@@ -200,10 +221,6 @@ class="form"  (ngSubmit)="addPhoneNumber(mobileNumber)">
   </div>
 </article>
 </form>
-
-
-
-
 
 
 
