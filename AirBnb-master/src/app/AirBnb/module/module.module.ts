@@ -45,6 +45,10 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
+import { MapComponent } from './map/map.component';
+import { AgmCoreModule } from '@agm/core';
+
+
 
 
 
@@ -94,6 +98,7 @@ const routes:Routes = [
         PropertyTypeComponent,
         PriceRangeComponent,
         FilterContentFooterComponent,
+        MapComponent,
     ],
     imports: [
         RouterModule.forRoot(routes),
@@ -109,6 +114,8 @@ const routes:Routes = [
         MatNativeDateModule,
         MatInputModule,
         MatSelectModule,
+        AgmCoreModule
+        
         
     ]
 })
