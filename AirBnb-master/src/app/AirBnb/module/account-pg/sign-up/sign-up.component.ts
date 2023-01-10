@@ -1,6 +1,6 @@
 import { Component, OnInit,  } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+// import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/AirBnb/services/auth.service';
 

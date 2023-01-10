@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 
 @Injectable({
@@ -8,7 +8,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class AuthService {
   [x: string]: any;
 
-  constructor(private fireauth:AngularFireAuth) { }
+  constructor() { }
 
 
   // logIn(Email:string,Password:string){
