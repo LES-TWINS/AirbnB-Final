@@ -21,24 +21,26 @@ export class CardComponent implements OnInit,OnDestroy {
   constructor(private router:Router, private http: HttpService,private mainService:MainService) {
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
-      this.hotelsArray.forEach((hotel: any) => {
-        hotel.mainImages = hotel.mainImages.map((item: any, index: number) => {
-          return {
-            src: item,
-            isActive: index == 0
-          }
-        })
-      });
-      console.log(this.hotelsArray);
-     
+      this.mapMainImages(this.hotelsArray);
     }))
+  }
+
+  mapMainImages(hotelsArray:any[]){
+    this.hotelsArray.forEach((hotel: any) => {
+      hotel.mainImages = hotel.mainImages.map((item: any, index: number) => {
+        return {
+          src: item,
+          isActive: index == 0
+        }
+      })
+    });
   }
 
 
   ngOnInit(): void {
    this.cardFilter = this.mainService.cardFilter.subscribe((data)=>{
        this.hotelsArray = data;
-       console.log(this.hotelsArray)
+       this.mapMainImages(this.hotelsArray);
      })
   }
 
