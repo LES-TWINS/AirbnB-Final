@@ -1,7 +1,9 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 import { MainService } from '../main.service';
+
 
 
 @Component({
@@ -9,15 +11,14 @@ import { MainService } from '../main.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit,OnDestroy {
 
   hotelsArray: any = [];
   activatedRoute: any;
- 
+  cardFilter!:Subscription
+
 
   constructor(private router:Router, private http: HttpService,private mainService:MainService) {
-
-
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
       this.hotelsArray.forEach((hotel: any) => {
@@ -33,9 +34,11 @@ export class CardComponent implements OnInit {
     }))
   }
 
+
   ngOnInit(): void {
-     this.mainService.cardFilter.subscribe((data)=>{
-       this.hotelsArray = data
+   this.cardFilter = this.mainService.cardFilter.subscribe((data)=>{
+       this.hotelsArray = data;
+       console.log(this.hotelsArray)
      })
   }
 
@@ -61,5 +64,7 @@ export class CardComponent implements OnInit {
 
     }
   }
-
+  ngOnDestroy(): void {
+    this.cardFilter.unsubscribe();
+  }
 }

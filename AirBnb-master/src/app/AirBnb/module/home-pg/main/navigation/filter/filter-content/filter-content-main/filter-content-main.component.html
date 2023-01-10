@@ -1,40 +1,77 @@
 <main>
+  <form #modalForm="ngForm" (ngSubmit)="filteredByCategory(modalForm)">
 
     <section class="price">
         <h1 class="price__header">Price range</h1>
         <p class="price__text">The average nightly price is $91</p>
-        <div class="price__range">
+        <div 
+        ngModelGroup="price"
+        class="price__range">
         <div class="price__range__wrapper">
           <span class="price__range__wrapper--label">min price</span>
-          <input class="price__range__wrapper--input" type="number" value="10">
+          <input 
+          ngModel
+          class="price__range__wrapper--input" 
+          name="minPrice"
+          type="number" 
+          value="10">
         </div>
         <div class="line"></div>
         <div class="price__range__wrapper">
           <span class="price__range__wrapper--label">max price</span>
-          <input class="price__range__wrapper--input" type="number" value="200">
+          <input
+          ngModel
+          class="price__range__wrapper--input" 
+          name="maxPrice"
+          type="number" 
+          value="200">
         </div>
         </div>
         </section>
         
         <section class="typeOfPlace">
             <h1 class="typeOfPlace__header">Type of place</h1>
-             <div class="typeOfPlace__wrapper">
+             <div 
+             ngModelGroup="typeOfPlace"
+             class="typeOfPlace__wrapper">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                <input 
+                (change)="test($event)"
+                ngModel
+                name="type"
+                value="entire place" 
+                class="form-check-input" 
+                type="checkbox" 
+              
+                id="flexCheckDefault1">
                 <label class="form-check-label" for="flexCheckDefault1">
                  <h3 class="checkboxHeader">Entire place</h3>
                  <p class="checkboxText">A place all to yourself</p>
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                <input 
+                (change)="test($event)"
+                ngModel
+                name="type1"
+                value="shared room"
+                class="form-check-input" 
+                type="checkbox"  
+                id="flexCheckDefault2">
                 <label class="form-check-label" for="flexCheckDefault2">
                  <h3 class="checkboxHeader">Shared room</h3>
                  <p class="checkboxText">A sleeping space and common areas that may be shared with others</p>
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+                <input 
+                (change)="test($event)"
+                ngModel
+                name="type2"
+                value="private room"
+                class="form-check-input" 
+                type="checkbox"  
+                id="flexCheckDefault3">
                 <label class="form-check-label" for="flexCheckDefault3">
                  <h3 class="checkboxHeader">Private room</h3>
                  <p class="checkboxText">Your own room in a home or a hotel, plus some shared common spaces</p>
@@ -49,42 +86,33 @@
                 <h3 class="rooms__text">Bedrooms</h3>
                 <div class="rooms__Bedrooms">
                     <button class="rooms__Bedrooms__button">Any</button>
-                    <button class="rooms__Bedrooms__button">1</button>
-                    <button class="rooms__Bedrooms__button">2</button>
-                    <button class="rooms__Bedrooms__button">3</button>
-                    <button class="rooms__Bedrooms__button">4</button>
-                    <button class="rooms__Bedrooms__button">5</button>
-                    <button class="rooms__Bedrooms__button">6</button>
-                    <button class="rooms__Bedrooms__button">7</button>
-                    <button class="rooms__Bedrooms__button">8+</button>
+                    <button 
+                    (click)="test($event)"
+                    value="{{num}}"
+                    *ngFor="let num of numberArray"
+                    class="rooms__Bedrooms__button">{{num}}</button>
+
                 </div>
                 
                 <h3 class="rooms__text">Beds</h3>
                 <div class="rooms__Bedrooms" >
-                   
-                      
                     <button class="rooms__Bedrooms__button beds">Any</button>
-                    <button class="rooms__Bedrooms__button beds">1</button>
-                    <button class="rooms__Bedrooms__button beds">2</button>
-                    <button class="rooms__Bedrooms__button beds">3</button>
-                    <button class="rooms__Bedrooms__button beds">4</button>
-                    <button class="rooms__Bedrooms__button beds">5</button>
-                    <button class="rooms__Bedrooms__button beds">6</button>
-                    <button class="rooms__Bedrooms__button beds">7</button>
-                    <button class="rooms__Bedrooms__button beds">8+</button>
+                    <button 
+                    *ngFor="let num of numberArray"
+                    value="{{num}}"
+                    (click)="test($event)"
+                    class="rooms__Bedrooms__button beds">{{num}}</button>
                 </div>
                 
                 <h3 class="rooms__text">Bathrooms</h3>
                 <div class="rooms__Bedrooms">
                     <button class="rooms__Bedrooms__button bathrooms">Any</button>
-                    <button class="rooms__Bedrooms__button bathrooms">1</button>
-                    <button class="rooms__Bedrooms__button bathrooms">2</button>
-                    <button class="rooms__Bedrooms__button bathrooms">3</button>
-                    <button class="rooms__Bedrooms__button bathrooms">4</button>
-                    <button class="rooms__Bedrooms__button bathrooms">5</button>
-                    <button class="rooms__Bedrooms__button bathrooms">6</button>
-                    <button class="rooms__Bedrooms__button bathrooms">7</button>
-                    <button class="rooms__Bedrooms__button bathrooms">8+</button>
+                    <button 
+                    *ngFor="let num of numberArray"
+                    
+                    value="{{num}}"
+                    (click)="test($event)"
+                    class="rooms__Bedrooms__button bathrooms">{{num}}</button>
                 </div>
                   </section>
                  
@@ -292,19 +320,12 @@
        
         
           </section>
-    
-    
-    
-    
-    
-    
-
-
-<!-- <app-price-range></app-price-range> -->
-<!-- <app-type-of-place></app-type-of-place> -->
-<!-- <app-rooms-and-beds></app-rooms-and-beds> -->
-<!-- <app-property-type></app-property-type> -->
-
-<!-- <app-amenites></app-amenites> -->
-<!-- <app-languages></app-languages> -->
+          <footer class="filter__footer">
+            <div class="filter__footer__wrapper">
+                <button 
+                type="submit"
+                class="filter__footer__wrapper--button">Show 1,000+homes</button>
+            </div>
+        </footer>
+        </form>
 </main>
