@@ -16,20 +16,21 @@ article {
         grid-template-columns: 1fr 1fr 1fr;
         column-gap:5px;
         border-radius: 12px;
+
     }
            
     img {
-        // max-width: 100%;
-        // max-height:100%;
-        // margin-left: 400px;
+        margin-left: 230px;
         width:900px;
-        // height: 286px;
+        height: 298px;
         object-fit:cover;
-
-         
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
+
     .card-body {
         margin: 20px;
+        // margin-left:230px;
     }
 
     .btn-primary {
@@ -52,12 +53,11 @@ article {
         width: 100px;
         margin-right: 50px;
         display: inline;
+        border-radius: 12px;
     }
     .info {
-        // margin-left: 170px;
-        // font-size: 12px !important;
-        // margin-top: 14px !important;
-        // margin-right: 60px !important;
+        font-size: 12px !important;
+        margin-right: 100px !important;
         
     }
  }
