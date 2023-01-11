@@ -10,19 +10,51 @@ import { HttpService } from 'src/app/AirBnb/services/http.service';
 export class FilterContentMainComponent implements OnInit {
 
   numberArray:Number[] = [1,2,3,4,5,6,7,8]
-  testing:any =''
+  testing:any = [];
+  roomsAndBedrooms:any = [];
+  typeOfPlace = {
+    type:'',
+    type1:'',
+    type2:''
+
+  }
+
 
   constructor(private http:HttpService) { }
 
   ngOnInit(): void {
-   
   }
+  
   filteredByCategory(data:NgForm){
-   
-    data.value.typeOfPlace = this.testing;
+    data.value.typeOfPlace = this.testing
+    data.value.roomsAndBeds = this.roomsAndBedrooms;
     console.log(data.value);
   }
+
+  getCheckboxValue(event:any,arrayQue:any){
+    const arrayName = arrayQue === 0 ?  this.testing : arrayQue === 1 ? this.testing : this.testing
+    if((event.target as HTMLInputElement).checked){
+      if(arrayName.length === 0){
+       arrayName.push((event.target as HTMLInputElement).value);
+      }
+          if(!arrayName.includes((event.target as HTMLInputElement).value)) {
+           arrayName.push((event.target as HTMLInputElement).value);
+          }
+     }
+     else{
+      arrayName.splice(arrayName.indexOf((event.target as HTMLInputElement).value),1);
+     }
+      console.log(this.testing)
+  }
+
   test(event: Event){
-  this.testing = ((event.target as HTMLInputElement).value)
+    this.getCheckboxValue(event,0)
+    
+  }
+  test1(event: Event){
+    this.getCheckboxValue(event,1)
+  }
+  roomsAndBeds(event: Event){
+    this.roomsAndBedrooms.push ((event.target as HTMLInputElement).value)
   }
 }
