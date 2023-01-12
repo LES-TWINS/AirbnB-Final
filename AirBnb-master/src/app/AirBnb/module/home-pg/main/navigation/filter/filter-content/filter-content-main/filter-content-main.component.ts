@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class FilterContentMainComponent implements OnInit {
   numberArray:Number[] = [1,2,3,4,5,6,7,8]
   testing:any = [];
   roomsAndBedrooms:any = [];
+  some:any;
+  te:any
   typeOfPlace = {
     type:'',
     type1:'',
@@ -20,7 +23,7 @@ export class FilterContentMainComponent implements OnInit {
   }
 
 
-  constructor(private http:HttpService) { }
+  constructor(private http:HttpService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +32,8 @@ export class FilterContentMainComponent implements OnInit {
     data.value.typeOfPlace = this.testing
     data.value.roomsAndBeds = this.roomsAndBedrooms;
     console.log(data.value);
+    this.some = data.value;
+
   }
 
   getCheckboxValue(event:any,arrayQue:any){
@@ -56,5 +61,15 @@ export class FilterContentMainComponent implements OnInit {
   }
   roomsAndBeds(event: Event){
     this.roomsAndBedrooms.push ((event.target as HTMLInputElement).value)
+  }
+  filter(){
+    // this.te = this.some
+    //  this.router.navigate(
+    //    ['/'],
+    //    { queryParams:
+    //    { price:this.some.price.minPrice}
+       
+    //   }
+    //  )
   }
 }

@@ -128,7 +128,9 @@
              
 <section class="property">
     <h2 class="property__header">Property types</h2>
-       <div class="property__wrapper">
+       <div 
+
+       class="property__wrapper">
            <div class="property__wrapper__type">
              <img src="/assets/images/house.png" alt="" class="property__wrapper__type--image">
 
@@ -161,6 +163,8 @@
     <h2 class="Amenities__header ">Amenities</h2>
 
 
+
+   
     <h3 class="Amenities__text">Essentials</h3>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="wifi">
@@ -223,7 +227,7 @@
          <h3 class="checkboxHeader">Iron</h3>
         </label>
       </div>
-   
+
 
 
       <h3 class="Amenities__text">Features</h3>
@@ -333,7 +337,9 @@
           <footer class="filter__footer">
             <div class="filter__footer__wrapper">
                 <button 
+                (click)="filter()"
                 type="submit"
+                aria-label="close"
                 class="filter__footer__wrapper--button">Show 1,000+homes</button>
             </div>
         </footer>
