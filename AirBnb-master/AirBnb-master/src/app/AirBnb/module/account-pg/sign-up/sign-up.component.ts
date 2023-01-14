@@ -1,7 +1,7 @@
 import { Component, OnInit,  } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-import { FormGroup,FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/AirBnb/services/authentication.service';
 import { Router } from '@angular/router';
 
@@ -16,15 +16,15 @@ export class SignUpComponent implements OnInit {
  submitted=false 
 //  Email!:string;
 //  Password!:string
- test:any
+
 
   constructor(private formBuilder:FormBuilder,private authservice:AuthenticationService,public router:Router) { }
 
   ngOnInit(): void {
     this.signupForm=this.formBuilder.group({
-      name:['',[Validators.required,Validators.minLength(5)]],
-      password:['',[Validators.required,Validators.minLength(6)]],
-      // birthdate:['',Validators.required],
+      Name:['',[Validators.required,Validators.minLength(5)]],
+      Password:['',[Validators.required,Validators.minLength(6)]],
+      Birthdate:['',Validators.required],
       email:['',[Validators.required,Validators.email]]
 
     })
@@ -42,19 +42,13 @@ get password(){
 }
 
 
-  signUp(data:NgForm){
+  signUp(){
    this.submitted=true;
-  this.test=data.value
-// if(this.signupForm.invalid){}
 
-const{name,password,email}=this.test
-// console.log(email)
-// console.log(Name)
-// console.log(Password)
+if(this.signupForm.invalid){}
 
-
-
-this.authservice.signup(name,password,email).pipe(
+const{Name,email,Password}=this.signupForm.value
+this.authservice.signup(Name,email,Password).pipe(
   
 ).subscribe(()=>{
   this.router.navigate(["home-pg"])

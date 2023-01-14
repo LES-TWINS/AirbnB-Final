@@ -3,32 +3,32 @@
     <div class="modal-content">
        
 
-<form  class="form" #modalForm="ngForm" (ngSubmit)="signUp(modalForm)">
+<form  class="form" [formGroup]="signupForm" (ngSubmit)="signUp()">
 
  
 <h1 class="form__header">Sign up<span type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></span></h1>
  <div class="wrapper">
   <div class="form-floating mb-3">
-    <input ngModel name="name" [ngClass]="{'is-invalid':submitted && signupForm.controls.name.errors}" type="text" class="form-control name shadow-none" id="name1" placeholder="name" maxlength="10">
+    <input formControlName="Name" [ngClass]="{'is-invalid':submitted && signupForm.controls.Name.errors}" type="text" class="form-control name shadow-none" id="name1" placeholder="name" maxlength="10">
     <label for="name1">First name</label>
-    <!-- <div *ngIf="submitted && signupForm.controls.name.errors">
-      <div class="popup " *ngIf="submitted && signupForm.controls.name.errors.required">Name is required</div>
-      <div class="popup " *ngIf="submitted && signupForm.controls.name.errors.minlength">Name should be at least 6 charecters</div>
+    <div *ngIf="submitted && signupForm.controls.Name.errors">
+      <div class="popup " *ngIf="submitted && signupForm.controls.Name.errors.required">Name is required</div>
+      <div class="popup " *ngIf="submitted && signupForm.controls.Name.errors.minlength">Name should be at least 6 charecters</div>
 
-    </div> -->
+    </div>
   </div>
 
   <div class="form-floating mb-3">
-    <input  ngModel name="password" [ngClass]="{'is-invalid':submitted && signupForm.controls.password.errors}" type="password" class="form-control shadow-none password"  placeholder="password" id="password1" maxlength="8" required>
+    <input  formControlName="Password" [ngClass]="{'is-invalid':submitted && signupForm.controls.Password.errors}" type="password" class="form-control shadow-none password" NgModel placeholder="password" id="password1" maxlength="8" required>
     <label for="password1">Password</label>
-    <!-- <div *ngIf="submitted && signupForm.controls.password.errors">
-      <div class="popup "*ngIf="submitted && signupForm.controls.password.errors.required">password is required</div>
-      <div class="popup " *ngIf="submitted && signupForm.controls.password.errors.minlength">should be at least 6 charecters</div>
-    </div> -->
+    <div *ngIf="submitted && signupForm.controls.Password.errors">
+      <div class="popup "*ngIf="submitted && signupForm.controls.Password.errors.required">password is required</div>
+      <div class="popup " *ngIf="submitted && signupForm.controls.Password.errors.minlength">should be at least 6 charecters</div>
+    </div>
   </div>
 <p class="input__wrapper__text">Make sure it matches the name on your government ID.</p>
 </div>
-<!-- 
+
 <div class="wrapper">
 <div class="form-floating mb-3" >
 <input formControlName="Birthdate" [ngClass]="{'is-invalid':submitted && signupForm.controls.Birthdate.errors}" type="date" class="form-control shadow-none" id="date" placeholder="date"  min="1900-01-01" max="2004-12-31" >
@@ -39,21 +39,21 @@
 </div>
 </div>
 <p class="input__wrapper__text">To sign up, you need to be at least 18. Your birthday won’t be shared with other people who use Airbnb.</p>
-</div> -->
+</div>
 
 
 <div class="wrapper">
 
 <div class="form-floating mb-3">
-  <input  ngModel name="email" [ngClass]="{'is-invalid':submitted && signupForm.controls.email.errors}" type="email" class="form-control shadow-none"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  id="email" placeholder="name@example.com"   required>
+  <input  formControlName="email" [ngClass]="{'is-invalid':submitted && signupForm.controls.email.errors}" type="email" class="form-control shadow-none" NgModel  id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"   required>
   <label for="email">Email address</label>
-  <!-- <div *ngIf="submitted && signupForm.controls.email.errors">
+  <div *ngIf="submitted && signupForm.controls.email.errors">
     <div class="popup " *ngIf="submitted && signupForm.controls.email.errors.required">Email is required</div>
     <div class="popup " *ngIf="submitted && signupForm.controls.email.errors.email">
     
 
   </div> 
-  </div> -->
+  </div>
  
 </div>
 
