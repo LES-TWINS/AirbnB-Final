@@ -1,3 +1,8 @@
 img {
   width: 102px;
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer!important;
 }

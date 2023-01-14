@@ -13,6 +13,8 @@ import {
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { Subscription } from 'rxjs';
+import { MapService } from './map.service';
+
 
 
 @Component({
@@ -53,12 +55,14 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private http: HttpService
+    private http: HttpService,
+    private map:MapService
   ) {}
 
   ngOnInit(): void {
     this.hotelId = this.activatedRoute.snapshot.params['id'];
     this.getOne(this.hotelId);
+    
     this.checkInTop();
     this.checkOutBottom();
 
@@ -153,13 +157,21 @@ export class DetailsComponent implements OnInit, OnDestroy {
   singleHotel: any = [];
   userScroll: number = 0;
   userScrollMax: number = 0;
+  lat:number = 0
+  long:number = 0
+  zoom = 12;
 
   getOne(id: string) {
     this.http.getOne(id).subscribe((data) => {
       this.singleHotel = data;
+        this.map.location.next(data);
       this.oneNightPrice = this.singleHotel.rooms[0].price;
       this.totalPrice = this.oneNightPrice;
-      console.log(this.singleHotel);
+      this.singleHotel = data;
+      this.lat =  this.singleHotel.latitude;
+      this.long = this.singleHotel.longitude;
+        console.log(this.lat)
+        console.log(this.long)
     });
   }
 
@@ -168,11 +180,14 @@ export class DetailsComponent implements OnInit, OnDestroy {
     let pos = document.documentElement.scrollTop;
     let max = document.documentElement.scrollHeight;
 
-    if (pos > max / 5) {
+    if (pos > max / 70) {
       this.userScroll = pos;
     }
     if (pos < max / 5) {
       this.userScroll = 0;
+    }
+    if(pos > max / 2){
+      this.userScroll = pos
     }
   }
 

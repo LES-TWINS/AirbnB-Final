@@ -120,7 +120,19 @@
           </aside>
         </div>
       </div>
-      <hr>
+      <hr class="long-hr">
+
+      <div class="map-container">
+        <h4>Where you’ll be</h4>
+        <agm-map [latitude]='lat' [longitude]='long' [zoom]='zoom'>
+          <agm-marker  [latitude]="lat" [longitude]="long">
+            <agm-info-window #infoWindow>
+              <!-- {{ marker.label }} -->
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
+      </div>
+      <hr class="long-hr">
 
       <div class="host-box">
         <div class="host-info">
@@ -144,7 +156,7 @@
           </div>
       </div>
       <hr>
-  
+
      
     </div>
   </section>

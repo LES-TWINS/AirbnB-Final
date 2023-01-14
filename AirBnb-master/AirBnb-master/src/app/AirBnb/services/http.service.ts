@@ -23,6 +23,9 @@ export class HttpService {
   getFilterByCategory(id:string){
     return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel/filter-by-category?ID=' + id);
   }
+  getFilterCategory(id:string){
+    return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel/filter-by-category?ID=' + id);
+  }
   getAllAmenities(){
     return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Category/get-all-menities');
   }
