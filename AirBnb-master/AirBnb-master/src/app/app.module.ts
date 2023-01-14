@@ -1,5 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './AirBnb/UI/table/table.component';
@@ -24,7 +26,6 @@ import { ModuleModule } from './AirBnb/module/module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD:AirBnb-master/AirBnb-master/src/app/app.module.ts
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -35,10 +36,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 
 
-=======
-import { FormsModule } from '@angular/forms';
-import { AgmCoreModule } from '@agm/core';
->>>>>>> 13bfbd27d6ebd71e9a676556592e4f1e5ca884cd:AirBnb-master/src/app/app.module.ts
 
 
 const routes:Routes = [
@@ -69,24 +66,16 @@ const routes:Routes = [
     FontAwesomeModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD:AirBnb-master/AirBnb-master/src/app/app.module.ts
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-=======
 
-    FormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
-    })
-    
-
-    
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
-    // provideFirestore(() => getFirestore()),
->>>>>>> 13bfbd27d6ebd71e9a676556592e4f1e5ca884cd:AirBnb-master/src/app/app.module.ts
-
+  
+   
+  
+   
+ 
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

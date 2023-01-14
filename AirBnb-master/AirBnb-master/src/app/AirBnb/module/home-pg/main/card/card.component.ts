@@ -1,10 +1,7 @@
-import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Route, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
-import { MapService } from '../../details/map.service';
 import { MainService } from '../main.service';
-
 
 
 @Component({
@@ -12,44 +9,33 @@ import { MainService } from '../main.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit,OnDestroy {
+export class CardComponent implements OnInit {
 
   hotelsArray: any = [];
   activatedRoute: any;
-  cardFilter!:Subscription
+ 
+
+  constructor(private router:Router, private http: HttpService,private mainService:MainService) {
 
 
-  constructor(private router:Router, private http: HttpService,
-    private mapService:MapService,
-    private mainService:MainService) {
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
-      this.mapMainImages(this.hotelsArray);
+      this.hotelsArray.forEach((hotel: any) => {
+        hotel.mainImages = hotel.mainImages.map((item: any, index: number) => {
+          return {
+            src: item,
+            isActive: index == 0
+          }
+        })
+      });
+      console.log(this.hotelsArray);
+     
     }))
   }
 
-  mapMainImages(hotelsArray:any[]){
-    this.hotelsArray.forEach((hotel: any) => {
-      hotel.mainImages = hotel.mainImages.map((item: any, index: number) => {
-        return {
-          src: item,
-          isActive: index == 0
-        }
-      })
-    });
-  }
-
-
   ngOnInit(): void {
-   this.cardFilter = this.mainService.cardFilter.subscribe((data)=>{
-       this.hotelsArray = data;
-       this.mapMainImages(this.hotelsArray);
-
-
-   
- 
-         
-    
+     this.mainService.cardFilter.subscribe((data)=>{
+       this.hotelsArray = data
      })
   }
 
@@ -75,7 +61,5 @@ export class CardComponent implements OnInit,OnDestroy {
 
     }
   }
-  ngOnDestroy(): void {
-    this.cardFilter.unsubscribe();
-  }
+
 }

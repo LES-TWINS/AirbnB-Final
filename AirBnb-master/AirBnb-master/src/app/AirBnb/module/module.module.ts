@@ -28,6 +28,12 @@ import { ErrorComponent } from "./error/error.component";
 import { FilterContentComponent } from './home-pg/main/navigation/filter/filter-content/filter-content.component';
 import { FilterContentHeaderComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-header/filter-content-header.component';
 import { FilterContentMainComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/filter-content-main.component';
+import { TypeOfPlaceComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/type-of-place/type-of-place.component';
+import { RoomsAndBedsComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/rooms-and-beds/rooms-and-beds.component';
+import { AmenitesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/amenites/amenites.component';
+import { LanguagesComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/languages/languages.component';
+import { PropertyTypeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/property-type/property-type.component';
+import { PriceRangeComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-main/price-range/price-range.component';
 import { FilterContentFooterComponent } from './home-pg/main/navigation/filter/filter-content/filter-content-footer/filter-content-footer.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -39,12 +45,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { NgScrolltopModule } from 'ng-scrolltop';
 import { HostPgComponent } from "./host-pg/host-pg.component";
-import { AgmCoreModule } from '@agm/core';
 import { SignInGoogleComponent } from './account-pg/sign-in/sign-in-google/sign-in-google.component';
 import { SignInFacebookComponent } from './account-pg/sign-in/sign-in-facebook/sign-in-facebook.component';
-
-
-
 
 
 
@@ -87,10 +89,15 @@ const routes:Routes = [
         FilterContentComponent,
         FilterContentHeaderComponent,
         FilterContentMainComponent,
+        TypeOfPlaceComponent,
+        RoomsAndBedsComponent,
+        AmenitesComponent,
+        LanguagesComponent,
+        PropertyTypeComponent,
+        PriceRangeComponent,
         FilterContentFooterComponent,
         SignInGoogleComponent,
         SignInFacebookComponent,
-
     ],
     imports: [
         RouterModule.forRoot(routes),
@@ -111,18 +118,9 @@ const routes:Routes = [
       
        
 
-<<<<<<< HEAD:AirBnb-master/AirBnb-master/src/app/AirBnb/module/module.module.ts
         
     
    
-=======
-        AgmCoreModule
-        
-        
-
-    
-
->>>>>>> 13bfbd27d6ebd71e9a676556592e4f1e5ca884cd:AirBnb-master/src/app/AirBnb/module/module.module.ts
     ]
 })
 
