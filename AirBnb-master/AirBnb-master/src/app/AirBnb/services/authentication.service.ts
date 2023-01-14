@@ -14,9 +14,9 @@ login(username:string,Password:string){
  return from(signInWithEmailAndPassword(this.auth,username,Password))
 }
 
-signup(Name:string,Password:string,email:string){
-  return from(createUserWithEmailAndPassword(this.auth,email,Password)).pipe(
-    switchMap(({user})=>updateProfile(user,{displayName:Name}))
+signup(name:string,password:string,email:string){
+  return from(createUserWithEmailAndPassword(this.auth,email,password)).pipe(
+    switchMap(({user})=>updateProfile(user,{displayName:name}))
   )
  }
 
