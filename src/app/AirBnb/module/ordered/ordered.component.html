@@ -1,0 +1,228 @@
+
+<app-header></app-header>
+
+<section>
+  <article class="col-md-12 d-flex justify-content-between">
+    <aside class="col-md-5 ">
+      <fa-icon class="back"
+        routerLink="/details/{{reservedHotel.name}}/{{reservedHotel.id}}"
+        [icon]="faArrowLeft"></fa-icon>
+        <h1>Confirm and pay</h1>
+<br>
+<br>
+    <h2><b>Your trip</b></h2>
+    <div class="trip col-md-12 d-flex justify-content-between" >
+      <div>
+        <p>Dates</p>
+        <p>{{reservedHotel.inMonth}} {{reservedHotel.inDay}} - {{reservedHotel.outMonth}} {{reservedHotel.outDay}} </p>
+        <p>Guests</p>
+        <p>{{reservedHotel.guests}}</p>
+      </div>
+    <div>
+        <span>Edit</span>
+        <br>
+        <br>
+        <br>
+        <span>Edit</span>
+    </div>
+    </div>
+<hr>
+<!-- payment section -->
+<article class="payment d-flex justify-content-between">
+  <div>
+    <h2><b>Pay with</b></h2>
+  </div>
+<div class="payImage d-flex flex-direction-row">
+<img src="https://a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_visa.0adea522bb26bd90821a8fade4911913.svg" alt="" >
+<img src="https://a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_amex.84088b520ca1b3384cb71398095627da.svg" alt="">
+<img src="https://a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_mastercard.f18379cf1f27d22abd9e9cf44085d149.svg"  alt=""> 
+<img src="https://a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_discover.7f05c82f07d62a0f8a69d54dbcd7c8be.svg"  alt=""> 
+<img src="https://a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_paypal.faa3042fa2daf6b4a9822cc4b43e8609.svg"  alt=""> 
+<img src="https://a0.muscache.com/airbnb/static/packages/assets/frontend/legacy-shared/svgs/payments/logo_googlepay.3f786bc031b59575d24f504dfb859da0.svg"  alt=""> 
+</div>
+</article>
+
+<form class="paymentMethods">
+<div class="container p-0">
+  <div class="card px-4"  >
+    <br>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Credit or debit card</option>
+        <option value="1">PayPal</option>
+        <option value="2">Google Pay</option>
+       </select>
+      <div class="row gx-3">
+          <div class="col-12">
+              <div class="credit-info d-flex flex-column">
+                  <p class="text mb-1">Card Number</p>
+                  <input class="form-control mb-3" type="text" placeholder="0000 0000 0000 0000">
+              </div>
+          </div>
+          <div class="col-6">
+              <div class="credit-info d-flex flex-column">
+                  <p class="text mb-1">Expiration</p>
+                  <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+              </div>
+          </div>
+          <div class="col-6">
+              <div class="credit-info d-flex flex-column">
+                  <p class="text mb-1">CVV/CVC</p>
+                  <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+              </div>
+          </div>
+          <div class="col-12">
+            <div class="credit-info d-flex flex-column">
+                <p class="text mb-1">ZIP code</p>
+                <input class="form-control mb-3" type="text" placeholder="ZIP code" id="inputZip">
+            </div>
+            <p class="text mb-1">Country/Region</p>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+              <option value="1">Georgia</option>
+              <option value="2">Germany</option>
+              <option value="2">Greece</option>
+            </select>
+            <br>
+        </div>
+        </div>
+      </div>
+  </div>
+</form>
+<br>
+<span>Enter a coupon</span>
+<hr>
+<div class="add">
+  <h2><b>Required for your trip</b></h2>
+    <div class="col-md-12 d-flex justify-content-between" >
+      <h3>Phone number</h3>
+      <button type="button" 
+      class="btn btn-light" 
+      data-bs-toggle="modal" 
+      data-bs-target="#exampleModal">
+        Add
+      </button>
+    </div>
+    <div>
+      <h4>{{phoneNumber}}</h4> 
+    </div>
+</div>
+<hr>
+<div class="cancellation">
+  <h2><b>Cancellation policy</b></h2>
+  <a>This reservation is non-refundable.</a>
+  <span>Learn more</span>
+</div>
+<hr>
+<div class="small-information">
+  <small>By selecting the button below, I agree to the <span>Host's House Rules, Ground rules for guests, Airbnb's Rebooking and Refund Policy,</span> and that Airbnb can <span>charge my payment method</span> if I’m responsible for damage.</small>
+  <br>
+  <small>I also agree to the <span class="blue-text">updated Terms of Service, Payments Terms of Service,</span> and I acknowledge the <span class="blue-text">Privacy Policy.</span></small>
+  <br>
+  <br>
+
+<button 
+routerLink="/ordered-payment/{{reservedHotel.id}}"
+
+type="button" class="btn btn-primary btn-lg">Confirm and pay</button>
+
+
+<!-- დროებითი ღილაკი -->
+
+<button 
+routerLink="/ordered-history/{{reservedHotel.id}}"
+
+type="button" class="btn btn-primary btn-lg">დროებითი</button>
+
+
+
+</div>
+</aside>
+
+<!-- card info -->
+<aside class="col-md-6">
+  <div class="card" style="width: 25rem;" [ngClass]="userScroll ? 'fixed' : 'not-fixed'">
+    <div class="image d-flex justify-content-between">
+      <div>
+        <img [src]="reservedHotel.img" class="card-img-top" alt="Card image cap">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{reservedHotel.type}}</h5>
+        <h4>{{reservedHotel.name}} </h4>
+        <br>
+        <div>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <a>{{reservedHotel.star}}.00</a>
+          <small>(5 review)</small>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        Your booking is protected by <b><a style="color:#FF385C;">air</a>cover</b></li>
+      <div class="card-body">
+        <h2><b>Price details</b></h2>
+        <div class="d-flex justify-content-between">
+          <p>${{reservedHotel.price}} x {{reservedHotel.night}} nights</p>
+          <p>${{reservedHotel.total}}</p>
+        </div>
+      </div>
+    </ul>
+    <div class="card-body d-flex justify-content-between">
+        <p><b>Total<span>(USD)</span></b></p>
+        <p>${{reservedHotel.total}}</p>
+    </div>
+  </div>
+  <br>
+</aside>
+</article>
+
+
+</section>
+
+<!-- Modal add phone number  -->
+<form  
+#mobileNumber="ngForm"
+class="form"  (ngSubmit)="addPhoneNumber(mobileNumber)">
+<article class="modal-number">
+  <div 
+  
+  class="modal fade" 
+  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add phone number</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>We'll send you trip updates and a text to verify this number.</p>
+          <div class="form-group">
+             <br>
+             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" type="string">
+              <option value="1">Georgia</option>
+              <option value="2">Germany</option>
+              <option value="2">Greece</option>
+            </select>
+             <input 
+
+            ngModel
+            name="phoneNumber"
+             class="form-control form-control-lg" type="number" placeholder="Phone number">
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+          <button 
+          type="submit" 
+          #saveBtn
+          class="btn btn-primary" data-bs-dismiss="modal" >Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</article>
+</form>
+
+
+
+
+<app-footer></app-footer>

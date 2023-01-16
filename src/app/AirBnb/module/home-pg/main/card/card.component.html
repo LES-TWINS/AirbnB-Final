@@ -1,0 +1,58 @@
+<div *ngFor="let hotels of hotelsArray" class="test">
+  <mat-card
+  
+  class="example-card">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active button"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"
+          class="button"></button>
+        <button type="input" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"
+          class="button"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"
+          class="button"></button>
+      </div>
+      <div 
+      
+      routerLink="./details/{{hotels.name}}/{{hotels.id}}"
+      class="carousel-inner">
+        <div class="carousel-item"[ngClass]='{"active":hotels.mainImages[0].isActive}' >
+          <img [src]="hotels.mainImages[0].src" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" [ngClass]='{"active":hotels.mainImages[1].isActive}'>
+          <img [src]="hotels.mainImages[1].src" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" [ngClass]='{"active":hotels.mainImages[2].isActive}'>
+          <img [src]="hotels.mainImages[2].src" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" [ngClass]='{"active":hotels.mainImages[3].isActive}'>
+          <img [src]="hotels.mainImages[3].src" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button (click)="prev(hotels)" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators">
+        <span class="" aria-hidden="true"> <span class="wrapper">
+            <img src="/assets/images/arrow.png" alt="" class="img"></span></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button (click)="next(hotels)" class="carousel-control-next nextA" type="button" data-bs-target="#carouselExampleIndicators">
+        <span class="" aria-hidden="true"><span class="wrapper rightA">
+            <img src="/assets/images/arrow.png" alt="" class="img"></span></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <mat-card-content class="cardText">
+      <h6>
+        {{hotels.city}}, {{hotels.country}}
+      </h6>
+      <p><span>${{hotels.rooms[0].price}} </span> Night</p>
+
+    </mat-card-content>
+
+
+  </mat-card>
+
+  
+</div>
+
+

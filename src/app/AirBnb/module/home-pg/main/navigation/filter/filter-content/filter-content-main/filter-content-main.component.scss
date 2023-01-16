@@ -1,0 +1,392 @@
+.Amenities{
+    max-width: 725px;
+    padding: 0 0 15px 25px;
+    flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 34px;
+
+}
+.Amenities__header {
+    font-size: 24px;  
+    width: 100%;
+}
+.Amenities__text{
+    font-size: 16px;
+margin: 27px 0 ;
+width: 100%;
+}
+.form-check{
+    width: 350px;
+     min-height: 50px;
+     display: flex;
+}
+.form-check-input{
+    width: 24px;
+    height: 24px;
+    box-shadow: none;
+    border: 1px solid #808080;
+}
+.form-check-input:hover{
+border: 1px solid #000;
+}
+.form-check-input:checked{
+    background-color: #000;
+}
+.form-check-label{
+    width: 100%;
+    padding-left: 18px;
+    cursor: pointer;
+}
+.checkboxHeader{
+    font-size: 16px;
+  padding-top: 2px;
+}
+.checkboxText{
+    color: #717171 ;
+    margin: -8px 0 0;
+}
+
+
+
+
+
+.languages {
+    max-width: 725px;
+    padding: 0 0 15px 25px;
+    flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 34px;
+  }
+  
+  .languages__header {
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 31px;
+  }
+  
+  .form-check {
+    width: 350px;
+    min-height: 50px;
+    display: flex;
+  }
+  
+  .form-check-input {
+    width: 24px;
+    height: 24px;
+    box-shadow: none;
+    border: 1px solid #808080;
+  }
+  
+  .form-check-input:hover {
+    border: 1px solid #000;
+  }
+  
+  .form-check-input:checked {
+    background-color: #000;
+  }
+  
+  .form-check-label {
+    width: 100%;
+    padding-left: 18px;
+    cursor: pointer;
+  }
+  
+  .checkboxHeader {
+    font-size: 16px;
+    padding-top: 2px;
+  }
+  
+  .checkboxText {
+    color: #717171;
+    margin: -8px 0 0;
+  }
+
+
+
+
+  .price{
+    width: 725px;
+    padding: 0 0 15px 25px;
+    height: auto;
+    background-color: white;
+    margin-bottom: 34px;
+  }
+  .price__header {
+    font-size: 24px;  
+    width: 100%;
+  }
+  .price__text{
+    font-size: 16px;
+    color:#717171;
+    margin-bottom: 35px;
+  }
+  .price__range{
+    max-width: 632px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 34px;
+    
+  
+  }
+  .price__range__wrapper{
+    position: relative;
+    width: 305px;
+    height: 55px;
+    border-radius: 8px;
+  }
+  
+  .price__range__wrapper::before{
+    content: "$";
+    position: absolute;
+    left: 13px;
+    top: 28px;
+    z-index: 33;
+  }
+  .price__range__wrapper--label{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #717171 ;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  
+  .price__range__wrapper--input{
+    border-radius:8px ;
+    width: 100%;
+    height: 55px;
+    padding: 25px 0 0 27px;
+    border: none;
+    outline: none;
+    appearance: none;
+    -moz-appearance: textfield;
+    box-shadow: #b0b0b0 0px 0px 0px 1px inset;
+    cursor: pointer;
+  }
+  .price__range__wrapper--input:focus{
+    box-shadow:rgb(34, 34, 34) 0px 0px 0px 2px inset !important;
+  
+  }
+  .line{
+    width: 7px;
+    height: auto;
+    position: relative;
+  
+  }
+  .line::before{
+    content: "";
+  position: absolute;
+  border-top: 1px solid #000;
+  top:50%;
+  width: 7px;
+  
+  }
+
+
+
+
+  .property{
+    max-width: 725px;
+    padding: 15px 0 15px 25px;
+    flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 52px;
+
+}
+.property__header {
+    font-size: 24px;  
+    width: 100%;
+    
+}
+.property__wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top:15px ;
+}
+.property__wrapper__type{
+    width: 161px;
+    height: 124px;
+    border-radius: 12px;
+    border: 1px solid #D7D7D7;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.property__wrapper__type:hover{
+    border: 1px solid #000;
+}
+.property__wrapper__type--image{
+    width: 46px;
+    height: 46px;
+    padding: 12px 0 0 12px;
+}
+
+.property__wrapper__type--text{
+    margin: 0;
+    padding: 0 0 12px 12px;
+    // font-weight: 600;
+    font-size: 16px;
+}
+
+
+.rooms{
+    max-width: 725px;
+    padding: 15px 0 15px 25px;
+    margin-top: -24px;
+    margin-bottom: 34px;
+}
+.rooms__header{
+    font-size: 24px;  
+}
+.rooms__text{
+font-size: 16px;
+margin: 27px 0 ;
+}
+.rooms__Bedrooms__button:first-of-type{
+    width: 79px;
+}
+.rooms__Bedrooms__button{
+    width: 59px;
+    height:40px ;
+    border: 1px solid #ddd ;
+    outline: none;
+    border-radius: 30px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+.rooms__Bedrooms__button:hover{
+border:1px solid #222;
+}
+.rooms__Bedrooms__button:focus{
+    background-color: #222;
+    color:#fff;
+    border:1px solid #222;
+}
+
+.typeOfPlace{
+    max-width: 725px;
+    padding: 15px 0 15px 25px; 
+    margin-bottom: 34px;
+
+}
+.typeOfPlace__header{
+    font-size: 24px;
+    margin-bottom: 20px; 
+}
+.typeOfPlace__wrapper{
+    flex-wrap: wrap;
+    display: flex;
+}
+.form-check{
+    width: 350px;
+     min-height: 60px;
+    margin: 8px 0;  
+    display: flex;
+}
+.form-check-input{
+    width: 24px;
+    height: 24px;
+    box-shadow: none;
+    border: 1px solid #808080;
+}
+.form-check-input:hover{
+border: 1px solid #000;
+}
+.form-check-input:checked{
+    background-color: black;
+}
+.form-check-label{
+    width: 100%;
+    padding-left: 18px;
+    cursor: pointer;
+    
+}
+.checkboxHeader{
+    font-size: 16px;
+}
+.checkboxText{
+    color: #717171 ;
+    margin: -8px 0 0;
+    font-size: 14px;
+}
+
+
+
+
+.typeOfPlace{
+    max-width: 725px;
+    padding: 15px 0 15px 25px; 
+    margin-bottom: 34px;
+
+}
+.typeOfPlace__header{
+    font-size: 24px;
+    margin-bottom: 20px; 
+}
+.typeOfPlace__wrapper{
+    flex-wrap: wrap;
+    display: flex;
+}
+.form-check{
+    width: 350px;
+     min-height: 60px;
+    margin: 8px 0;  
+    display: flex;
+}
+.form-check-input{
+    width: 24px;
+    height: 24px;
+    box-shadow: none;
+    border: 1px solid #808080;
+}
+.form-check-input:hover{
+border: 1px solid #000;
+}
+.form-check-input:checked{
+    background-color: black;
+}
+.form-check-label{
+    width: 100%;
+    padding-left: 18px;
+    cursor: pointer;
+    
+}
+.checkboxHeader{
+    font-size: 16px;
+}
+.checkboxText{
+    color: #717171 ;
+    margin: -8px 0 0;
+    font-size: 14px;
+}
+.filter__footer{
+  width: 100%;
+  height: 81px;
+  border-top:  1px solid #ebebeb;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: -20px;
+  }
+  .filter__footer__wrapper{
+      width:calc(100% - 48px) ;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+  }
+  .filter__footer__wrapper--button{
+      border: none;
+      background: #222;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 24px;
+      color:#fff;
+      border-radius: 8px;
+    }
+  .filter__footer__wrapper--button:hover{
+      background-color: #000;
+  }
