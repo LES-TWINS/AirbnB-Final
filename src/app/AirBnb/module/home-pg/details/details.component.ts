@@ -180,15 +180,17 @@ export class DetailsComponent implements OnInit, OnDestroy {
     let pos = document.documentElement.scrollTop;
     let max = document.documentElement.scrollHeight;
 
-    if (pos > max / 70) {
+    if (pos > max / 6.5) {
       this.userScroll = pos;
     }
-    if (pos < max / 5) {
+    else if (pos > max / 1.6) {
+      this.userScroll = pos;
+     }
+    else{
       this.userScroll = 0;
     }
-    if(pos > max / 2){
-      this.userScroll = pos
-    }
+
+
   }
 
   ngOnDestroy(): void {

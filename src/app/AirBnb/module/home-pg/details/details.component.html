@@ -165,7 +165,7 @@
 
 
 
-<div class="reserve-area" [ngClass]="userScroll ? 'fixed' : 'not-fixed'">
+<div class="reserve-area" [ngClass]="userScroll > 0  ? 'fixed' : 'not-fixed'">
   <div class="hotel-detal">
     <div class="price">
       <h4>${{singleHotel.rooms[0].price}} <span>night</span> </h4>
