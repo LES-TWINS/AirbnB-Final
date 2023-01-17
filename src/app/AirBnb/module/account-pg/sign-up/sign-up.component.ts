@@ -1,4 +1,4 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, OnInit, ViewChild,  } from '@angular/core';
 // import { AngularFireAuth } from '@angular/fire/compat/auth';
 // import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { FormGroup,FormBuilder, Validators, NgForm } from '@angular/forms';
@@ -14,7 +14,7 @@ import { User } from 'src/app/AirBnb/shared-models/user.model';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-
+  close:boolean = true
 //  signupForm!:FormGroup;
   submitted=false 
 //  Email!:string;
@@ -43,10 +43,12 @@ export class SignUpComponent implements OnInit {
       this.submitted=true
       var tmpUser =Object.assign(new User(),form.value);
       console.log(tmpUser)
+     
        this.firebaseWorker.signUp(tmpUser,form.value.password).then((res:any) =>{
         this.router.navigate(['/'])
       
        })
+       this.close =! this.close 
     }
 
     

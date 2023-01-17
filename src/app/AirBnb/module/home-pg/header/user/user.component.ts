@@ -22,4 +22,7 @@ toggleLogin(){
 clickedOutside():void{
   this.show=false
 }
+forSignUp(){
+  
+}
 }
