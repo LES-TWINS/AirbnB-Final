@@ -3,17 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  firebase: {
-    projectId: 'airbnb-68fa1',
-    appId: '1:867520084614:web:63a1475360862f18562f07',
-    databaseURL: 'https://airbnb-68fa1-default-rtdb.europe-west1.firebasedatabase.app',
-    storageBucket: 'airbnb-68fa1.appspot.com',
-    locationId: 'europe-central2',
-    apiKey: 'AIzaSyA8kOcPF7Zs11s1ZWN3SORKkP1N0oFafBs',
-    authDomain: 'airbnb-68fa1.firebaseapp.com',
-    messagingSenderId: '867520084614',
-  },
   production: false,
+   firebaseConfig : {
+    apiKey: "AIzaSyAAm1EsvcFZy3_b_ejt7ABPL2sJMfDuWow",
+    authDomain: "airbnb-final-b133e.firebaseapp.com",
+    projectId: "airbnb-final-b133e",
+    storageBucket: "airbnb-final-b133e.appspot.com",
+    messagingSenderId: "883952473881",
+    appId: "1:883952473881:web:416fe334e382848b1dd788",
+    measurementId: "G-J75T7QFDFW"
+  },
+
   
 };
 

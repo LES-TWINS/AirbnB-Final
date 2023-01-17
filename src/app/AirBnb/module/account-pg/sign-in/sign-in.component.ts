@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/AirBnb/services/auth.service';
 
 
@@ -9,31 +9,26 @@ import { AuthService } from 'src/app/AirBnb/services/auth.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  signinForm!:FormGroup;
-  submitted=false ;
-  Email!:string;
-  Password!:string
 
-  constructor(private formBuilder:FormBuilder,) { }
+  submitted=false ;
+
+
+  constructor(private formBuilder:FormBuilder,private firebaseWorker:AuthService) { }
  
   ngOnInit(): void {
-    this.signinForm=this.formBuilder.group({
-      Email:['',[Validators.required,Validators.email]],
-       Password:['',[Validators.required,Validators.minLength(6)]],
-    })
+
   }
  
 
   
-
-   logIn() {
- this.submitted=true
-
-// this.auth.logIn(this.Email,this.Password);
-// this.Email="";
-// this.Password="";
- 
+onFormSubmit(form:NgForm){
+  this.submitted=true
+  this.firebaseWorker.signIn(form.value.email,form.value.password).then(res =>{
+   res.subscribe((user:any) =>{
+    console.log(user)
+    
+   })
+  })
 }
-
 
 }

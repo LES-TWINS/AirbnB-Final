@@ -24,6 +24,7 @@ export class CardComponent implements OnInit,OnDestroy {
     private mainService:MainService) {
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
+      console.log(this.hotelsArray)
       this.mapMainImages(this.hotelsArray);
     }))
   }

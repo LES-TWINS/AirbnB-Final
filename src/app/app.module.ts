@@ -17,7 +17,7 @@ import { DetailsComponent } from './AirBnb/module/home-pg/details/details.compon
 import { SignInComponent } from './AirBnb/module/account-pg/sign-in/sign-in.component';
 import { SignUpComponent } from './AirBnb/module/account-pg/sign-up/sign-up.component';
 import { OrderedHistoryComponent } from './AirBnb/module/ordered/ordered-history/ordered-history.component';
-import { ModaleComponent } from './AirBnb/shared/modale/modale.component';
+
 import { ModuleComponent } from './AirBnb/module/module.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleModule } from './AirBnb/module/module.module';
@@ -26,6 +26,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
 
 
 const routes:Routes = [
@@ -43,9 +49,7 @@ const routes:Routes = [
     IconComponent,
     CalculatorComponent,
     CalendarComponent,
-    ModaleComponent,
     ModuleComponent,
-    
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -58,17 +62,13 @@ const routes:Routes = [
     FontAwesomeModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     FormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
-    })
     
-
-    
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
-    // provideFirestore(() => getFirestore()),
 
   ],
 })
