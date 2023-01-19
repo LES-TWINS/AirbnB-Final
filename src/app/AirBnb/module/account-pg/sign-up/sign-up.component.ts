@@ -14,11 +14,9 @@ import { User } from 'src/app/AirBnb/shared-models/user.model';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  close:boolean = true
-//  signupForm!:FormGroup;
-  submitted=false 
-//  Email!:string;
-//  Password!:string
+
+
+
 
 
   constructor(private formBuilder:FormBuilder,
@@ -40,7 +38,6 @@ export class SignUpComponent implements OnInit {
 
 
     onFormSubmit(form:NgForm){
-      this.submitted=true
       var tmpUser =Object.assign(new User(),form.value);
       console.log(tmpUser)
      
@@ -48,7 +45,7 @@ export class SignUpComponent implements OnInit {
         this.router.navigate(['/'])
       
        })
-       this.close =! this.close 
+      //  this.close =! this.close 
     }
 
     
