@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/AirBnb/services/http.service';
 import { MapService } from '../../details/map.service';
 import { MainService } from '../main.service';
+import { CardServiceService } from '../navigation/filter/filter-content/filter-content-main/card-service.service';
 
 
 
@@ -21,12 +22,17 @@ export class CardComponent implements OnInit,OnDestroy {
 
   constructor(private router:Router, private http: HttpService,
     private mapService:MapService,
-    private mainService:MainService) {
+    private mainService:MainService,
+    private cardService:CardServiceService) {
     this.http.getAllHotels().subscribe(((hotels: any) => {
       this.hotelsArray = hotels;
       console.log(this.hotelsArray)
       this.mapMainImages(this.hotelsArray);
     }))
+    // this.http.getFilterByCategory().subscribe((data) =>{
+    //   console.log(data)
+    // })
+
   }
 
   mapMainImages(hotelsArray:any[]){
@@ -45,12 +51,11 @@ export class CardComponent implements OnInit,OnDestroy {
    this.cardFilter = this.mainService.cardFilter.subscribe((data)=>{
        this.hotelsArray = data;
        this.mapMainImages(this.hotelsArray);
-
-
-   
- 
-         
-    
+     })
+     this.cardService.cardService.subscribe((data)=>{
+      this.hotelsArray = data;
+      this,this.mapMainImages(this.hotelsArray)
+      console.log(data)
      })
   }
 

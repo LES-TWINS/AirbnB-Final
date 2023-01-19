@@ -33,6 +33,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
 import {MapsAPILoader} from '@agm/core';
+import { FooterComponent } from './AirBnb/module/home-pg/footer/footer.component';
 
 
 const routes:Routes = [
@@ -51,7 +52,9 @@ const routes:Routes = [
     CalculatorComponent,
     CalendarComponent,
     ModuleComponent,
+
   ],
+  
   providers: [],
   bootstrap: [AppComponent],
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ordered-payment',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderedPaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private actRoute:ActivatedRoute) { 
+
+    this.actRoute.params.subscribe(data=>{
+      console.log(data)
+    })
+  }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,5 @@
 
-<app-header></app-header>
+
 
 <section>
   <article class="col-md-12 d-flex justify-content-between">
@@ -120,8 +120,8 @@
   <br>
 
 <button 
-routerLink="/ordered-payment/{{reservedHotel.id}}"
 
+(click)="onBtnClick()"
 type="button" class="btn btn-primary btn-lg">Confirm and pay</button>
 
 
@@ -226,4 +226,3 @@ class="form"  (ngSubmit)="addPhoneNumber(mobileNumber)">
 
 
 
-<app-footer></app-footer>

@@ -43,6 +43,7 @@ import { AgmCoreModule } from '@agm/core';
 import { SignInGoogleComponent } from './account-pg/sign-in/sign-in-google/sign-in-google.component';
 import { SignInFacebookComponent } from './account-pg/sign-in/sign-in-facebook/sign-in-facebook.component';
 import { OrderedPaymentComponent } from "./ordered/ordered-payment/ordered-payment.component";
+import { ProfileComponent } from "./account-pg/profile/profile.component";
 
 
 
@@ -56,9 +57,10 @@ const routes:Routes = [
     { path: 'host-pg/:checkIn/:checkOut',component:HostPgComponent},
     { path:'details/:name/:id',component:DetailsComponent},
     { path: 'ordered', component:OrderedComponent},
-    { path: 'ordered-payment/:id', component:OrderedPaymentComponent},
-    { path:'ordered-history/:id', component: OrderedHistoryComponent},
-    { path:'**',component:ErrorComponent}
+    { path: 'ordered-payment', component:OrderedPaymentComponent},
+    { path:'ordered-history', component: OrderedHistoryComponent},
+    { path:'profile',component:ProfileComponent},
+    { path:'**',component:ErrorComponent},
   
   ]
 
@@ -76,7 +78,7 @@ const routes:Routes = [
         LogoComponent,
         SearchComponent,
         UserComponent,
-        FooterComponent,
+       FooterComponent,
         AboutComponent,
         SupportComponent,
         CardComponent,
@@ -90,8 +92,11 @@ const routes:Routes = [
         FilterContentFooterComponent,
         SignInGoogleComponent,
         SignInFacebookComponent,
-
+        ProfileComponent
+       
     ],
+    exports: [HeaderComponent,FooterComponent],
+ 
     imports: [
         RouterModule.forRoot(routes),
         MatCardModule,

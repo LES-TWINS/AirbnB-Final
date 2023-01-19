@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../../account-pg/sign-in/user.service';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  userPage:boolean = false;
+
+
+  constructor(private userService:UserService) { 
+
+    this.userService.userService.subscribe(data=>{
+    this.userPage = true;
+    })
+
+  }
 
   ngOnInit(): void {
   }
@@ -22,7 +32,5 @@ toggleLogin(){
 clickedOutside():void{
   this.show=false
 }
-forSignUp(){
-  
-}
+
 }

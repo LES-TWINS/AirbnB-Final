@@ -4,14 +4,39 @@
     <div clickOutside (clickOutside)="clickedOutside()" >
     <button type="button" class="btn login" alt=""(click)="toggleLogin()"><div><img src="/assets/images/burger.png"  class="burger"><img src="/assets/images/person.png" alt="" class="person"> </div></button> 
     </div>
-    <div class="list-group sign-in"  *ngIf="show">
-     
+
+
+      <div
+      *ngIf="userPage !== true ? 'show' : 'hide'"
+      >
+      <div 
+      class="list-group sign-in"  *ngIf="show" >
         <button 
-        
         type="button" 
         class="list-group-item list-group-item-action" data-bs-toggle="modal" href="#signup" >Sign up</button>
         <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" href="#login">Log in</button>
-       
       </div>
+    </div>
+
+    <div
+    *ngIf="userPage === true 'show' : 'hide'"
+    >
+      <div 
+      class="list-group sign-in"  *ngIf="show">
+        <button 
+        type="button" 
+        routerLink="/profile"
+        class="list-group-item list-group-item-action"   >Account</button>
+        <button type="button" 
+        routerLink="/ordered-history"
+        class="list-group-item list-group-item-action"
+         >Order History</button>
+        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" href="#login">Log Out</button>
+      </div>
+    </div>
+ 
 </div>
+
+
+
 

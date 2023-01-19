@@ -81,16 +81,31 @@
             </section>
         
 
-            <section class="rooms ">
+   
+      
+
+            <section
+            ngModelGroup="bedrooms"
+            class="rooms ">
                 <h2 class="rooms__header  ">Rooms and beds</h2>
                 <h3 class="rooms__text">Bedrooms</h3>
                 <div class="rooms__Bedrooms">
-                    <button class="rooms__Bedrooms__button">Any</button>
+                    <!-- <button class="rooms__Bedrooms__button">Any</button>
                     <button 
-                    (click)="test($event)"
+                    (click)="getBedRoomsCount($event)"
                     value="{{num}}"
                     *ngFor="let num of numberArray"
-                    class="rooms__Bedrooms__button">{{num}}</button>
+                    class="rooms__Bedrooms__button">{{num}}</button> -->
+
+                    <div class="radio_container">
+                      <input type="radio" name="radio" id="one" checked>
+                      <label for="one">one</label>
+                      <input type="radio" name="radio" id="two">
+                      <label for="two">two</label>
+                      <input type="radio" name="radio" id="three">
+                      <label for="three">three</label>
+                  </div>
+
 
                 </div>
                 
@@ -100,7 +115,7 @@
                     <button 
                     *ngFor="let num of numberArray"
                     value="{{num}}"
-                    (click)="test($event)"
+                  
                     class="rooms__Bedrooms__button beds">{{num}}</button>
                 </div>
                 
@@ -111,7 +126,7 @@
                     *ngFor="let num of numberArray"
                     
                     value="{{num}}"
-                    (click)="test($event)"
+                    
                     class="rooms__Bedrooms__button bathrooms">{{num}}</button>
                 </div>
                   </section>
@@ -324,6 +339,7 @@
             <div class="filter__footer__wrapper">
                 <button 
                 type="submit"
+                data-bs-dismiss="modal"
                 class="filter__footer__wrapper--button">Show 1,000+homes</button>
             </div>
         </footer>
