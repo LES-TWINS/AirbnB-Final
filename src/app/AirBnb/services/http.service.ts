@@ -21,10 +21,12 @@ export class HttpService {
     return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel/' + id);
   }
 
-  getFilterByCategory(id?: string,price?:any, typeOfPlace?:any, bedrooms?:any){
+  getFilterByCategory(id?: string,price?:any, typeOfPlace?:any, bedrooms?:any,beds?:any,bath?:any,property?:any,amenities?:any,host?:any){
     const _id = id || null;
     const _price = price || null;
     const _typeOfPlace = typeOfPlace || null;
+    const _bedrooms = bedrooms || null;
+    
     let querys:any = '';
     let formstr:any = '';
     let param = "";
@@ -32,20 +34,38 @@ if (id) {
   formstr += 'ID='+ id; 
 }
 if (price && price.minPrice != '') {
-    formstr += 'PriceFrom='+ price.minPrice + '&'; 
-
-     
+    formstr += 'PriceFrom='+ price.minPrice + '&';  
 }
 if (price && price.maxPrice != '') {
   formstr += 'PriceTo='+ price.maxPrice + '&'; 
- 
 }
 if (typeOfPlace != undefined && typeOfPlace.length >= 0) {
-   formstr += 'TypeOfPlace='+ typeOfPlace; 
+   formstr += 'TypeOfPlace='+ typeOfPlace + '&'; 
 }
-// if(bedrooms){
-//   formstr += 'BedsPerRoomCount='+ bedrooms + '&'; 
-// }
+if(bedrooms){
+  formstr += 'RoomsCount='+ bedrooms + '&'; 
+}
+if(beds){
+  formstr += 'BedsPerRoomCount='+ beds + '&'; 
+}
+if(bath){
+  formstr += 'BathRoomsCount='+ bath + '&'; 
+}
+if(property){
+  formstr += 'PropertyType='+ property + '&'; 
+}
+if(amenities){
+  amenities.forEach((ele:any) => {
+    formstr += 'Amenities='+ ele + '&';
+  });
+
+
+}
+if(host){
+    host.forEach((hostlang:any) =>{
+      formstr += 'HostLanguages='+ hostlang + '&';
+    })
+}
   
     querys  = new HttpParams({fromString: formstr});
     return this.http.get(`http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel/filter-by-category?${querys}`);

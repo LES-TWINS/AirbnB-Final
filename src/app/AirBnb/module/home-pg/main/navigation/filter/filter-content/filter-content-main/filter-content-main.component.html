@@ -90,72 +90,179 @@
                 <h2 class="rooms__header  ">Rooms and beds</h2>
                 <h3 class="rooms__text">Bedrooms</h3>
                 <div class="rooms__Bedrooms">
-                    <!-- <button class="rooms__Bedrooms__button">Any</button>
-                    <button 
-                    (click)="getBedRoomsCount($event)"
-                    value="{{num}}"
-                    *ngFor="let num of numberArray"
-                    class="rooms__Bedrooms__button">{{num}}</button> -->
-
                     <div class="radio_container">
-                      <input type="radio" name="radio" id="one" checked>
-                      <label for="one">one</label>
-                      <input type="radio" name="radio" id="two">
-                      <label for="two">two</label>
-                      <input type="radio" name="radio" id="three">
-                      <label for="three">three</label>
+                      <input 
+                      (change)="test1($event)"
+                      type="radio" 
+                      value="any"
+                      name="radio" id="any" checked>
+                      <label for="any">any</label>
+                      <input 
+                      (change)="test1($event)"
+                      type="radio" 
+                      value="1"
+                      name="radio" id="one">
+                      <label for="one">1</label>
+                      <input 
+                      (change)="test1($event)"
+                      value="2"
+                      type="radio" name="radio" id="two">
+                      <label for="two">2</label>
+                      <input 
+                      (change)="test1($event)"
+                      value="3"
+                      type="radio" name="radio" id="three">
+                      <label for="three">3</label>
+                      <input
+                      (change)="test1($event)"
+                      value="4"
+                      type="radio" name="radio" id="four">
+                      <label for="four">4</label>
+                      <input
+                      (change)="test1($event)"
+                      value="5"
+                      type="radio" name="radio" id="five">
+                      <label for="five">5</label>
+                      <input 
+                      (change)="test1($event)"
+                      value="6"
+                      type="radio" name="radio" id="six">
+                      <label for="six">6</label>
                   </div>
 
 
                 </div>
                 
                 <h3 class="rooms__text">Beds</h3>
-                <div class="rooms__Bedrooms" >
-                    <button class="rooms__Bedrooms__button beds">Any</button>
-                    <button 
-                    *ngFor="let num of numberArray"
-                    value="{{num}}"
-                  
-                    class="rooms__Bedrooms__button beds">{{num}}</button>
+                <div 
+                
+                ngModelGroup="beds"
+                class="rooms__Bedrooms" >
+                  <div class="radio_container">
+                    <input 
+                    (change)="getBedsValue($event)"
+                    type="radio" 
+                    value="any"
+                    name="beds" id="any1" checked>
+                    <label for="any1">any</label>
+                    <input 
+                    (change)="getBedsValue($event)"
+                    value="1"
+                    type="radio" name="beds" id="beds1">
+                    <label for="beds1">1</label>
+                    <input
+                    (change)="getBedsValue($event)"
+                    value="2"
+                    type="radio" name="beds" id="beds2">
+                    <label for="beds2">2</label>
+                    <input
+                    (change)="getBedsValue($event)"
+                    value="3"
+                    type="radio" name="beds" id="beds3">
+                    <label for="beds3">3</label>
+                    <input
+                    (change)="getBedsValue($event)"
+                    value="4"
+                    type="radio" name="beds" id="beds4">
+                    <label for="beds4">4</label>
+                    <input 
+                    (change)="getBedsValue($event)"
+                    value="5"
+                    type="radio" name="beds" id="beds5">
+                    <label for="beds5">5</label>
+                    <input 
+                    (change)="getBedsValue($event)"
+                    value="6"
+                    type="radio" name="beds" id="beds6">
+                    <label for="beds6">6</label>
+                </div>
                 </div>
                 
                 <h3 class="rooms__text">Bathrooms</h3>
-                <div class="rooms__Bedrooms">
-                    <button class="rooms__Bedrooms__button bathrooms">Any</button>
-                    <button 
-                    *ngFor="let num of numberArray"
-                    
-                    value="{{num}}"
-                    
-                    class="rooms__Bedrooms__button bathrooms">{{num}}</button>
+                <div 
+                ngModelGroup="baths"
+                class="rooms__Bedrooms">
+                  <div class="radio_container">
+                    <input 
+                    (change)="getBathCount($event)" 
+                    value="any"
+                    type="radio" name="bath" id="any2" checked>
+                    <label for="any2">any</label>
+                    <input 
+                    (change)="getBathCount($event)" 
+                    value="1"
+                    type="radio" name="bath" id="bath1">
+                    <label for="bath1">1</label>
+                    <input
+                    (change)="getBathCount($event)" 
+                    value="2"
+                    type="radio" name="bath" id="bath2">
+                    <label for="bath2">2</label>
+                    <input
+                    (change)="getBathCount($event)" 
+                    value="3"
+                    type="radio" name="bath" id="bath3">
+                    <label for="bath3">3</label>
+                    <input 
+                    (change)="getBathCount($event)" 
+                    value="4"
+                    type="radio" name="bath" id="bath4">
+                    <label for="bath4">4</label>
+                    <input
+                    (change)="getBathCount($event)" 
+                    value="5"
+                    type="radio" name="bath" id="bath5">
+                    <label for="bath5">5</label>
+                    <input
+                    (change)="getBathCount($event)" 
+                    value="6"
+                    type="radio" name="bath" id="bath6">
+                    <label for="bath6">6</label>
+                </div>
                 </div>
                   </section>
                  
              
 <section class="property">
     <h2 class="property__header">Property types</h2>
-       <div class="property__wrapper">
-           <div class="property__wrapper__type">
-             <img src="/assets/images/house.png" alt="" class="property__wrapper__type--image">
+       <div 
+       
+       ngModelGroup="property"
+       class="property__wrapper">
+     <ul>
+      <li><input 
+        (click)="getPropertyVal($event)"
+        value="home"
+        type="radio"
+        name="test" id="cb1" />
+        <label for="cb1"><img src="/assets/images/house.png" /></label>
+        Home
+      </li>
+      <li><input
+        (click)="getPropertyVal($event)"
+        value="villa"
+        type="radio" name="test" id="cb2" />
+        <label for="cb2"><img src="/assets/images/guesthouse.png"/></label>
+        Villa
+      </li>
+      <li><input 
+        (click)="getPropertyVal($event)"
+        value="guesthouse"
+        type="radio" name="test" id="cb3" />
+        <label for="cb3"><img src="/assets/images/apartment.png"/></label>
+        Guesthouse
+      </li>
+      <li><input 
+        
+        (click)="getPropertyVal($event)"
+        value="hotel"
+        type="radio" name="test" id="cb4" />
+        <label for="cb4"><img src="/assets/images/hotel.png" /></label>
+        Hotel
+      </li>
+    </ul>
 
-              <h3 class="property__wrapper__type--text">House</h3>
-           </div>
-           <div class="property__wrapper__type">
-            <img src="/assets/images/apartment.png" alt="" class="property__wrapper__type--image">
 
-             <h3 class="property__wrapper__type--text">Apartment</h3>
-          </div>
-          <div class="property__wrapper__type">
-            <img src="/assets/images/guesthouse.png" alt="" class="property__wrapper__type--image">
-
-             <h3 class="property__wrapper__type--text">Guesthouse</h3>
-          </div>
-          <div class="property__wrapper__type">
-            <img src="/assets/images/hotel.png" alt="" class="property__wrapper__type--image">
-
-             <h3 class="property__wrapper__type--text">Hotel</h3>
-          </div>
-    
        </div>
 
 </section>
@@ -169,164 +276,133 @@
 
     <h3 class="Amenities__text">Essentials</h3>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="wifi">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="wifi" id="wifi">
         <label class="form-check-label" for="wifi">
          <h3 class="checkboxHeader">wifi</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Kitchen">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="Kitchen" id="Kitchen">
         <label class="form-check-label" for="Kitchen">
          <h3 class="checkboxHeader">Kitchen</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Washer">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="Washer" id="Washer">
         <label class="form-check-label" for="Washer">
          <h3 class="checkboxHeader">Washer</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="dryer">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="Dryer" id="dryer">
         <label class="form-check-label" for="dryer">
          <h3 class="checkboxHeader">Dryer</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Airconditioning">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="Air conditioning" id="Airconditioning">
         <label class="form-check-label" for="Airconditioning">
          <h3 class="checkboxHeader">Air conditioning</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Heating">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="Heating" id="Heating">
         <label class="form-check-label" for="Heating">
          <h3 class="checkboxHeader">Heating</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="Dedicatedworkspace">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="Dedicatedworkspace" id="Dedicatedworkspace">
         <label class="form-check-label" for="Dedicatedworkspace">
          <h3 class="checkboxHeader">Dedicated workspace</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="tv">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="tv" id="tv">
         <label class="form-check-label" for="tv">
          <h3 class="checkboxHeader">TV</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="hairdryer">
+        <input 
+        (change)="getAmenities($event)"
+        class="form-check-input" type="checkbox" value="hairdryer" id="hairdryer">
         <label class="form-check-label" for="hairdryer">
          <h3 class="checkboxHeader">Hair dryer</h3>
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="iron">
+        <input
+        (change)="getAmenities($event)" 
+        class="form-check-input" type="checkbox" value="iron" id="iron">
         <label class="form-check-label" for="iron">
          <h3 class="checkboxHeader">Iron</h3>
         </label>
       </div>
-   
-
-
-      <h3 class="Amenities__text">Features</h3>
-      <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="Pool">
-          <label class="form-check-label" for="Pool">
-           <h3 class="checkboxHeader">Pool</h3>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="hottub">
-          <label class="form-check-label" for="hottub">
-           <h3 class="checkboxHeader">Hot tub</h3>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="freeparkingonpremises">
-          <label class="form-check-label" for="freeparkingonpremises">
-           <h3 class="checkboxHeader">Free parking on premises</h3>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="evcharger">
-          <label class="form-check-label" for="evcharger">
-           <h3 class="checkboxHeader">Ev charger</h3>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="crib">
-          <label class="form-check-label" for="crib">
-           <h3 class="checkboxHeader">Crib</h3>
-          </label>
-        </div>
-      
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="gym">
-          <label class="form-check-label" for="gym">
-           <h3 class="checkboxHeader">Gym</h3>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="bbqgrill">
-          <label class="form-check-label" for="bbqgrill">
-           <h3 class="checkboxHeader">BBQ grill</h3>
-          </label>
-        </div>
-      
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="breakfast">
-          <label class="form-check-label" for="breakfast">
-           <h3 class="checkboxHeader">Breakfast</h3>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="indoorfireplace">
-          <label class="form-check-label" for="indoorfireplace">
-           <h3 class="checkboxHeader">Indoor fireplace</h3>
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="smokingallowed">
-          <label class="form-check-label" for="smokingallowed">
-           <h3 class="checkboxHeader">Smoking allowed</h3>
-          </label>
-        </div>
-      
-      
-    
       </section>
 
 
 
 
 
-      <section class="languages ">
+      <section 
+      
+      ngModelGroup="hostLanguage"
+      class="languages ">
         <h2 class="languages__header ">Host languages</h2>
         
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="English">
+            <input 
+            
+            (change)="getHostLang($event)"
+            value="english"
+            class="form-check-input" type="checkbox"  id="English">
             <label class="form-check-label" for="English">
              <h3 class="checkboxHeader">English</h3>
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="French">
+            <input 
+            
+            (change)="getHostLang($event)"
+            value="french"
+            class="form-check-input" type="checkbox"  id="French">
             <label class="form-check-label" for="French">
              <h3 class="checkboxHeader">French</h3>
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="German">
+            <input 
+            (change)="getHostLang($event)"
+            value="german"
+            class="form-check-input" type="checkbox"  id="German">
             <label class="form-check-label" for="German">
              <h3 class="checkboxHeader">German</h3>
             </label>
           </div>
      
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="Japanese">
+              <input 
+              (change)="getHostLang($event)"
+              value="japanese"
+              
+              class="form-check-input" type="checkbox" id="Japanese">
               <label class="form-check-label" for="Japanese">
                <h3 class="checkboxHeader">Japanese</h3>
               </label>
