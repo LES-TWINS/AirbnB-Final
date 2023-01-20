@@ -510,6 +510,10 @@ input[type="radio"]:checked + label {
   
   :checked + label {
     border-color: #ddd;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 12px;
+
   }
   
   :checked + label:before {
@@ -523,4 +527,5 @@ input[type="radio"]:checked + label {
     box-shadow: 0 0 5px #333;
     z-index: -1;
   }
+
 }

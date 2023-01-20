@@ -235,21 +235,27 @@
         value="home"
         type="radio"
         name="test" id="cb1" />
-        <label for="cb1"><img src="/assets/images/house.png" /></label>
+        <label 
+        class="imgLab"
+        for="cb1"><img src="/assets/images/house.png" /></label>
         Home
       </li>
       <li><input
         (click)="getPropertyVal($event)"
         value="villa"
         type="radio" name="test" id="cb2" />
-        <label for="cb2"><img src="/assets/images/guesthouse.png"/></label>
+        <label 
+        class="imgLab"
+        for="cb2"><img src="/assets/images/guesthouse.png"/></label>
         Villa
       </li>
       <li><input 
         (click)="getPropertyVal($event)"
         value="guesthouse"
         type="radio" name="test" id="cb3" />
-        <label for="cb3"><img src="/assets/images/apartment.png"/></label>
+        <label
+        class="imgLab"
+        for="cb3"><img src="/assets/images/apartment.png"/></label>
         Guesthouse
       </li>
       <li><input 
@@ -257,7 +263,9 @@
         (click)="getPropertyVal($event)"
         value="hotel"
         type="radio" name="test" id="cb4" />
-        <label for="cb4"><img src="/assets/images/hotel.png" /></label>
+        <label 
+        class="imgLab"
+        for="cb4"><img src="/assets/images/hotel.png" /></label>
         Hotel
       </li>
     </ul>
