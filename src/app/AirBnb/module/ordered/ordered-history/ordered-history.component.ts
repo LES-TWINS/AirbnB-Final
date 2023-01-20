@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ordered-history',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderedHistoryComponent implements OnInit {
 
-  constructor() { }
+  reservedHotel:any;
+
+
+  constructor(private actRoute:ActivatedRoute) { 
+
+    this.actRoute.queryParams.subscribe((data:any)=>{
+      console.log(data)
+      this.reservedHotel = data
+    })
+
+  }
 
   ngOnInit(): void {
   }

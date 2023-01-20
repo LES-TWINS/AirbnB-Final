@@ -20,14 +20,15 @@
     <h2>Where you've been</h2>
     <div class="past col-md-3 d-flex justify-content-between">
       <div>
-        <img src="https://a0.muscache.com/im/pictures/d727f355-3f10-44b5-9750-d1efca2438fc.jpg?im_w=720">
-        <!-- <img [src]="reservedHotel.img"  alt="Card image cap"> -->
+        <img [src]="reservedHotel.img">
+      
       </div>
       <div class="info">
-        <p><b>Country</b></p>
-        <p class="card-text">Hosted byname</p>
-        <p> Apr 1-7,2019 </p>
-        <!-- <p>{{reservedHotel.inMonth}} {{reservedHotel.inDay}} - {{reservedHotel.outMonth}} {{reservedHotel.outDay}} </p> -->
+        <h5><b>{{reservedHotel.name}}</b></h5>
+        <p> check in :  {{reservedHotel.inMonth}} {{reservedHotel.inDay}} </p>
+        <p> check out :  {{reservedHotel.outMonth}} {{reservedHotel.outDay}} </p>
+        <p>price: {{reservedHotel.price}}</p>
+      
       </div>
     </div>
     <hr>

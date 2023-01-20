@@ -31,7 +31,12 @@
         routerLink="/ordered-history"
         class="list-group-item list-group-item-action"
          >Order History</button>
-        <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="modal" href="#login">Log Out</button>
+        <button 
+        type="button" 
+        class="list-group-item list-group-item-action" 
+        routerLink="/"
+        (click)="userPage =! userPage"
+        href="#login">Log Out</button>
       </div>
     </div>
  

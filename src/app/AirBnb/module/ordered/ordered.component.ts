@@ -56,7 +56,15 @@ export class OrderedComponent implements OnInit {
     ['/ordered-payment'],
     { queryParams: { 
 
-      price:this.reservedHotel.img,
+      price:this.reservedHotel.price,
+      img:this.reservedHotel.img,
+      id:this.reservedHotel.id,
+      name:this.reservedHotel.name,
+      inMonth:this.reservedHotel.inMonth,
+       inDay:this.reservedHotel.inDay,
+       outMonth:this.reservedHotel.outMonth,
+       outDay:this.reservedHotel.outDay,
+
 
 
      } }

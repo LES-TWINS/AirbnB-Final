@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-ordered-payment',
@@ -8,11 +8,33 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class OrderedPaymentComponent implements OnInit {
 
-  constructor(private actRoute:ActivatedRoute) { 
+ 
+  reservedHotel:any;
 
-    this.actRoute.params.subscribe(data=>{
-      console.log(data)
+
+
+  constructor(private actRoute:ActivatedRoute,private router:Router) { 
+
+    this.actRoute.queryParams.subscribe(data=>{
+      this.reservedHotel = data
+        console.log(data)
     })
+  }
+  onBtnClick(){
+     this.router.navigate(
+      ['./ordered-history'],
+      {queryParams: {
+        price:this.reservedHotel.price,
+        img:this.reservedHotel.img,
+        id:this.reservedHotel.id,
+        name:this.reservedHotel.name,
+        inMonth:this.reservedHotel.inMonth,
+        inDay:this.reservedHotel.inDay,
+        outMonth:this.reservedHotel.outMonth,
+        outDay:this.reservedHotel.outDay,
+         
+      }}
+     )
   }
 
   ngOnInit(): void {
