@@ -39,7 +39,7 @@ if (price && price.minPrice != '') {
 if (price && price.maxPrice != '') {
   formstr += 'PriceTo='+ price.maxPrice + '&'; 
 }
-if (typeOfPlace != undefined && typeOfPlace.length >= 0) {
+if (typeOfPlace !== '' && typeOfPlace !== undefined &&  typeOfPlace !== null && typeOfPlace.length >= 0) {
    formstr += 'TypeOfPlace='+ typeOfPlace + '&'; 
 }
 if(bedrooms){
