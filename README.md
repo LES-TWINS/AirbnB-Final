@@ -1,3 +1,7 @@
+# Run npm install --force to install node_modules
+
+
+
 # AirBnb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
